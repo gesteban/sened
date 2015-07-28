@@ -1,0 +1,613 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY schema "http://schema.org/" >
+    <!ENTITY dcterms "http://purl.org/dc/terms/" >
+    <!ENTITY foaf "http://xmlns.com/foaf/0.1/" >
+    <!ENTITY property "http://dbpedia.org/property/" >
+    <!ENTITY ontology "http://dbpedia.org/ontology/" >
+    <!ENTITY dbyago "http://dbpedia.org/class/yago/" >
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY core "http://www.w3.org/2004/02/skos/core#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+    <!ENTITY subsets_merged "file:/c:/users/peonza/documents/proyecto/subsets_merged.owl#" >
+]>
+
+
+<rdf:RDF xmlns="http://eina.unizar.es/giga/merged.owl#"
+     xml:base="http://eina.unizar.es/giga/merged.owl"
+     xmlns:foaf="http://xmlns.com/foaf/0.1/"
+     xmlns:property="http://dbpedia.org/property/"
+     xmlns:ontology="http://dbpedia.org/ontology/"
+     xmlns:subsets_merged="file:/c:/users/peonza/documents/proyecto/subsets_merged.owl#"
+     xmlns:dcterms="http://purl.org/dc/terms/"
+     xmlns:schema="http://schema.org/"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:core="http://www.w3.org/2004/02/skos/core#"
+     xmlns:dbyago="http://dbpedia.org/class/yago/">
+    <owl:Ontology rdf:about="file:/c:/users/peonza/documents/proyecto/subsets_merged.owl">
+        <subsets_merged:taxonomyDefinedBy>classes</subsets_merged:taxonomyDefinedBy>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <owl:AnnotationProperty rdf:about="&subsets_merged;queryLanguage"/>
+    <owl:AnnotationProperty rdf:about="&subsets_merged;taxonomyDefinedBy"/>
+    <owl:AnnotationProperty rdf:about="&subsets_merged;kwdSearchable"/>
+    <owl:AnnotationProperty rdf:about="&subsets_merged;dataRetreavable"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Datatypes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- file:/c:/users/peonza/documents/proyecto/subsets_merged.owl#architect_ -->
+
+    <owl:ObjectProperty rdf:about="&subsets_merged;architect_">
+        <owl:equivalentProperty rdf:resource="&ontology;architect"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- file:/c:/users/peonza/documents/proyecto/subsets_merged.owl#birthPlace_ -->
+
+    <owl:ObjectProperty rdf:about="&subsets_merged;birthPlace_">
+        <owl:equivalentProperty rdf:resource="&ontology;birthPlace"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- file:/c:/users/peonza/documents/proyecto/subsets_merged.owl#buriedPlace_ -->
+
+    <owl:ObjectProperty rdf:about="&subsets_merged;buriedPlace_">
+        <owl:equivalentProperty rdf:resource="&ontology;buriedPlace"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- file:/c:/users/peonza/documents/proyecto/subsets_merged.owl#capital_ -->
+
+    <owl:ObjectProperty rdf:about="&subsets_merged;capital_">
+        <owl:equivalentProperty rdf:resource="&ontology;capital"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- file:/c:/users/peonza/documents/proyecto/subsets_merged.owl#city_ -->
+
+    <owl:ObjectProperty rdf:about="&subsets_merged;city_">
+        <owl:equivalentProperty rdf:resource="&ontology;city"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- file:/c:/users/peonza/documents/proyecto/subsets_merged.owl#country_ -->
+
+    <owl:ObjectProperty rdf:about="&subsets_merged;country_">
+        <owl:equivalentProperty rdf:resource="&ontology;country"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- file:/c:/users/peonza/documents/proyecto/subsets_merged.owl#deathPlace_ -->
+
+    <owl:ObjectProperty rdf:about="&subsets_merged;deathPlace_">
+        <owl:equivalentProperty rdf:resource="&ontology;deathPlace"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- file:/c:/users/peonza/documents/proyecto/subsets_merged.owl#hometown_ -->
+
+    <owl:ObjectProperty rdf:about="&subsets_merged;hometown_">
+        <owl:equivalentProperty rdf:resource="&ontology;hometown"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- file:/c:/users/peonza/documents/proyecto/subsets_merged.owl#ispartOf_ -->
+
+    <owl:ObjectProperty rdf:about="&subsets_merged;ispartOf_">
+        <owl:equivalentProperty rdf:resource="&ontology;isPartOf"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- file:/c:/users/peonza/documents/proyecto/subsets_merged.owl#locatedInArea_ -->
+
+    <owl:ObjectProperty rdf:about="&subsets_merged;locatedInArea_">
+        <owl:equivalentProperty rdf:resource="&ontology;locatedInArea"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- file:/c:/users/peonza/documents/proyecto/subsets_merged.owl#location_ -->
+
+    <owl:ObjectProperty rdf:about="&subsets_merged;location_">
+        <owl:equivalentProperty rdf:resource="&ontology;location"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- file:/c:/users/peonza/documents/proyecto/subsets_merged.owl#nearestCity_ -->
+
+    <owl:ObjectProperty rdf:about="&subsets_merged;nearestCity_">
+        <owl:equivalentProperty rdf:resource="&ontology;nearestCity"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- file:/c:/users/peonza/documents/proyecto/subsets_merged.owl#part_ -->
+
+    <owl:ObjectProperty rdf:about="&subsets_merged;part_"/>
+    
+
+
+    <!-- file:/c:/users/peonza/documents/proyecto/subsets_merged.owl#primaryTopic_ -->
+
+    <owl:ObjectProperty rdf:about="&subsets_merged;primaryTopic_">
+        <subsets_merged:dataRetreavable>yes</subsets_merged:dataRetreavable>
+        <rdfs:range rdf:resource="&subsets_merged;Country_"/>
+        <rdfs:range rdf:resource="&subsets_merged;Person_"/>
+        <owl:equivalentProperty rdf:resource="&foaf;primaryTopic"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- file:/c:/users/peonza/documents/proyecto/subsets_merged.owl#region_ -->
+
+    <owl:ObjectProperty rdf:about="&subsets_merged;region_">
+        <owl:equivalentProperty rdf:resource="&ontology;region"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- file:/c:/users/peonza/documents/proyecto/subsets_merged.owl#residence_ -->
+
+    <owl:ObjectProperty rdf:about="&subsets_merged;residence_">
+        <owl:equivalentProperty rdf:resource="&ontology;residence"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- file:/c:/users/peonza/documents/proyecto/subsets_merged.owl#restingPlace_ -->
+
+    <owl:ObjectProperty rdf:about="&subsets_merged;restingPlace_">
+        <owl:equivalentProperty rdf:resource="&ontology;restingPlace"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- file:/c:/users/peonza/documents/proyecto/subsets_merged.owl#worksplaces_ -->
+
+    <owl:ObjectProperty rdf:about="&subsets_merged;worksplaces_">
+        <rdfs:domain rdf:resource="&subsets_merged;Person_"/>
+        <owl:equivalentProperty rdf:resource="&property;workplaces"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://dbpedia.org/ontology/architect -->
+
+    <owl:ObjectProperty rdf:about="&ontology;architect">
+        <rdfs:range rdf:resource="&ontology;Architect"/>
+        <rdfs:domain rdf:resource="&ontology;ArchitecturalStructure"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://dbpedia.org/ontology/birthPlace -->
+
+    <owl:ObjectProperty rdf:about="&ontology;birthPlace">
+        <rdfs:domain rdf:resource="&ontology;Person"/>
+        <rdfs:range rdf:resource="&ontology;Place"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://dbpedia.org/ontology/buriedPlace -->
+
+    <owl:ObjectProperty rdf:about="&ontology;buriedPlace">
+        <rdfs:domain rdf:resource="&ontology;Person"/>
+        <rdfs:range rdf:resource="&ontology;Place"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://dbpedia.org/ontology/capital -->
+
+    <owl:ObjectProperty rdf:about="&ontology;capital">
+        <rdfs:range rdf:resource="&ontology;City"/>
+        <rdfs:domain rdf:resource="&ontology;PopulatedPlace"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://dbpedia.org/ontology/city -->
+
+    <owl:ObjectProperty rdf:about="&ontology;city">
+        <rdfs:range rdf:resource="&ontology;City"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://dbpedia.org/ontology/country -->
+
+    <owl:ObjectProperty rdf:about="&ontology;country">
+        <rdfs:range rdf:resource="&ontology;Country"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://dbpedia.org/ontology/deathPlace -->
+
+    <owl:ObjectProperty rdf:about="&ontology;deathPlace">
+        <rdfs:domain rdf:resource="&ontology;Person"/>
+        <rdfs:range rdf:resource="&ontology;Place"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://dbpedia.org/ontology/hometown -->
+
+    <owl:ObjectProperty rdf:about="&ontology;hometown">
+        <rdfs:domain rdf:resource="&ontology;Person"/>
+        <rdfs:range rdf:resource="&ontology;Settlement"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://dbpedia.org/ontology/isPartOf -->
+
+    <owl:ObjectProperty rdf:about="&ontology;isPartOf"/>
+    
+
+
+    <!-- http://dbpedia.org/ontology/locatedInArea -->
+
+    <owl:ObjectProperty rdf:about="&ontology;locatedInArea">
+        <rdfs:range rdf:resource="&ontology;Place"/>
+        <rdfs:domain rdf:resource="&ontology;Place"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://dbpedia.org/ontology/location -->
+
+    <owl:ObjectProperty rdf:about="&ontology;location">
+        <rdfs:range rdf:resource="&ontology;Place"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://dbpedia.org/ontology/nearestCity -->
+
+    <owl:ObjectProperty rdf:about="&ontology;nearestCity">
+        <rdfs:domain rdf:resource="&ontology;Place"/>
+        <rdfs:range rdf:resource="&ontology;PopulatedPlace"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://dbpedia.org/ontology/part -->
+
+    <owl:ObjectProperty rdf:about="&ontology;part">
+        <rdfs:range rdf:resource="&ontology;Place"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://dbpedia.org/ontology/region -->
+
+    <owl:ObjectProperty rdf:about="&ontology;region">
+        <rdfs:range rdf:resource="&ontology;Place"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://dbpedia.org/ontology/residence -->
+
+    <owl:ObjectProperty rdf:about="&ontology;residence">
+        <rdfs:range rdf:resource="&ontology;Person"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://dbpedia.org/ontology/restingPlace -->
+
+    <owl:ObjectProperty rdf:about="&ontology;restingPlace">
+        <rdfs:domain rdf:resource="&ontology;Person"/>
+        <rdfs:range rdf:resource="&ontology;Place"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://dbpedia.org/property/workplaces -->
+
+    <owl:ObjectProperty rdf:about="&property;workplaces"/>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/primaryTopic -->
+
+    <owl:ObjectProperty rdf:about="&foaf;primaryTopic">
+        <rdfs:domain rdf:resource="&foaf;Document"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- file:/c:/users/peonza/documents/proyecto/subsets_merged.owl#comment_en -->
+
+    <owl:DatatypeProperty rdf:about="&subsets_merged;comment_en">
+        <subsets_merged:queryLanguage rdf:datatype="&xsd;language">en</subsets_merged:queryLanguage>
+        <subsets_merged:kwdSearchable>yes</subsets_merged:kwdSearchable>
+        <subsets_merged:dataRetreavable>yes</subsets_merged:dataRetreavable>
+        <rdfs:domain rdf:resource="&subsets_merged;Country_"/>
+        <rdfs:domain rdf:resource="&ontology;Country"/>
+        <owl:equivalentProperty rdf:resource="&rdfs;comment"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- file:/c:/users/peonza/documents/proyecto/subsets_merged.owl#label_en -->
+
+    <owl:DatatypeProperty rdf:about="&subsets_merged;label_en">
+        <subsets_merged:queryLanguage rdf:datatype="&xsd;language">en</subsets_merged:queryLanguage>
+        <subsets_merged:dataRetreavable>yes</subsets_merged:dataRetreavable>
+        <owl:equivalentProperty rdf:resource="&rdfs;label"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.w3.org/2000/01/rdf-schema#comment -->
+
+    <owl:DatatypeProperty rdf:about="&rdfs;comment"/>
+    
+
+
+    <!-- http://www.w3.org/2000/01/rdf-schema#label -->
+
+    <owl:DatatypeProperty rdf:about="&rdfs;label"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- file:/c:/users/peonza/documents/proyecto/subsets_merged.owl#Architect_ -->
+
+    <owl:Class rdf:about="&subsets_merged;Architect_">
+        <owl:equivalentClass rdf:resource="&ontology;Architect"/>
+    </owl:Class>
+    
+
+
+    <!-- file:/c:/users/peonza/documents/proyecto/subsets_merged.owl#ArchitecturalStructure_ -->
+
+    <owl:Class rdf:about="&subsets_merged;ArchitecturalStructure_">
+        <owl:equivalentClass rdf:resource="&ontology;ArchitecturalStructure"/>
+    </owl:Class>
+    
+
+
+    <!-- file:/c:/users/peonza/documents/proyecto/subsets_merged.owl#City_ -->
+
+    <owl:Class rdf:about="&subsets_merged;City_">
+        <owl:equivalentClass rdf:resource="&ontology;City"/>
+        <rdfs:subClassOf rdf:resource="&owl;Thing"/>
+    </owl:Class>
+    
+
+
+    <!-- file:/c:/users/peonza/documents/proyecto/subsets_merged.owl#Concept_ -->
+
+    <owl:Class rdf:about="&subsets_merged;Concept_">
+        <owl:equivalentClass rdf:resource="&core;Concept"/>
+        <rdfs:subClassOf rdf:resource="&owl;Thing"/>
+    </owl:Class>
+    
+
+
+    <!-- file:/c:/users/peonza/documents/proyecto/subsets_merged.owl#Country_ -->
+
+    <owl:Class rdf:about="&subsets_merged;Country_">
+        <owl:equivalentClass rdf:resource="&ontology;Country"/>
+        <rdfs:subClassOf rdf:resource="&owl;Thing"/>
+    </owl:Class>
+    
+
+
+    <!-- file:/c:/users/peonza/documents/proyecto/subsets_merged.owl#Person_ -->
+
+    <owl:Class rdf:about="&subsets_merged;Person_">
+        <rdfs:label xml:lang="en">Person</rdfs:label>
+        <rdfs:label xml:lang="es">Persona</rdfs:label>
+        <owl:equivalentClass rdf:resource="&schema;Person"/>
+        <rdfs:subClassOf rdf:resource="&owl;Thing"/>
+    </owl:Class>
+    
+
+
+    <!-- file:/c:/users/peonza/documents/proyecto/subsets_merged.owl#Place_ -->
+
+    <owl:Class rdf:about="&subsets_merged;Place_">
+        <owl:equivalentClass rdf:resource="&ontology;Place"/>
+        <rdfs:subClassOf rdf:resource="&owl;Thing"/>
+    </owl:Class>
+    
+
+
+    <!-- file:/c:/users/peonza/documents/proyecto/subsets_merged.owl#PopulatedPlace_ -->
+
+    <owl:Class rdf:about="&subsets_merged;PopulatedPlace_">
+        <owl:equivalentClass rdf:resource="&ontology;PopulatedPlace"/>
+        <rdfs:subClassOf rdf:resource="&owl;Thing"/>
+    </owl:Class>
+    
+
+
+    <!-- file:/c:/users/peonza/documents/proyecto/subsets_merged.owl#Settlement_ -->
+
+    <owl:Class rdf:about="&subsets_merged;Settlement_">
+        <owl:equivalentClass rdf:resource="&ontology;Settlement"/>
+    </owl:Class>
+    
+
+
+    <!-- http://dbpedia.org/ontology/Architect -->
+
+    <owl:Class rdf:about="&ontology;Architect">
+        <rdfs:subClassOf rdf:resource="&ontology;Person"/>
+    </owl:Class>
+    
+
+
+    <!-- http://dbpedia.org/ontology/ArchitecturalStructure -->
+
+    <owl:Class rdf:about="&ontology;ArchitecturalStructure">
+        <rdfs:subClassOf rdf:resource="&ontology;Place"/>
+    </owl:Class>
+    
+
+
+    <!-- http://dbpedia.org/ontology/City -->
+
+    <owl:Class rdf:about="&ontology;City">
+        <rdfs:subClassOf rdf:resource="&ontology;Settlement"/>
+    </owl:Class>
+    
+
+
+    <!-- http://dbpedia.org/ontology/Country -->
+
+    <owl:Class rdf:about="&ontology;Country">
+        <rdfs:subClassOf rdf:resource="&ontology;PopulatedPlace"/>
+        <rdfs:subClassOf rdf:resource="&owl;Thing"/>
+    </owl:Class>
+    
+
+
+    <!-- http://dbpedia.org/ontology/Person -->
+
+    <owl:Class rdf:about="&ontology;Person">
+        <owl:equivalentClass rdf:resource="&schema;Person"/>
+        <owl:equivalentClass rdf:resource="&foaf;Person"/>
+    </owl:Class>
+    
+
+
+    <!-- http://dbpedia.org/ontology/Place -->
+
+    <owl:Class rdf:about="&ontology;Place">
+        <owl:equivalentClass rdf:resource="&schema;Place"/>
+        <rdfs:subClassOf rdf:resource="&owl;Thing"/>
+    </owl:Class>
+    
+
+
+    <!-- http://dbpedia.org/ontology/PopulatedPlace -->
+
+    <owl:Class rdf:about="&ontology;PopulatedPlace">
+        <rdfs:subClassOf rdf:resource="&ontology;Place"/>
+        <rdfs:subClassOf rdf:resource="&owl;Thing"/>
+    </owl:Class>
+    
+
+
+    <!-- http://dbpedia.org/ontology/Settlement -->
+
+    <owl:Class rdf:about="&ontology;Settlement">
+        <rdfs:subClassOf rdf:resource="&ontology;PopulatedPlace"/>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.org/Person -->
+
+    <owl:Class rdf:about="&schema;Person"/>
+    
+
+
+    <!-- http://schema.org/Place -->
+
+    <owl:Class rdf:about="&schema;Place">
+        <rdfs:subClassOf rdf:resource="&owl;Thing"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#Concept -->
+
+    <owl:Class rdf:about="&core;Concept"/>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/Document -->
+
+    <owl:Class rdf:about="&foaf;Document">
+        <rdfs:subClassOf rdf:resource="&owl;Thing"/>
+    </owl:Class>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/Person -->
+
+    <owl:Class rdf:about="&foaf;Person"/>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.2.3.1824) http://owlapi.sourceforge.net -->
+

@@ -1,0 +1,337 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY schema "http://schema.org/" >
+    <!ENTITY dcterms "http://purl.org/dc/terms/" >
+    <!ENTITY foaf "http://xmlns.com/foaf/0.1/" >
+    <!ENTITY property "http://dbpedia.org/property/" >
+    <!ENTITY ontology "http://dbpedia.org/ontology/" >
+    <!ENTITY dbyago "http://dbpedia.org/class/yago/" >
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY core "http://www.w3.org/2004/02/skos/core#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+    <!ENTITY subsets_merged "file:/c:/users/peonza/documents/proyecto/subsets_merged.owl#" >
+]>
+
+
+<rdf:RDF xmlns="http://eina.unizar.es/giga/merged.owl#"
+     xml:base="http://eina.unizar.es/giga/merged.owl"
+     xmlns:foaf="http://xmlns.com/foaf/0.1/"
+     xmlns:property="http://dbpedia.org/property/"
+     xmlns:ontology="http://dbpedia.org/ontology/"
+     xmlns:subsets_merged="file:/c:/users/peonza/documents/proyecto/subsets_merged.owl#"
+     xmlns:dcterms="http://purl.org/dc/terms/"
+     xmlns:schema="http://schema.org/"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:core="http://www.w3.org/2004/02/skos/core#"
+     xmlns:dbyago="http://dbpedia.org/class/yago/">
+    <owl:Ontology rdf:about="file:/c:/users/peonza/documents/proyecto/subsets_merged.owl">
+        <subsets_merged:taxonomyDefinedBy>categories</subsets_merged:taxonomyDefinedBy>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <owl:AnnotationProperty rdf:about="&subsets_merged;queryLanguage"/>
+    <owl:AnnotationProperty rdf:about="&subsets_merged;taxonomyDefinedBy"/>
+    <owl:AnnotationProperty rdf:about="&subsets_merged;kwdSearchable"/>
+    <owl:AnnotationProperty rdf:about="&subsets_merged;dataRetreavable"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Datatypes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- file:/c:/users/peonza/documents/proyecto/subsets_merged.owl#conocidoPor -->
+
+    <owl:ObjectProperty rdf:about="&subsets_merged;conocidoPor">
+        <rdfs:range rdf:resource="&subsets_merged;Articulo"/>
+        <rdfs:range rdf:resource="&subsets_merged;Instituto"/>
+        <owl:equivalentProperty rdf:resource="&ontology;knownFor"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- file:/c:/users/peonza/documents/proyecto/subsets_merged.owl#masEspecificoQue -->
+
+    <owl:ObjectProperty rdf:about="&subsets_merged;masEspecificoQue">
+        <owl:equivalentProperty rdf:resource="&core;broader"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- file:/c:/users/peonza/documents/proyecto/subsets_merged.owl#primaryTopic_all -->
+
+    <owl:ObjectProperty rdf:about="&subsets_merged;primaryTopic_all">
+        <subsets_merged:dataRetreavable>yes</subsets_merged:dataRetreavable>
+        <rdfs:range rdf:resource="&subsets_merged;Articulo"/>
+        <rdfs:range rdf:resource="&subsets_merged;Instituto"/>
+        <rdfs:range rdf:resource="&subsets_merged;Persona"/>
+        <owl:equivalentProperty rdf:resource="&foaf;primaryTopic"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- file:/c:/users/peonza/documents/proyecto/subsets_merged.owl#sujetoDe -->
+
+    <owl:ObjectProperty rdf:about="&subsets_merged;sujetoDe">
+        <rdfs:domain rdf:resource="&subsets_merged;Articulo"/>
+        <rdfs:range rdf:resource="&subsets_merged;Categoria"/>
+        <owl:equivalentProperty rdf:resource="&dcterms;subject"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- file:/c:/users/peonza/documents/proyecto/subsets_merged.owl#trabajaEn -->
+
+    <owl:ObjectProperty rdf:about="&subsets_merged;trabajaEn">
+        <rdfs:range rdf:resource="&subsets_merged;Instituto"/>
+        <rdfs:domain rdf:resource="&subsets_merged;Persona"/>
+        <owl:equivalentProperty rdf:resource="&property;workplaces"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://dbpedia.org/ontology/knownFor -->
+
+    <owl:ObjectProperty rdf:about="&ontology;knownFor">
+        <rdfs:domain rdf:resource="&ontology;Person"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://dbpedia.org/property/workplaces -->
+
+    <owl:ObjectProperty rdf:about="&property;workplaces"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/subject -->
+
+    <owl:ObjectProperty rdf:about="&dcterms;subject"/>
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#broader -->
+
+    <owl:ObjectProperty rdf:about="&core;broader">
+        <rdf:type rdf:resource="&owl;TransitiveProperty"/>
+        <owl:inverseOf rdf:resource="&core;narrower"/>
+        <rdfs:subPropertyOf rdf:resource="&core;semanticRelation"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#narrower -->
+
+    <owl:ObjectProperty rdf:about="&core;narrower">
+        <rdf:type rdf:resource="&owl;TransitiveProperty"/>
+        <rdfs:subPropertyOf rdf:resource="&core;semanticRelation"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#semanticRelation -->
+
+    <owl:ObjectProperty rdf:about="&core;semanticRelation">
+        <rdfs:domain rdf:resource="&core;Concept"/>
+        <rdfs:range rdf:resource="&core;Concept"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/primaryTopic -->
+
+    <owl:ObjectProperty rdf:about="&foaf;primaryTopic">
+        <rdfs:domain rdf:resource="&foaf;Document"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- file:/c:/users/peonza/documents/proyecto/subsets_merged.owl#abstract_en -->
+
+    <owl:DatatypeProperty rdf:about="&subsets_merged;abstract_en">
+        <subsets_merged:queryLanguage rdf:datatype="&xsd;language">en</subsets_merged:queryLanguage>
+        <subsets_merged:dataRetreavable>yes</subsets_merged:dataRetreavable>
+        <subsets_merged:kwdSearchable>yes</subsets_merged:kwdSearchable>
+        <rdfs:domain rdf:resource="&subsets_merged;Articulo"/>
+        <rdfs:domain rdf:resource="&subsets_merged;Instituto"/>
+        <rdfs:domain rdf:resource="&subsets_merged;Persona"/>
+        <owl:equivalentProperty rdf:resource="&ontology;abstract"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- file:/c:/users/peonza/documents/proyecto/subsets_merged.owl#label_en -->
+
+    <owl:DatatypeProperty rdf:about="&subsets_merged;label_en">
+        <subsets_merged:queryLanguage rdf:datatype="&xsd;language">en</subsets_merged:queryLanguage>
+        <subsets_merged:dataRetreavable>yes</subsets_merged:dataRetreavable>
+        <rdfs:domain rdf:resource="&subsets_merged;Articulo"/>
+        <rdfs:domain rdf:resource="&subsets_merged;Categoria"/>
+        <rdfs:domain rdf:resource="&subsets_merged;Instituto"/>
+        <rdfs:domain rdf:resource="&subsets_merged;Persona"/>
+        <owl:equivalentProperty rdf:resource="&rdfs;label"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://dbpedia.org/ontology/abstract -->
+
+    <owl:DatatypeProperty rdf:about="&ontology;abstract"/>
+    
+
+
+    <!-- http://www.w3.org/2000/01/rdf-schema#label -->
+
+    <owl:DatatypeProperty rdf:about="&rdfs;label"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- file:/c:/users/peonza/documents/proyecto/subsets_merged.owl#Articulo -->
+
+    <owl:Class rdf:about="&subsets_merged;Articulo">
+        <rdfs:label xml:lang="en">Article</rdfs:label>
+        <rdfs:label xml:lang="es">Articulo</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- file:/c:/users/peonza/documents/proyecto/subsets_merged.owl#Categoria -->
+
+    <owl:Class rdf:about="&subsets_merged;Categoria">
+        <rdfs:label xml:lang="en">Category</rdfs:label>
+        <rdfs:label xml:lang="es">Categoria</rdfs:label>
+        <owl:equivalentClass rdf:resource="&core;Concept"/>
+        <rdfs:subClassOf rdf:resource="&owl;Thing"/>
+    </owl:Class>
+    
+
+
+    <!-- file:/c:/users/peonza/documents/proyecto/subsets_merged.owl#Instituto -->
+
+    <owl:Class rdf:about="&subsets_merged;Instituto">
+        <rdfs:label xml:lang="en">Institute</rdfs:label>
+        <rdfs:label xml:lang="es">Instituto</rdfs:label>
+        <owl:equivalentClass rdf:resource="&dbyago;Institute108407330"/>
+        <rdfs:subClassOf rdf:resource="&owl;Thing"/>
+    </owl:Class>
+    
+
+
+    <!-- file:/c:/users/peonza/documents/proyecto/subsets_merged.owl#Persona -->
+
+    <owl:Class rdf:about="&subsets_merged;Persona">
+        <rdfs:label xml:lang="en">Person</rdfs:label>
+        <rdfs:label xml:lang="es">Persona</rdfs:label>
+        <owl:equivalentClass rdf:resource="&schema;Person"/>
+        <rdfs:subClassOf rdf:resource="&owl;Thing"/>
+    </owl:Class>
+    
+
+
+    <!-- http://dbpedia.org/class/yago/Institute108407330 -->
+
+    <owl:Class rdf:about="&dbyago;Institute108407330"/>
+    
+
+
+    <!-- http://dbpedia.org/ontology/Person -->
+
+    <owl:Class rdf:about="&ontology;Person">
+        <owl:equivalentClass rdf:resource="&schema;Person"/>
+        <owl:equivalentClass rdf:resource="&foaf;Person"/>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.org/Person -->
+
+    <owl:Class rdf:about="&schema;Person"/>
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#Concept -->
+
+    <owl:Class rdf:about="&core;Concept">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&core;semanticRelation"/>
+                <owl:allValuesFrom rdf:resource="&core;Concept"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/Document -->
+
+    <owl:Class rdf:about="&foaf;Document">
+        <rdfs:subClassOf rdf:resource="&owl;Thing"/>
+    </owl:Class>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/Person -->
+
+    <owl:Class rdf:about="&foaf;Person"/>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.2.3.1824) http://owlapi.sourceforge.net -->
+
