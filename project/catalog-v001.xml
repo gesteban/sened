@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog prefer="public" xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
+    <group id="Folder Repository, directory=, recursive=true, Auto-Update=true, version=2" prefer="public" xml:base="">
+        <uri id="Automatically generated entry, Timestamp=1355442132345" name="duplicate:file:/D:/otrobackup/WS_DBPedia/vocChemistry2.rdf" uri="vocChemistry2.rdf"/>
+        <uri id="Automatically generated entry, Timestamp=1355442132345" name="duplicate:file:/D:/otrobackup/WS_DBPedia/vocChemistry2.rdf" uri="vocChemistry2_pruned.rdf"/>
+        <uri id="Automatically generated entry, Timestamp=1355442132345" name="file:/D:/otrobackup/WS_DBPedia/vocIndustry2.rdf" uri="vocIndustry2.rdf"/>
+        <uri id="Automatically generated entry, Timestamp=1355442132345" name="duplicate:file:/D:/otrobackup/WS_DBPedia/vocMechanics3.rdf" uri="vocMechanics3.rdf"/>
+        <uri id="Automatically generated entry, Timestamp=1355442132345" name="duplicate:file:/D:/otrobackup/WS_DBPedia/vocMechanics3.rdf" uri="vocMechanics3_full.rdf"/>
+        <uri id="Automatically generated entry, Timestamp=1355442132345" name="duplicate:http://eina.unizar.es/giga/merged.owl" uri="src/java/eina/ontology/DomainOntology.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1355442132345" name="duplicate:http://eina.unizar.es/giga/merged.owl" uri="src/java/eina/ontology/DomainOntology2.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1355442132345" name="duplicate:http://eina.unizar.es/giga/merged.owl" uri="src/java/eina/ontology/DomainOntology3.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1355442132345" name="shadowed:http://eina.unizar.es/giga/merged.owl" uri="build/web/WEB-INF/classes/eina/ontology/DomainOntology.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1355442132345" name="shadowed:http://eina.unizar.es/giga/merged.owl" uri="build/web/WEB-INF/classes/eina/ontology/DomainOntology2.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1355442132345" name="shadowed:http://eina.unizar.es/giga/merged.owl" uri="build/web/WEB-INF/classes/eina/ontology/DomainOntology3.owl"/>
+    </group>
+</catalog>

@@ -1,0 +1,2207 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY skos "http://www.w3.org/2004/02/skos/core#" >
+    <!ENTITY Category "http://dbpedia.org/resource/Category:" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY Bose "http://dbpedia.org/resource/Category:Bose–" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+    <!ENTITY Fermi "http://dbpedia.org/resource/Category:Fermi–" >
+    <!ENTITY Maxwell "http://dbpedia.org/resource/Category:Maxwell–" >
+    <!ENTITY Post-Hartree "http://dbpedia.org/resource/Category:Post-Hartree–" >
+    <!ENTITY Seismological_observatories "http://dbpedia.org/resource/Category:Seismological_observatories," >
+]>
+
+
+<rdf:RDF xmlns="file:/D:/otrobackup/WS_DBPedia/vocMechanics3.rdf#"
+     xml:base="file:/D:/otrobackup/WS_DBPedia/vocMechanics3.rdf"
+     xmlns:Fermi="&Category;Fermi–"
+     xmlns:Seismological_observatories="&Category;Seismological_observatories,"
+     xmlns:Bose="&Category;Bose–"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:Category="http://dbpedia.org/resource/Category:"
+     xmlns:Maxwell="&Category;Maxwell–"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+     xmlns:Post-Hartree="&Category;Post-Hartree–">
+    <owl:Ontology rdf:about="file:/D:/otrobackup/WS_DBPedia/vocMechanics3.rdf">
+        <owl:imports rdf:resource="http://www.w3.org/TR/skos-reference/skos-owl1-dl.rdf"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Datatypes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#narrower -->
+
+    <owl:ObjectProperty rdf:about="&skos;narrower"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#Concept -->
+
+    <owl:Class rdf:about="&skos;Concept"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Acceleration -->
+
+    <owl:NamedIndividual rdf:about="&Category;Acceleration">
+        <rdf:type rdf:resource="&skos;Concept"/>
+        <skos:narrower rdf:resource="&Category;Accelerometers"/>
+        <skos:narrower rdf:resource="&Category;Units_of_acceleration"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Accelerometers -->
+
+    <owl:NamedIndividual rdf:about="&Category;Accelerometers">
+        <rdf:type rdf:resource="&skos;Concept"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Aether_theories -->
+
+    <owl:NamedIndividual rdf:about="&Category;Aether_theories">
+        <rdf:type rdf:resource="&skos;Concept"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Air_traffic_control_systems -->
+
+    <owl:NamedIndividual rdf:about="&Category;Air_traffic_control_systems">
+        <rdf:type rdf:resource="&skos;Concept"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Amorphous_solids -->
+
+    <owl:NamedIndividual rdf:about="&Category;Amorphous_solids">
+        <rdf:type rdf:resource="&skos;Concept"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Angle -->
+
+    <owl:NamedIndividual rdf:about="&Category;Angle">
+        <rdf:type rdf:resource="&skos;Concept"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Animal_flight -->
+
+    <owl:NamedIndividual rdf:about="&Category;Animal_flight">
+        <rdf:type rdf:resource="&skos;Concept"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Anticyclones -->
+
+    <owl:NamedIndividual rdf:about="&Category;Anticyclones">
+        <rdf:type rdf:resource="&skos;Concept"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Applications_of_control_engineering -->
+
+    <owl:NamedIndividual rdf:about="&Category;Applications_of_control_engineering">
+        <rdf:type rdf:resource="&skos;Concept"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Aquatic_locomotion -->
+
+    <owl:NamedIndividual rdf:about="&Category;Aquatic_locomotion">
+        <rdf:type rdf:resource="&skos;Concept"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Arboreal_locomotion -->
+
+    <owl:NamedIndividual rdf:about="&Category;Arboreal_locomotion">
+        <rdf:type rdf:resource="&skos;Concept"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Articulated_robotics -->
+
+    <owl:NamedIndividual rdf:about="&Category;Articulated_robotics">
+        <rdf:type rdf:resource="&skos;Concept"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Astrodynamics -->
+
+    <owl:NamedIndividual rdf:about="&Category;Astrodynamics">
+        <rdf:type rdf:resource="&skos;Concept"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Astronomical_dynamical_systems -->
+
+    <owl:NamedIndividual rdf:about="&Category;Astronomical_dynamical_systems">
+        <rdf:type rdf:resource="&skos;Concept"/>
+        <skos:narrower rdf:resource="&Category;Galaxies"/>
+        <skos:narrower rdf:resource="&Category;Planetary_systems"/>
+        <skos:narrower rdf:resource="&Category;Star_systems"/>
+        <skos:narrower rdf:resource="&Category;Universe"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Atmosphere -->
+
+    <owl:NamedIndividual rdf:about="&Category;Atmosphere">
+        <rdf:type rdf:resource="&skos;Concept"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Automatic_transmission_tradenames -->
+
+    <owl:NamedIndividual rdf:about="&Category;Automatic_transmission_tradenames">
+        <rdf:type rdf:resource="&skos;Concept"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Automation -->
+
+    <owl:NamedIndividual rdf:about="&Category;Automation">
+        <rdf:type rdf:resource="&skos;Concept"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Automobile_transmissions -->
+
+    <owl:NamedIndividual rdf:about="&Category;Automobile_transmissions">
+        <rdf:type rdf:resource="&skos;Concept"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Automotive_transmission_technologies -->
+
+    <owl:NamedIndividual rdf:about="&Category;Automotive_transmission_technologies">
+        <rdf:type rdf:resource="&skos;Concept"/>
+        <skos:narrower rdf:resource="&Category;Automatic_transmission_tradenames"/>
+        <skos:narrower rdf:resource="&Category;Automobile_transmissions"/>
+        <skos:narrower rdf:resource="&Category;Continuously_variable_transmissions"/>
+        <skos:narrower rdf:resource="&Category;Epicyclical_gearing"/>
+        <skos:narrower rdf:resource="&Category;Rotating_shaft_couplings"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Belt_drives -->
+
+    <owl:NamedIndividual rdf:about="&Category;Belt_drives">
+        <rdf:type rdf:resource="&skos;Concept"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Bifurcation_theory -->
+
+    <owl:NamedIndividual rdf:about="&Category;Bifurcation_theory">
+        <rdf:type rdf:resource="&skos;Concept"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Biomechanics -->
+
+    <owl:NamedIndividual rdf:about="&Category;Biomechanics">
+        <rdf:type rdf:resource="&skos;Concept"/>
+        <skos:narrower rdf:resource="&Category;Locomotion_(biological)"/>
+        <skos:narrower rdf:resource="&Category;Vertebral_column"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Black_holes -->
+
+    <owl:NamedIndividual rdf:about="&Category;Black_holes">
+        <rdf:type rdf:resource="&skos;Concept"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Bone_products -->
+
+    <owl:NamedIndividual rdf:about="&Category;Bone_products">
+        <rdf:type rdf:resource="&skos;Concept"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Bose–Einstein_statistics -->
+
+    <owl:NamedIndividual rdf:about="&Category;Bose–Einstein_statistics">
+        <rdf:type rdf:resource="&skos;Concept"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Brakes -->
+
+    <owl:NamedIndividual rdf:about="&Category;Brakes">
+        <rdf:type rdf:resource="&skos;Concept"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Branches_of_thermodynamics -->
+
+    <owl:NamedIndividual rdf:about="&Category;Branches_of_thermodynamics">
+        <rdf:type rdf:resource="&skos;Concept"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Breccias -->
+
+    <owl:NamedIndividual rdf:about="&Category;Breccias">
+        <rdf:type rdf:resource="&skos;Concept"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Calorimetry -->
+
+    <owl:NamedIndividual rdf:about="&Category;Calorimetry">
+        <rdf:type rdf:resource="&skos;Concept"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Celestial_mechanics -->
+
+    <owl:NamedIndividual rdf:about="&Category;Celestial_mechanics">
+        <rdf:type rdf:resource="&skos;Concept"/>
+        <skos:narrower rdf:resource="&Category;Astrodynamics"/>
+        <skos:narrower rdf:resource="&Category;Dark_matter"/>
+        <skos:narrower rdf:resource="&Category;Dynamics_of_the_Solar_System"/>
+        <skos:narrower rdf:resource="&Category;Gravitation"/>
+        <skos:narrower rdf:resource="&Category;Orbits"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Cell_movement -->
+
+    <owl:NamedIndividual rdf:about="&Category;Cell_movement">
+        <rdf:type rdf:resource="&skos;Concept"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Chain_drives -->
+
+    <owl:NamedIndividual rdf:about="&Category;Chain_drives">
+        <rdf:type rdf:resource="&skos;Concept"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Chaos_theorists -->
+
+    <owl:NamedIndividual rdf:about="&Category;Chaos_theorists">
+        <rdf:type rdf:resource="&skos;Concept"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Chaos_theory -->
+
+    <owl:NamedIndividual rdf:about="&Category;Chaos_theory">
+        <rdf:type rdf:resource="&skos;Concept"/>
+        <skos:narrower rdf:resource="&Category;Chaos_theorists"/>
+        <skos:narrower rdf:resource="&Category;Fractals"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Chaotic_maps -->
+
+    <owl:NamedIndividual rdf:about="&Category;Chaotic_maps">
+        <rdf:type rdf:resource="&skos;Concept"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Chemical_thermodynamics -->
+
+    <owl:NamedIndividual rdf:about="&Category;Chemical_thermodynamics">
+        <rdf:type rdf:resource="&skos;Concept"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Clamps -->
+
+    <owl:NamedIndividual rdf:about="&Category;Clamps">
+        <rdf:type rdf:resource="&skos;Concept"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Classical_mechanics -->
+
+    <owl:NamedIndividual rdf:about="&Category;Classical_mechanics">
+        <rdf:type rdf:resource="&skos;Concept"/>
+        <skos:narrower rdf:resource="&Category;Celestial_mechanics"/>
+        <skos:narrower rdf:resource="&Category;Continuum_mechanics"/>
+        <skos:narrower rdf:resource="&Category;Fictitious_forces"/>
+        <skos:narrower rdf:resource="&Category;Friction"/>
+        <skos:narrower rdf:resource="&Category;Lagrangian_mechanics"/>
+        <skos:narrower rdf:resource="&Category;Rigid_bodies_mechanics"/>
+        <skos:narrower rdf:resource="&Category;Rotation"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Clutches -->
+
+    <owl:NamedIndividual rdf:about="&Category;Clutches">
+        <rdf:type rdf:resource="&skos;Concept"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Complex_dynamics -->
+
+    <owl:NamedIndividual rdf:about="&Category;Complex_dynamics">
+        <rdf:type rdf:resource="&skos;Concept"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Continuously_variable_transmissions -->
+
+    <owl:NamedIndividual rdf:about="&Category;Continuously_variable_transmissions">
+        <rdf:type rdf:resource="&skos;Concept"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Continuum_mechanics -->
+
+    <owl:NamedIndividual rdf:about="&Category;Continuum_mechanics">
+        <rdf:type rdf:resource="&skos;Concept"/>
+        <skos:narrower rdf:resource="&Category;Fluid_mechanics"/>
+        <skos:narrower rdf:resource="&Category;Fracture_mechanics"/>
+        <skos:narrower rdf:resource="&Category;Rheology"/>
+        <skos:narrower rdf:resource="&Category;Solid_mechanics"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Control_devices -->
+
+    <owl:NamedIndividual rdf:about="&Category;Control_devices">
+        <rdf:type rdf:resource="&skos;Concept"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Control_engineering -->
+
+    <owl:NamedIndividual rdf:about="&Category;Control_engineering">
+        <rdf:type rdf:resource="&skos;Concept"/>
+        <skos:narrower rdf:resource="&Category;Air_traffic_control_systems"/>
+        <skos:narrower rdf:resource="&Category;Applications_of_control_engineering"/>
+        <skos:narrower rdf:resource="&Category;Automation"/>
+        <skos:narrower rdf:resource="&Category;Control_devices"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Corrosion -->
+
+    <owl:NamedIndividual rdf:about="&Category;Corrosion">
+        <rdf:type rdf:resource="&skos;Concept"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Critical_phenomena -->
+
+    <owl:NamedIndividual rdf:about="&Category;Critical_phenomena">
+        <rdf:type rdf:resource="&skos;Concept"/>
+        <skos:narrower rdf:resource="&Category;Scale-invariant_systems"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Cryobiology -->
+
+    <owl:NamedIndividual rdf:about="&Category;Cryobiology">
+        <rdf:type rdf:resource="&skos;Concept"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Crystalline_solids -->
+
+    <owl:NamedIndividual rdf:about="&Category;Crystalline_solids">
+        <rdf:type rdf:resource="&skos;Concept"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Cubic_equations_of_state -->
+
+    <owl:NamedIndividual rdf:about="&Category;Cubic_equations_of_state">
+        <rdf:type rdf:resource="&skos;Concept"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Cuts_(earthmoving) -->
+
+    <owl:NamedIndividual rdf:about="&Category;Cuts_(earthmoving)">
+        <rdf:type rdf:resource="&skos;Concept"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Dams -->
+
+    <owl:NamedIndividual rdf:about="&Category;Dams">
+        <rdf:type rdf:resource="&skos;Concept"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Dark_matter -->
+
+    <owl:NamedIndividual rdf:about="&Category;Dark_matter">
+        <rdf:type rdf:resource="&skos;Concept"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Deformation -->
+
+    <owl:NamedIndividual rdf:about="&Category;Deformation">
+        <rdf:type rdf:resource="&skos;Concept"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Dimensionless_numbers_of_thermodynamics -->
+
+    <owl:NamedIndividual rdf:about="&Category;Dimensionless_numbers_of_thermodynamics">
+        <rdf:type rdf:resource="&skos;Concept"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Drilling_technology -->
+
+    <owl:NamedIndividual rdf:about="&Category;Drilling_technology">
+        <rdf:type rdf:resource="&skos;Concept"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Dynamical_systems -->
+
+    <owl:NamedIndividual rdf:about="&Category;Dynamical_systems">
+        <rdf:type rdf:resource="&skos;Concept"/>
+        <skos:narrower rdf:resource="&Category;Astronomical_dynamical_systems"/>
+        <skos:narrower rdf:resource="&Category;Bifurcation_theory"/>
+        <skos:narrower rdf:resource="&Category;Chaos_theory"/>
+        <skos:narrower rdf:resource="&Category;Chaotic_maps"/>
+        <skos:narrower rdf:resource="&Category;Complex_dynamics"/>
+        <skos:narrower rdf:resource="&Category;Control_engineering"/>
+        <skos:narrower rdf:resource="&Category;Electrodynamics"/>
+        <skos:narrower rdf:resource="&Category;Entropy"/>
+        <skos:narrower rdf:resource="&Category;Entropy_and_information"/>
+        <skos:narrower rdf:resource="&Category;Ergodic_theory"/>
+        <skos:narrower rdf:resource="&Category;Fixed_points_(mathematics)"/>
+        <skos:narrower rdf:resource="&Category;Hamiltonian_mechanics"/>
+        <skos:narrower rdf:resource="&Category;Limit_sets"/>
+        <skos:narrower rdf:resource="&Category;Non-equilibrium_thermodynamics"/>
+        <skos:narrower rdf:resource="&Category;Nonlinear_systems"/>
+        <skos:narrower rdf:resource="&Category;Oscillation"/>
+        <skos:narrower rdf:resource="&Category;Random_dynamical_systems"/>
+        <skos:narrower rdf:resource="&Category;Stability_theory"/>
+        <skos:narrower rdf:resource="&Category;Symbolic_dynamics"/>
+        <skos:narrower rdf:resource="&Category;Theorems_in_dynamical_systems"/>
+        <skos:narrower rdf:resource="&Category;Thermodynamics"/>
+        <skos:narrower rdf:resource="&Category;Topological_dynamics"/>
+        <skos:narrower rdf:resource="&Category;Vortices"/>
+        <skos:narrower rdf:resource="&Category;Waves"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Dynamics -->
+
+    <owl:NamedIndividual rdf:about="&Category;Dynamics">
+        <rdf:type rdf:resource="&skos;Concept"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Dynamics_of_the_Solar_System -->
+
+    <owl:NamedIndividual rdf:about="&Category;Dynamics_of_the_Solar_System">
+        <rdf:type rdf:resource="&skos;Concept"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Effects_of_gravitation -->
+
+    <owl:NamedIndividual rdf:about="&Category;Effects_of_gravitation">
+        <rdf:type rdf:resource="&skos;Concept"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Elasticity_(physics) -->
+
+    <owl:NamedIndividual rdf:about="&Category;Elasticity_(physics)">
+        <rdf:type rdf:resource="&skos;Concept"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Electrodynamics -->
+
+    <owl:NamedIndividual rdf:about="&Category;Electrodynamics">
+        <rdf:type rdf:resource="&skos;Concept"/>
+        <skos:narrower rdf:resource="&Category;Electromagnetic_components"/>
+        <skos:narrower rdf:resource="&Category;Electromagnetic_radiation"/>
+        <skos:narrower rdf:resource="&Category;Induction_heating"/>
+        <skos:narrower rdf:resource="&Category;Light"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Electromagnetic_components -->
+
+    <owl:NamedIndividual rdf:about="&Category;Electromagnetic_components">
+        <rdf:type rdf:resource="&skos;Concept"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Electromagnetic_radiation -->
+
+    <owl:NamedIndividual rdf:about="&Category;Electromagnetic_radiation">
+        <rdf:type rdf:resource="&skos;Concept"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Electromagnetism -->
+
+    <owl:NamedIndividual rdf:about="&Category;Electromagnetism">
+        <rdf:type rdf:resource="&skos;Concept"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Energetics -->
+
+    <owl:NamedIndividual rdf:about="&Category;Energetics">
+        <rdf:type rdf:resource="&skos;Concept"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Engineering_thermodynamics -->
+
+    <owl:NamedIndividual rdf:about="&Category;Engineering_thermodynamics">
+        <rdf:type rdf:resource="&skos;Concept"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Enthalpy -->
+
+    <owl:NamedIndividual rdf:about="&Category;Enthalpy">
+        <rdf:type rdf:resource="&skos;Concept"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Entropy -->
+
+    <owl:NamedIndividual rdf:about="&Category;Entropy">
+        <rdf:type rdf:resource="&skos;Concept"/>
+        <skos:narrower rdf:resource="&Category;Entropy_and_information"/>
+        <skos:narrower rdf:resource="&Category;Quantum_mechanical_entropy"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Entropy_and_information -->
+
+    <owl:NamedIndividual rdf:about="&Category;Entropy_and_information">
+        <rdf:type rdf:resource="&skos;Concept"/>
+        <skos:narrower rdf:resource="&Category;Quantum_mechanical_entropy"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Epicyclical_gearing -->
+
+    <owl:NamedIndividual rdf:about="&Category;Epicyclical_gearing">
+        <rdf:type rdf:resource="&skos;Concept"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Equations_of_state -->
+
+    <owl:NamedIndividual rdf:about="&Category;Equations_of_state">
+        <rdf:type rdf:resource="&skos;Concept"/>
+        <skos:narrower rdf:resource="&Category;Cubic_equations_of_state"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Equilibrium_chemistry -->
+
+    <owl:NamedIndividual rdf:about="&Category;Equilibrium_chemistry">
+        <rdf:type rdf:resource="&skos;Concept"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Ergodic_theory -->
+
+    <owl:NamedIndividual rdf:about="&Category;Ergodic_theory">
+        <rdf:type rdf:resource="&skos;Concept"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Escapements -->
+
+    <owl:NamedIndividual rdf:about="&Category;Escapements">
+        <rdf:type rdf:resource="&skos;Concept"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:European_windstorms -->
+
+    <owl:NamedIndividual rdf:about="&Category;European_windstorms">
+        <rdf:type rdf:resource="&skos;Concept"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Faster-than-light_travel -->
+
+    <owl:NamedIndividual rdf:about="&Category;Faster-than-light_travel">
+        <rdf:type rdf:resource="&skos;Concept"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Fermi–Dirac_statistics -->
+
+    <owl:NamedIndividual rdf:about="&Category;Fermi–Dirac_statistics">
+        <rdf:type rdf:resource="&skos;Concept"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Fictitious_forces -->
+
+    <owl:NamedIndividual rdf:about="&Category;Fictitious_forces">
+        <rdf:type rdf:resource="&skos;Concept"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Firearm_actions -->
+
+    <owl:NamedIndividual rdf:about="&Category;Firearm_actions">
+        <rdf:type rdf:resource="&skos;Concept"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Fixed-point_theorems -->
+
+    <owl:NamedIndividual rdf:about="&Category;Fixed-point_theorems">
+        <rdf:type rdf:resource="&skos;Concept"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Fixed_points_(mathematics) -->
+
+    <owl:NamedIndividual rdf:about="&Category;Fixed_points_(mathematics)">
+        <rdf:type rdf:resource="&skos;Concept"/>
+        <skos:narrower rdf:resource="&Category;Fixed-point_theorems"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Flatulence -->
+
+    <owl:NamedIndividual rdf:about="&Category;Flatulence">
+        <rdf:type rdf:resource="&skos;Concept"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Fluid_mechanics -->
+
+    <owl:NamedIndividual rdf:about="&Category;Fluid_mechanics">
+        <rdf:type rdf:resource="&skos;Concept"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Forms_of_water -->
+
+    <owl:NamedIndividual rdf:about="&Category;Forms_of_water">
+        <rdf:type rdf:resource="&skos;Concept"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Fractals -->
+
+    <owl:NamedIndividual rdf:about="&Category;Fractals">
+        <rdf:type rdf:resource="&skos;Concept"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Fracture_mechanics -->
+
+    <owl:NamedIndividual rdf:about="&Category;Fracture_mechanics">
+        <rdf:type rdf:resource="&skos;Concept"/>
+        <skos:narrower rdf:resource="&Category;Breccias"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Frames_of_reference -->
+
+    <owl:NamedIndividual rdf:about="&Category;Frames_of_reference">
+        <rdf:type rdf:resource="&skos;Concept"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Friction -->
+
+    <owl:NamedIndividual rdf:about="&Category;Friction">
+        <rdf:type rdf:resource="&skos;Concept"/>
+        <skos:narrower rdf:resource="&Category;Friction_musical_instruments"/>
+        <skos:narrower rdf:resource="&Category;Tribology"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Friction_musical_instruments -->
+
+    <owl:NamedIndividual rdf:about="&Category;Friction_musical_instruments">
+        <rdf:type rdf:resource="&skos;Concept"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Galaxies -->
+
+    <owl:NamedIndividual rdf:about="&Category;Galaxies">
+        <rdf:type rdf:resource="&skos;Concept"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Gas_laws -->
+
+    <owl:NamedIndividual rdf:about="&Category;Gas_laws">
+        <rdf:type rdf:resource="&skos;Concept"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Gas_technologies -->
+
+    <owl:NamedIndividual rdf:about="&Category;Gas_technologies">
+        <rdf:type rdf:resource="&skos;Concept"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Gases -->
+
+    <owl:NamedIndividual rdf:about="&Category;Gases">
+        <rdf:type rdf:resource="&skos;Concept"/>
+        <skos:narrower rdf:resource="&Category;Atmosphere"/>
+        <skos:narrower rdf:resource="&Category;Flatulence"/>
+        <skos:narrower rdf:resource="&Category;Fluid_mechanics"/>
+        <skos:narrower rdf:resource="&Category;Gas_laws"/>
+        <skos:narrower rdf:resource="&Category;Gas_technologies"/>
+        <skos:narrower rdf:resource="&Category;Greenhouse_gases"/>
+        <skos:narrower rdf:resource="&Category;Ideal_gas"/>
+        <skos:narrower rdf:resource="&Category;Industrial_gases"/>
+        <skos:narrower rdf:resource="&Category;Inhalants"/>
+        <skos:narrower rdf:resource="&Category;Noble_gases"/>
+        <skos:narrower rdf:resource="&Category;Olfaction"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Gears -->
+
+    <owl:NamedIndividual rdf:about="&Category;Gears">
+        <rdf:type rdf:resource="&skos;Concept"/>
+        <skos:narrower rdf:resource="&Category;Epicyclical_gearing"/>
+        <skos:narrower rdf:resource="&Category;Hub_gears"/>
+        <skos:narrower rdf:resource="&Category;Variators"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:General_relativity -->
+
+    <owl:NamedIndividual rdf:about="&Category;General_relativity">
+        <rdf:type rdf:resource="&skos;Concept"/>
+        <skos:narrower rdf:resource="&Category;Black_holes"/>
+        <skos:narrower rdf:resource="&Category;Effects_of_gravitation"/>
+        <skos:narrower rdf:resource="&Category;Faster-than-light_travel"/>
+        <skos:narrower rdf:resource="&Category;Frames_of_reference"/>
+        <skos:narrower rdf:resource="&Category;Gravitational_lensing"/>
+        <skos:narrower rdf:resource="&Category;Gravitational_wave_telescopes"/>
+        <skos:narrower rdf:resource="&Category;Lorentzian_manifolds"/>
+        <skos:narrower rdf:resource="&Category;Relativists"/>
+        <skos:narrower rdf:resource="&Category;Tests_of_general_relativity"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Geophysical_imaging -->
+
+    <owl:NamedIndividual rdf:about="&Category;Geophysical_imaging">
+        <rdf:type rdf:resource="&skos;Concept"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Geotechnical_engineering -->
+
+    <owl:NamedIndividual rdf:about="&Category;Geotechnical_engineering">
+        <rdf:type rdf:resource="&skos;Concept"/>
+        <skos:narrower rdf:resource="&Category;Cuts_(earthmoving)"/>
+        <skos:narrower rdf:resource="&Category;Dams"/>
+        <skos:narrower rdf:resource="&Category;Drilling_technology"/>
+        <skos:narrower rdf:resource="&Category;Geophysical_imaging"/>
+        <skos:narrower rdf:resource="&Category;Ground_freezing"/>
+        <skos:narrower rdf:resource="&Category;Landfill"/>
+        <skos:narrower rdf:resource="&Category;Rock_Mechanics"/>
+        <skos:narrower rdf:resource="&Category;Rock_mass_classification"/>
+        <skos:narrower rdf:resource="&Category;Sediments"/>
+        <skos:narrower rdf:resource="&Category;Soil_tests"/>
+        <skos:narrower rdf:resource="&Category;Tunnels"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Gravitation -->
+
+    <owl:NamedIndividual rdf:about="&Category;Gravitation">
+        <rdf:type rdf:resource="&skos;Concept"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Gravitational_lensing -->
+
+    <owl:NamedIndividual rdf:about="&Category;Gravitational_lensing">
+        <rdf:type rdf:resource="&skos;Concept"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Gravitational_wave_telescopes -->
+
+    <owl:NamedIndividual rdf:about="&Category;Gravitational_wave_telescopes">
+        <rdf:type rdf:resource="&skos;Concept"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Greenhouse_gases -->
+
+    <owl:NamedIndividual rdf:about="&Category;Greenhouse_gases">
+        <rdf:type rdf:resource="&skos;Concept"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Ground_freezing -->
+
+    <owl:NamedIndividual rdf:about="&Category;Ground_freezing">
+        <rdf:type rdf:resource="&skos;Concept"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Hamiltonian_mechanics -->
+
+    <owl:NamedIndividual rdf:about="&Category;Hamiltonian_mechanics">
+        <rdf:type rdf:resource="&skos;Concept"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Heat_conduction -->
+
+    <owl:NamedIndividual rdf:about="&Category;Heat_conduction">
+        <rdf:type rdf:resource="&skos;Concept"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:History_of_thermodynamics -->
+
+    <owl:NamedIndividual rdf:about="&Category;History_of_thermodynamics">
+        <rdf:type rdf:resource="&skos;Concept"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Hub_gears -->
+
+    <owl:NamedIndividual rdf:about="&Category;Hub_gears">
+        <rdf:type rdf:resource="&skos;Concept"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Ideal_gas -->
+
+    <owl:NamedIndividual rdf:about="&Category;Ideal_gas">
+        <rdf:type rdf:resource="&skos;Concept"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Induction_heating -->
+
+    <owl:NamedIndividual rdf:about="&Category;Induction_heating">
+        <rdf:type rdf:resource="&skos;Concept"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Industrial_gases -->
+
+    <owl:NamedIndividual rdf:about="&Category;Industrial_gases">
+        <rdf:type rdf:resource="&skos;Concept"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Inhalants -->
+
+    <owl:NamedIndividual rdf:about="&Category;Inhalants">
+        <rdf:type rdf:resource="&skos;Concept"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Kinematics -->
+
+    <owl:NamedIndividual rdf:about="&Category;Kinematics">
+        <rdf:type rdf:resource="&skos;Concept"/>
+        <skos:narrower rdf:resource="&Category;Acceleration"/>
+        <skos:narrower rdf:resource="&Category;Linkages"/>
+        <skos:narrower rdf:resource="&Category;Mechanisms"/>
+        <skos:narrower rdf:resource="&Category;Robot_kinematics"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Lagrangian_mechanics -->
+
+    <owl:NamedIndividual rdf:about="&Category;Lagrangian_mechanics">
+        <rdf:type rdf:resource="&skos;Concept"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Landfill -->
+
+    <owl:NamedIndividual rdf:about="&Category;Landfill">
+        <rdf:type rdf:resource="&skos;Concept"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Lattice_models -->
+
+    <owl:NamedIndividual rdf:about="&Category;Lattice_models">
+        <rdf:type rdf:resource="&skos;Concept"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Laws_of_thermodynamics -->
+
+    <owl:NamedIndividual rdf:about="&Category;Laws_of_thermodynamics">
+        <rdf:type rdf:resource="&skos;Concept"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Light -->
+
+    <owl:NamedIndividual rdf:about="&Category;Light">
+        <rdf:type rdf:resource="&skos;Concept"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Limit_sets -->
+
+    <owl:NamedIndividual rdf:about="&Category;Limit_sets">
+        <rdf:type rdf:resource="&skos;Concept"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Linkages -->
+
+    <owl:NamedIndividual rdf:about="&Category;Linkages">
+        <rdf:type rdf:resource="&skos;Concept"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Locks -->
+
+    <owl:NamedIndividual rdf:about="&Category;Locks">
+        <rdf:type rdf:resource="&skos;Concept"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Locomotion_(biological) -->
+
+    <owl:NamedIndividual rdf:about="&Category;Locomotion_(biological)">
+        <rdf:type rdf:resource="&skos;Concept"/>
+        <skos:narrower rdf:resource="&Category;Animal_flight"/>
+        <skos:narrower rdf:resource="&Category;Aquatic_locomotion"/>
+        <skos:narrower rdf:resource="&Category;Arboreal_locomotion"/>
+        <skos:narrower rdf:resource="&Category;Cell_movement"/>
+        <skos:narrower rdf:resource="&Category;Terrestrial_locomotion"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Lorentzian_manifolds -->
+
+    <owl:NamedIndividual rdf:about="&Category;Lorentzian_manifolds">
+        <rdf:type rdf:resource="&skos;Concept"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Markov_chain_Monte_Carlo -->
+
+    <owl:NamedIndividual rdf:about="&Category;Markov_chain_Monte_Carlo">
+        <rdf:type rdf:resource="&skos;Concept"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Mathematics_of_rigidity -->
+
+    <owl:NamedIndividual rdf:about="&Category;Mathematics_of_rigidity">
+        <rdf:type rdf:resource="&skos;Concept"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Maxwell–Boltzmann_statistics -->
+
+    <owl:NamedIndividual rdf:about="&Category;Maxwell–Boltzmann_statistics">
+        <rdf:type rdf:resource="&skos;Concept"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Mechanical_amplifiers -->
+
+    <owl:NamedIndividual rdf:about="&Category;Mechanical_amplifiers">
+        <rdf:type rdf:resource="&skos;Concept"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Mechanical_calculators -->
+
+    <owl:NamedIndividual rdf:about="&Category;Mechanical_calculators">
+        <rdf:type rdf:resource="&skos;Concept"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Mechanical_devices_using_viscosity -->
+
+    <owl:NamedIndividual rdf:about="&Category;Mechanical_devices_using_viscosity">
+        <rdf:type rdf:resource="&skos;Concept"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Mechanical_failure_modes -->
+
+    <owl:NamedIndividual rdf:about="&Category;Mechanical_failure_modes">
+        <rdf:type rdf:resource="&skos;Concept"/>
+        <skos:narrower rdf:resource="&Category;Corrosion"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Mechanical_power_control -->
+
+    <owl:NamedIndividual rdf:about="&Category;Mechanical_power_control">
+        <rdf:type rdf:resource="&skos;Concept"/>
+        <skos:narrower rdf:resource="&Category;Escapements"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Mechanical_power_transmission -->
+
+    <owl:NamedIndividual rdf:about="&Category;Mechanical_power_transmission">
+        <rdf:type rdf:resource="&skos;Concept"/>
+        <skos:narrower rdf:resource="&Category;Automotive_transmission_technologies"/>
+        <skos:narrower rdf:resource="&Category;Belt_drives"/>
+        <skos:narrower rdf:resource="&Category;Chain_drives"/>
+        <skos:narrower rdf:resource="&Category;Gears"/>
+        <skos:narrower rdf:resource="&Category;Motorcycle_transmissions"/>
+        <skos:narrower rdf:resource="&Category;Variators"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Mechanical_vibrations -->
+
+    <owl:NamedIndividual rdf:about="&Category;Mechanical_vibrations">
+        <rdf:type rdf:resource="&skos;Concept"/>
+        <skos:narrower rdf:resource="&Category;Molecular_vibration"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Mechanics -->
+
+    <owl:NamedIndividual rdf:about="&Category;Mechanics">
+        <rdf:type rdf:resource="&skos;Concept"/>
+        <rdfs:comment rdf:datatype="&rdf;XMLLiteral">rootCategory</rdfs:comment>
+        <skos:narrower rdf:resource="&Category;Biomechanics"/>
+        <skos:narrower rdf:resource="&Category;Classical_mechanics"/>
+        <skos:narrower rdf:resource="&Category;Continuum_mechanics"/>
+        <skos:narrower rdf:resource="&Category;Dynamical_systems"/>
+        <skos:narrower rdf:resource="&Category;Kinematics"/>
+        <skos:narrower rdf:resource="&Category;Mathematics_of_rigidity"/>
+        <skos:narrower rdf:resource="&Category;Mechanical_power_control"/>
+        <skos:narrower rdf:resource="&Category;Mechanical_power_transmission"/>
+        <skos:narrower rdf:resource="&Category;Mechanical_vibrations"/>
+        <skos:narrower rdf:resource="&Category;Oscillation"/>
+        <skos:narrower rdf:resource="&Category;Rock_Mechanics"/>
+        <skos:narrower rdf:resource="&Category;Soil_mechanics"/>
+        <skos:narrower rdf:resource="&Category;Solid_mechanics"/>
+        <skos:narrower rdf:resource="&Category;Statistical_mechanics"/>
+        <skos:narrower rdf:resource="&Category;Theory_of_relativity"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Mechanisms -->
+
+    <owl:NamedIndividual rdf:about="&Category;Mechanisms">
+        <rdf:type rdf:resource="&skos;Concept"/>
+        <skos:narrower rdf:resource="&Category;Brakes"/>
+        <skos:narrower rdf:resource="&Category;Clamps"/>
+        <skos:narrower rdf:resource="&Category;Clutches"/>
+        <skos:narrower rdf:resource="&Category;Escapements"/>
+        <skos:narrower rdf:resource="&Category;Firearm_actions"/>
+        <skos:narrower rdf:resource="&Category;Gears"/>
+        <skos:narrower rdf:resource="&Category;Locks"/>
+        <skos:narrower rdf:resource="&Category;Mechanical_amplifiers"/>
+        <skos:narrower rdf:resource="&Category;Mechanical_calculators"/>
+        <skos:narrower rdf:resource="&Category;Mechanical_devices_using_viscosity"/>
+        <skos:narrower rdf:resource="&Category;Pumps"/>
+        <skos:narrower rdf:resource="&Category;Rotating_shaft_couplings"/>
+        <skos:narrower rdf:resource="&Category;Servomechanisms"/>
+        <skos:narrower rdf:resource="&Category;Switches"/>
+        <skos:narrower rdf:resource="&Category;Valves"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Minkowski_spacetime -->
+
+    <owl:NamedIndividual rdf:about="&Category;Minkowski_spacetime">
+        <rdf:type rdf:resource="&skos;Concept"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Molecular_vibration -->
+
+    <owl:NamedIndividual rdf:about="&Category;Molecular_vibration">
+        <rdf:type rdf:resource="&skos;Concept"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Monte_Carlo_methodologists -->
+
+    <owl:NamedIndividual rdf:about="&Category;Monte_Carlo_methodologists">
+        <rdf:type rdf:resource="&skos;Concept"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Monte_Carlo_methods -->
+
+    <owl:NamedIndividual rdf:about="&Category;Monte_Carlo_methods">
+        <rdf:type rdf:resource="&skos;Concept"/>
+        <skos:narrower rdf:resource="&Category;Markov_chain_Monte_Carlo"/>
+        <skos:narrower rdf:resource="&Category;Monte_Carlo_methodologists"/>
+        <skos:narrower rdf:resource="&Category;Monte_Carlo_methods_in_finance"/>
+        <skos:narrower rdf:resource="&Category;Monte_Carlo_software"/>
+        <skos:narrower rdf:resource="&Category;Non-uniform_random_numbers"/>
+        <skos:narrower rdf:resource="&Category;Quantum_Monte_Carlo"/>
+        <skos:narrower rdf:resource="&Category;Variance_reduction"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Monte_Carlo_methods_in_finance -->
+
+    <owl:NamedIndividual rdf:about="&Category;Monte_Carlo_methods_in_finance">
+        <rdf:type rdf:resource="&skos;Concept"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Monte_Carlo_software -->
+
+    <owl:NamedIndividual rdf:about="&Category;Monte_Carlo_software">
+        <rdf:type rdf:resource="&skos;Concept"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Motorcycle_transmissions -->
+
+    <owl:NamedIndividual rdf:about="&Category;Motorcycle_transmissions">
+        <rdf:type rdf:resource="&skos;Concept"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Noble_gases -->
+
+    <owl:NamedIndividual rdf:about="&Category;Noble_gases">
+        <rdf:type rdf:resource="&skos;Concept"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Non-equilibrium_thermodynamics -->
+
+    <owl:NamedIndividual rdf:about="&Category;Non-equilibrium_thermodynamics">
+        <rdf:type rdf:resource="&skos;Concept"/>
+        <skos:narrower rdf:resource="&Category;Transport_phenomena"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Non-uniform_random_numbers -->
+
+    <owl:NamedIndividual rdf:about="&Category;Non-uniform_random_numbers">
+        <rdf:type rdf:resource="&skos;Concept"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Nonlinear_systems -->
+
+    <owl:NamedIndividual rdf:about="&Category;Nonlinear_systems">
+        <rdf:type rdf:resource="&skos;Concept"/>
+        <skos:narrower rdf:resource="&Category;Chaos_theory"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Olfaction -->
+
+    <owl:NamedIndividual rdf:about="&Category;Olfaction">
+        <rdf:type rdf:resource="&skos;Concept"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Orbits -->
+
+    <owl:NamedIndividual rdf:about="&Category;Orbits">
+        <rdf:type rdf:resource="&skos;Concept"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Oscillation -->
+
+    <owl:NamedIndividual rdf:about="&Category;Oscillation">
+        <rdf:type rdf:resource="&skos;Concept"/>
+        <skos:narrower rdf:resource="&Category;Oscillators"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Oscillators -->
+
+    <owl:NamedIndividual rdf:about="&Category;Oscillators">
+        <rdf:type rdf:resource="&skos;Concept"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Particle_distributions -->
+
+    <owl:NamedIndividual rdf:about="&Category;Particle_distributions">
+        <rdf:type rdf:resource="&skos;Concept"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Particle_statistics -->
+
+    <owl:NamedIndividual rdf:about="&Category;Particle_statistics">
+        <rdf:type rdf:resource="&skos;Concept"/>
+        <skos:narrower rdf:resource="&Category;Bose–Einstein_statistics"/>
+        <skos:narrower rdf:resource="&Category;Fermi–Dirac_statistics"/>
+        <skos:narrower rdf:resource="&Category;Maxwell–Boltzmann_statistics"/>
+        <skos:narrower rdf:resource="&Category;Particle_distributions"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Partition_functions -->
+
+    <owl:NamedIndividual rdf:about="&Category;Partition_functions">
+        <rdf:type rdf:resource="&skos;Concept"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Phase_transitions -->
+
+    <owl:NamedIndividual rdf:about="&Category;Phase_transitions">
+        <rdf:type rdf:resource="&skos;Concept"/>
+        <skos:narrower rdf:resource="&Category;Cryobiology"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Planetary_systems -->
+
+    <owl:NamedIndividual rdf:about="&Category;Planetary_systems">
+        <rdf:type rdf:resource="&skos;Concept"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Plasticity -->
+
+    <owl:NamedIndividual rdf:about="&Category;Plasticity">
+        <rdf:type rdf:resource="&skos;Concept"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Psychrometrics -->
+
+    <owl:NamedIndividual rdf:about="&Category;Psychrometrics">
+        <rdf:type rdf:resource="&skos;Concept"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Pumps -->
+
+    <owl:NamedIndividual rdf:about="&Category;Pumps">
+        <rdf:type rdf:resource="&skos;Concept"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Quantum_Monte_Carlo -->
+
+    <owl:NamedIndividual rdf:about="&Category;Quantum_Monte_Carlo">
+        <rdf:type rdf:resource="&skos;Concept"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Quantum_mechanical_entropy -->
+
+    <owl:NamedIndividual rdf:about="&Category;Quantum_mechanical_entropy">
+        <rdf:type rdf:resource="&skos;Concept"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Radiation -->
+
+    <owl:NamedIndividual rdf:about="&Category;Radiation">
+        <rdf:type rdf:resource="&skos;Concept"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Random_dynamical_systems -->
+
+    <owl:NamedIndividual rdf:about="&Category;Random_dynamical_systems">
+        <rdf:type rdf:resource="&skos;Concept"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Random_matrices -->
+
+    <owl:NamedIndividual rdf:about="&Category;Random_matrices">
+        <rdf:type rdf:resource="&skos;Concept"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Relativists -->
+
+    <owl:NamedIndividual rdf:about="&Category;Relativists">
+        <rdf:type rdf:resource="&skos;Concept"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Relativity_stubs -->
+
+    <owl:NamedIndividual rdf:about="&Category;Relativity_stubs">
+        <rdf:type rdf:resource="&skos;Concept"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Renormalization_group -->
+
+    <owl:NamedIndividual rdf:about="&Category;Renormalization_group">
+        <rdf:type rdf:resource="&skos;Concept"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Rheology -->
+
+    <owl:NamedIndividual rdf:about="&Category;Rheology">
+        <rdf:type rdf:resource="&skos;Concept"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Rigid_bodies_mechanics -->
+
+    <owl:NamedIndividual rdf:about="&Category;Rigid_bodies_mechanics">
+        <rdf:type rdf:resource="&skos;Concept"/>
+        <skos:narrower rdf:resource="&Category;Dynamics"/>
+        <skos:narrower rdf:resource="&Category;Statics"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Robot_kinematics -->
+
+    <owl:NamedIndividual rdf:about="&Category;Robot_kinematics">
+        <rdf:type rdf:resource="&skos;Concept"/>
+        <skos:narrower rdf:resource="&Category;Articulated_robotics"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Rock_Mechanics -->
+
+    <owl:NamedIndividual rdf:about="&Category;Rock_Mechanics">
+        <rdf:type rdf:resource="&skos;Concept"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Rock_mass_classification -->
+
+    <owl:NamedIndividual rdf:about="&Category;Rock_mass_classification">
+        <rdf:type rdf:resource="&skos;Concept"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Rolling-element_bearings -->
+
+    <owl:NamedIndividual rdf:about="&Category;Rolling-element_bearings">
+        <rdf:type rdf:resource="&skos;Concept"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Rotating_machines -->
+
+    <owl:NamedIndividual rdf:about="&Category;Rotating_machines">
+        <rdf:type rdf:resource="&skos;Concept"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Rotating_shaft_couplings -->
+
+    <owl:NamedIndividual rdf:about="&Category;Rotating_shaft_couplings">
+        <rdf:type rdf:resource="&skos;Concept"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Rotation -->
+
+    <owl:NamedIndividual rdf:about="&Category;Rotation">
+        <rdf:type rdf:resource="&skos;Concept"/>
+        <skos:narrower rdf:resource="&Category;Angle"/>
+        <skos:narrower rdf:resource="&Category;Rolling-element_bearings"/>
+        <skos:narrower rdf:resource="&Category;Rotating_machines"/>
+        <skos:narrower rdf:resource="&Category;Rotational_symmetry"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Rotational_symmetry -->
+
+    <owl:NamedIndividual rdf:about="&Category;Rotational_symmetry">
+        <rdf:type rdf:resource="&skos;Concept"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Scale-invariant_systems -->
+
+    <owl:NamedIndividual rdf:about="&Category;Scale-invariant_systems">
+        <rdf:type rdf:resource="&skos;Concept"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Sediments -->
+
+    <owl:NamedIndividual rdf:about="&Category;Sediments">
+        <rdf:type rdf:resource="&skos;Concept"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Servomechanisms -->
+
+    <owl:NamedIndividual rdf:about="&Category;Servomechanisms">
+        <rdf:type rdf:resource="&skos;Concept"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Shock_waves -->
+
+    <owl:NamedIndividual rdf:about="&Category;Shock_waves">
+        <rdf:type rdf:resource="&skos;Concept"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Soil_mechanics -->
+
+    <owl:NamedIndividual rdf:about="&Category;Soil_mechanics">
+        <rdf:type rdf:resource="&skos;Concept"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Soil_tests -->
+
+    <owl:NamedIndividual rdf:about="&Category;Soil_tests">
+        <rdf:type rdf:resource="&skos;Concept"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Solid_fuels -->
+
+    <owl:NamedIndividual rdf:about="&Category;Solid_fuels">
+        <rdf:type rdf:resource="&skos;Concept"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Solid_mechanics -->
+
+    <owl:NamedIndividual rdf:about="&Category;Solid_mechanics">
+        <rdf:type rdf:resource="&skos;Concept"/>
+        <skos:narrower rdf:resource="&Category;Deformation"/>
+        <skos:narrower rdf:resource="&Category;Elasticity_(physics)"/>
+        <skos:narrower rdf:resource="&Category;Fracture_mechanics"/>
+        <skos:narrower rdf:resource="&Category;Geotechnical_engineering"/>
+        <skos:narrower rdf:resource="&Category;Mechanical_failure_modes"/>
+        <skos:narrower rdf:resource="&Category;Plasticity"/>
+        <skos:narrower rdf:resource="&Category;Solids"/>
+        <skos:narrower rdf:resource="&Category;Yield_criteria"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Solids -->
+
+    <owl:NamedIndividual rdf:about="&Category;Solids">
+        <rdf:type rdf:resource="&skos;Concept"/>
+        <skos:narrower rdf:resource="&Category;Amorphous_solids"/>
+        <skos:narrower rdf:resource="&Category;Bone_products"/>
+        <skos:narrower rdf:resource="&Category;Crystalline_solids"/>
+        <skos:narrower rdf:resource="&Category;Solid_fuels"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Sound -->
+
+    <owl:NamedIndividual rdf:about="&Category;Sound">
+        <rdf:type rdf:resource="&skos;Concept"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Special_relativity -->
+
+    <owl:NamedIndividual rdf:about="&Category;Special_relativity">
+        <rdf:type rdf:resource="&skos;Concept"/>
+        <skos:narrower rdf:resource="&Category;Aether_theories"/>
+        <skos:narrower rdf:resource="&Category;Electromagnetism"/>
+        <skos:narrower rdf:resource="&Category;Faster-than-light_travel"/>
+        <skos:narrower rdf:resource="&Category;Minkowski_spacetime"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Spin_models -->
+
+    <owl:NamedIndividual rdf:about="&Category;Spin_models">
+        <rdf:type rdf:resource="&skos;Concept"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Spinal_cord -->
+
+    <owl:NamedIndividual rdf:about="&Category;Spinal_cord">
+        <rdf:type rdf:resource="&skos;Concept"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Spiral_galaxies -->
+
+    <owl:NamedIndividual rdf:about="&Category;Spiral_galaxies">
+        <rdf:type rdf:resource="&skos;Concept"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Stability_theory -->
+
+    <owl:NamedIndividual rdf:about="&Category;Stability_theory">
+        <rdf:type rdf:resource="&skos;Concept"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Star_systems -->
+
+    <owl:NamedIndividual rdf:about="&Category;Star_systems">
+        <rdf:type rdf:resource="&skos;Concept"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Statics -->
+
+    <owl:NamedIndividual rdf:about="&Category;Statics">
+        <rdf:type rdf:resource="&skos;Concept"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Statistical_ensembles -->
+
+    <owl:NamedIndividual rdf:about="&Category;Statistical_ensembles">
+        <rdf:type rdf:resource="&skos;Concept"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Statistical_field_theories -->
+
+    <owl:NamedIndividual rdf:about="&Category;Statistical_field_theories">
+        <rdf:type rdf:resource="&skos;Concept"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Statistical_mechanics -->
+
+    <owl:NamedIndividual rdf:about="&Category;Statistical_mechanics">
+        <rdf:type rdf:resource="&skos;Concept"/>
+        <skos:narrower rdf:resource="&Category;Critical_phenomena"/>
+        <skos:narrower rdf:resource="&Category;Equations_of_state"/>
+        <skos:narrower rdf:resource="&Category;Gases"/>
+        <skos:narrower rdf:resource="&Category;Lattice_models"/>
+        <skos:narrower rdf:resource="&Category;Monte_Carlo_methods"/>
+        <skos:narrower rdf:resource="&Category;Particle_statistics"/>
+        <skos:narrower rdf:resource="&Category;Partition_functions"/>
+        <skos:narrower rdf:resource="&Category;Phase_transitions"/>
+        <skos:narrower rdf:resource="&Category;Random_matrices"/>
+        <skos:narrower rdf:resource="&Category;Renormalization_group"/>
+        <skos:narrower rdf:resource="&Category;Spin_models"/>
+        <skos:narrower rdf:resource="&Category;Statistical_ensembles"/>
+        <skos:narrower rdf:resource="&Category;Statistical_field_theories"/>
+        <skos:narrower rdf:resource="&Category;Statistical_mechanics_theorems"/>
+        <skos:narrower rdf:resource="&Category;Thermodynamic_entropy"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Statistical_mechanics_theorems -->
+
+    <owl:NamedIndividual rdf:about="&Category;Statistical_mechanics_theorems">
+        <rdf:type rdf:resource="&skos;Concept"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Switches -->
+
+    <owl:NamedIndividual rdf:about="&Category;Switches">
+        <rdf:type rdf:resource="&skos;Concept"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Symbolic_dynamics -->
+
+    <owl:NamedIndividual rdf:about="&Category;Symbolic_dynamics">
+        <rdf:type rdf:resource="&skos;Concept"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Temperature -->
+
+    <owl:NamedIndividual rdf:about="&Category;Temperature">
+        <rdf:type rdf:resource="&skos;Concept"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Terrestrial_locomotion -->
+
+    <owl:NamedIndividual rdf:about="&Category;Terrestrial_locomotion">
+        <rdf:type rdf:resource="&skos;Concept"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Tests_of_general_relativity -->
+
+    <owl:NamedIndividual rdf:about="&Category;Tests_of_general_relativity">
+        <rdf:type rdf:resource="&skos;Concept"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Theorems_in_dynamical_systems -->
+
+    <owl:NamedIndividual rdf:about="&Category;Theorems_in_dynamical_systems">
+        <rdf:type rdf:resource="&skos;Concept"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Theory_of_relativity -->
+
+    <owl:NamedIndividual rdf:about="&Category;Theory_of_relativity">
+        <rdf:type rdf:resource="&skos;Concept"/>
+        <skos:narrower rdf:resource="&Category;General_relativity"/>
+        <skos:narrower rdf:resource="&Category;Relativists"/>
+        <skos:narrower rdf:resource="&Category;Relativity_stubs"/>
+        <skos:narrower rdf:resource="&Category;Special_relativity"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Thermochemistry -->
+
+    <owl:NamedIndividual rdf:about="&Category;Thermochemistry">
+        <rdf:type rdf:resource="&skos;Concept"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Thermodynamic_entropy -->
+
+    <owl:NamedIndividual rdf:about="&Category;Thermodynamic_entropy">
+        <rdf:type rdf:resource="&skos;Concept"/>
+        <skos:narrower rdf:resource="&Category;Quantum_mechanical_entropy"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Thermodynamic_free_energy -->
+
+    <owl:NamedIndividual rdf:about="&Category;Thermodynamic_free_energy">
+        <rdf:type rdf:resource="&skos;Concept"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Thermodynamic_models -->
+
+    <owl:NamedIndividual rdf:about="&Category;Thermodynamic_models">
+        <rdf:type rdf:resource="&skos;Concept"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Thermodynamic_processes -->
+
+    <owl:NamedIndividual rdf:about="&Category;Thermodynamic_processes">
+        <rdf:type rdf:resource="&skos;Concept"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Thermodynamic_properties -->
+
+    <owl:NamedIndividual rdf:about="&Category;Thermodynamic_properties">
+        <rdf:type rdf:resource="&skos;Concept"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Thermodynamicists -->
+
+    <owl:NamedIndividual rdf:about="&Category;Thermodynamicists">
+        <rdf:type rdf:resource="&skos;Concept"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Thermodynamics -->
+
+    <owl:NamedIndividual rdf:about="&Category;Thermodynamics">
+        <rdf:type rdf:resource="&skos;Concept"/>
+        <skos:narrower rdf:resource="&Category;Branches_of_thermodynamics"/>
+        <skos:narrower rdf:resource="&Category;Calorimetry"/>
+        <skos:narrower rdf:resource="&Category;Chemical_thermodynamics"/>
+        <skos:narrower rdf:resource="&Category;Dimensionless_numbers_of_thermodynamics"/>
+        <skos:narrower rdf:resource="&Category;Energetics"/>
+        <skos:narrower rdf:resource="&Category;Engineering_thermodynamics"/>
+        <skos:narrower rdf:resource="&Category;Enthalpy"/>
+        <skos:narrower rdf:resource="&Category;Equilibrium_chemistry"/>
+        <skos:narrower rdf:resource="&Category;Forms_of_water"/>
+        <skos:narrower rdf:resource="&Category;Gas_laws"/>
+        <skos:narrower rdf:resource="&Category;Heat_conduction"/>
+        <skos:narrower rdf:resource="&Category;History_of_thermodynamics"/>
+        <skos:narrower rdf:resource="&Category;Laws_of_thermodynamics"/>
+        <skos:narrower rdf:resource="&Category;Non-equilibrium_thermodynamics"/>
+        <skos:narrower rdf:resource="&Category;Psychrometrics"/>
+        <skos:narrower rdf:resource="&Category;Temperature"/>
+        <skos:narrower rdf:resource="&Category;Thermochemistry"/>
+        <skos:narrower rdf:resource="&Category;Thermodynamic_free_energy"/>
+        <skos:narrower rdf:resource="&Category;Thermodynamic_models"/>
+        <skos:narrower rdf:resource="&Category;Thermodynamic_processes"/>
+        <skos:narrower rdf:resource="&Category;Thermodynamic_properties"/>
+        <skos:narrower rdf:resource="&Category;Thermodynamicists"/>
+        <skos:narrower rdf:resource="&Category;Units_of_temperature"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Topological_dynamics -->
+
+    <owl:NamedIndividual rdf:about="&Category;Topological_dynamics">
+        <rdf:type rdf:resource="&skos;Concept"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Tornado -->
+
+    <owl:NamedIndividual rdf:about="&Category;Tornado">
+        <rdf:type rdf:resource="&skos;Concept"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Transport_phenomena -->
+
+    <owl:NamedIndividual rdf:about="&Category;Transport_phenomena">
+        <rdf:type rdf:resource="&skos;Concept"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Tribology -->
+
+    <owl:NamedIndividual rdf:about="&Category;Tribology">
+        <rdf:type rdf:resource="&skos;Concept"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Tropical_cyclones -->
+
+    <owl:NamedIndividual rdf:about="&Category;Tropical_cyclones">
+        <rdf:type rdf:resource="&skos;Concept"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Tunnels -->
+
+    <owl:NamedIndividual rdf:about="&Category;Tunnels">
+        <rdf:type rdf:resource="&skos;Concept"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Types_of_cyclone -->
+
+    <owl:NamedIndividual rdf:about="&Category;Types_of_cyclone">
+        <rdf:type rdf:resource="&skos;Concept"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Units_of_acceleration -->
+
+    <owl:NamedIndividual rdf:about="&Category;Units_of_acceleration">
+        <rdf:type rdf:resource="&skos;Concept"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Units_of_temperature -->
+
+    <owl:NamedIndividual rdf:about="&Category;Units_of_temperature">
+        <rdf:type rdf:resource="&skos;Concept"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Universe -->
+
+    <owl:NamedIndividual rdf:about="&Category;Universe">
+        <rdf:type rdf:resource="&skos;Concept"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Valves -->
+
+    <owl:NamedIndividual rdf:about="&Category;Valves">
+        <rdf:type rdf:resource="&skos;Concept"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Variance_reduction -->
+
+    <owl:NamedIndividual rdf:about="&Category;Variance_reduction">
+        <rdf:type rdf:resource="&skos;Concept"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Variators -->
+
+    <owl:NamedIndividual rdf:about="&Category;Variators">
+        <rdf:type rdf:resource="&skos;Concept"/>
+        <skos:narrower rdf:resource="&Category;Continuously_variable_transmissions"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Vertebral_column -->
+
+    <owl:NamedIndividual rdf:about="&Category;Vertebral_column">
+        <rdf:type rdf:resource="&skos;Concept"/>
+        <skos:narrower rdf:resource="&Category;Spinal_cord"/>
+        <skos:narrower rdf:resource="&Category;Vertebral_column_disorders"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Vertebral_column_disorders -->
+
+    <owl:NamedIndividual rdf:about="&Category;Vertebral_column_disorders">
+        <rdf:type rdf:resource="&skos;Concept"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Vortices -->
+
+    <owl:NamedIndividual rdf:about="&Category;Vortices">
+        <rdf:type rdf:resource="&skos;Concept"/>
+        <skos:narrower rdf:resource="&Category;Anticyclones"/>
+        <skos:narrower rdf:resource="&Category;European_windstorms"/>
+        <skos:narrower rdf:resource="&Category;Spiral_galaxies"/>
+        <skos:narrower rdf:resource="&Category;Tornado"/>
+        <skos:narrower rdf:resource="&Category;Tropical_cyclones"/>
+        <skos:narrower rdf:resource="&Category;Types_of_cyclone"/>
+        <skos:narrower rdf:resource="&Category;Whirlpools"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Water_waves -->
+
+    <owl:NamedIndividual rdf:about="&Category;Water_waves">
+        <rdf:type rdf:resource="&skos;Concept"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Wave_mechanics -->
+
+    <owl:NamedIndividual rdf:about="&Category;Wave_mechanics">
+        <rdf:type rdf:resource="&skos;Concept"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Waves -->
+
+    <owl:NamedIndividual rdf:about="&Category;Waves">
+        <rdf:type rdf:resource="&skos;Concept"/>
+        <skos:narrower rdf:resource="&Category;Light"/>
+        <skos:narrower rdf:resource="&Category;Radiation"/>
+        <skos:narrower rdf:resource="&Category;Shock_waves"/>
+        <skos:narrower rdf:resource="&Category;Sound"/>
+        <skos:narrower rdf:resource="&Category;Water_waves"/>
+        <skos:narrower rdf:resource="&Category;Wave_mechanics"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Whirlpools -->
+
+    <owl:NamedIndividual rdf:about="&Category;Whirlpools">
+        <rdf:type rdf:resource="&skos;Concept"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Yield_criteria -->
+
+    <owl:NamedIndividual rdf:about="&Category;Yield_criteria">
+        <rdf:type rdf:resource="&skos;Concept"/>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.3.1957) http://owlapi.sourceforge.net -->
+

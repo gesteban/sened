@@ -1,0 +1,2753 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY skos "http://www.w3.org/2004/02/skos/core#" >
+    <!ENTITY Category "http://dbpedia.org/resource/Category:" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+    <!ENTITY _molecular "http://dbpedia.org/resource/Category:Atomic,_molecular," >
+]>
+
+
+<rdf:RDF xmlns="file:/D:/otrobackup/WS_DBPedia/vocChemistry2.rdf#"
+     xml:base="file:/D:/otrobackup/WS_DBPedia/vocChemistry2.rdf"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:Category="http://dbpedia.org/resource/Category:"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:_molecular="&Category;Atomic,_molecular,"
+     xmlns:skos="http://www.w3.org/2004/02/skos/core#">
+    <owl:Ontology rdf:about="file:/D:/otrobackup/WS_DBPedia/vocChemistry2.rdf">
+        <owl:imports rdf:resource="http://www.w3.org/TR/skos-reference/skos-owl1-dl.rdf"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Datatypes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#narrower -->
+
+    <owl:ObjectProperty rdf:about="&skos;narrower"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#Concept -->
+
+    <owl:Class rdf:about="&skos;Concept"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Acid-base_chemistry -->
+
+    <skos:Concept rdf:about="&Category;Acid-base_chemistry">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <skos:narrower rdf:resource="&Category;Acids"/>
+        <skos:narrower rdf:resource="&Category;Bases"/>
+        <skos:narrower rdf:resource="&Category;Buffers"/>
+        <skos:narrower rdf:resource="&Category;PH_indicators"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Acids -->
+
+    <skos:Concept rdf:about="&Category;Acids">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Agricultural_chemicals -->
+
+    <skos:Concept rdf:about="&Category;Agricultural_chemicals">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Air-free_techniques -->
+
+    <skos:Concept rdf:about="&Category;Air-free_techniques">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Air_raid_on_Bari -->
+
+    <skos:Concept rdf:about="&Category;Air_raid_on_Bari">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Alchemical_substances -->
+
+    <skos:Concept rdf:about="&Category;Alchemical_substances">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Allotropy -->
+
+    <skos:Concept rdf:about="&Category;Allotropy">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Amount_of_substance -->
+
+    <skos:Concept rdf:about="&Category;Amount_of_substance">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Analytical_chemistry -->
+
+    <skos:Concept rdf:about="&Category;Analytical_chemistry">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <skos:narrower rdf:resource="&Category;Analytical_chemists"/>
+        <skos:narrower rdf:resource="&Category;Analytical_reagents"/>
+        <skos:narrower rdf:resource="&Category;Analytical_standards"/>
+        <skos:narrower rdf:resource="&Category;Chemical_tests"/>
+        <skos:narrower rdf:resource="&Category;Complexometric_indicators"/>
+        <skos:narrower rdf:resource="&Category;Drug_testing_reagents"/>
+        <skos:narrower rdf:resource="&Category;Electroanalytical_chemistry"/>
+        <skos:narrower rdf:resource="&Category;Elemental_analysis"/>
+        <skos:narrower rdf:resource="&Category;Equilibrium_chemistry"/>
+        <skos:narrower rdf:resource="&Category;Instrumental_analysis"/>
+        <skos:narrower rdf:resource="&Category;Olfaction"/>
+        <skos:narrower rdf:resource="&Category;PH_indicators"/>
+        <skos:narrower rdf:resource="&Category;Redox_indicators"/>
+        <skos:narrower rdf:resource="&Category;Titration"/>
+        <skos:narrower rdf:resource="&Category;Units_of_chemical_measurement"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Analytical_chemists -->
+
+    <skos:Concept rdf:about="&Category;Analytical_chemists">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Analytical_reagents -->
+
+    <skos:Concept rdf:about="&Category;Analytical_reagents">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Analytical_standards -->
+
+    <skos:Concept rdf:about="&Category;Analytical_standards">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Antistatic_agents -->
+
+    <skos:Concept rdf:about="&Category;Antistatic_agents">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Astrochemistry -->
+
+    <skos:Concept rdf:about="&Category;Astrochemistry">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Atmospheric_chemistry -->
+
+    <skos:Concept rdf:about="&Category;Atmospheric_chemistry">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Atmospheric_dispersion_modeling -->
+
+    <skos:Concept rdf:about="&Category;Atmospheric_dispersion_modeling">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Atomic,_molecular,_and_optical_physics -->
+
+    <skos:Concept rdf:about="&Category;Atomic,_molecular,_and_optical_physics">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Atomic_physics -->
+
+    <skos:Concept rdf:about="&Category;Atomic_physics">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <skos:narrower rdf:resource="&Category;Atoms"/>
+        <skos:narrower rdf:resource="&Category;Electron"/>
+        <skos:narrower rdf:resource="&Category;Emission_spectroscopy"/>
+        <skos:narrower rdf:resource="&Category;Foundational_quantum_physics"/>
+        <skos:narrower rdf:resource="&Category;Nuclear_physics"/>
+        <skos:narrower rdf:resource="&Category;Scattering"/>
+        <skos:narrower rdf:resource="&Category;Spectroscopy"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Atoms -->
+
+    <skos:Concept rdf:about="&Category;Atoms">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Base_catalyzed_reactions -->
+
+    <skos:Concept rdf:about="&Category;Base_catalyzed_reactions">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Bases -->
+
+    <skos:Concept rdf:about="&Category;Bases">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Biochemistry -->
+
+    <skos:Concept rdf:about="&Category;Biochemistry">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <skos:narrower rdf:resource="&Category;Biochemistry_methods"/>
+        <skos:narrower rdf:resource="&Category;Biochemistry_stubs"/>
+        <skos:narrower rdf:resource="&Category;Biochemistry_templates"/>
+        <skos:narrower rdf:resource="&Category;Biochemists"/>
+        <skos:narrower rdf:resource="&Category;Biology_and_pharmacology_of_chemical_elements"/>
+        <skos:narrower rdf:resource="&Category;Bioluminescence"/>
+        <skos:narrower rdf:resource="&Category;Biomolecules"/>
+        <skos:narrower rdf:resource="&Category;Cellular_respiration"/>
+        <skos:narrower rdf:resource="&Category;Chemical_ecology"/>
+        <skos:narrower rdf:resource="&Category;Chemical_pathology"/>
+        <skos:narrower rdf:resource="&Category;Chemical_weapons"/>
+        <skos:narrower rdf:resource="&Category;Cryobiology"/>
+        <skos:narrower rdf:resource="&Category;Fermentation"/>
+        <skos:narrower rdf:resource="&Category;Gene_expression"/>
+        <skos:narrower rdf:resource="&Category;Glycobiology"/>
+        <skos:narrower rdf:resource="&Category;Metabolism"/>
+        <skos:narrower rdf:resource="&Category;Molecular_biology"/>
+        <skos:narrower rdf:resource="&Category;Neurochemistry"/>
+        <skos:narrower rdf:resource="&Category;Photosynthesis"/>
+        <skos:narrower rdf:resource="&Category;Reagents_for_biochemistry"/>
+        <skos:narrower rdf:resource="&Category;Signal_transduction"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Biochemistry_methods -->
+
+    <skos:Concept rdf:about="&Category;Biochemistry_methods">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Biochemistry_stubs -->
+
+    <skos:Concept rdf:about="&Category;Biochemistry_stubs">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Biochemistry_templates -->
+
+    <skos:Concept rdf:about="&Category;Biochemistry_templates">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Biochemists -->
+
+    <skos:Concept rdf:about="&Category;Biochemists">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Bioindicators -->
+
+    <skos:Concept rdf:about="&Category;Bioindicators">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Biology_and_pharmacology_of_chemical_elements -->
+
+    <skos:Concept rdf:about="&Category;Biology_and_pharmacology_of_chemical_elements">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Bioluminescence -->
+
+    <skos:Concept rdf:about="&Category;Bioluminescence">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Biomolecules -->
+
+    <skos:Concept rdf:about="&Category;Biomolecules">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Bosons -->
+
+    <skos:Concept rdf:about="&Category;Bosons">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Buffers -->
+
+    <skos:Concept rdf:about="&Category;Buffers">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Catalysts -->
+
+    <skos:Concept rdf:about="&Category;Catalysts">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Cellular_respiration -->
+
+    <skos:Concept rdf:about="&Category;Cellular_respiration">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Chelating_agents -->
+
+    <skos:Concept rdf:about="&Category;Chelating_agents">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Chembox_templates -->
+
+    <skos:Concept rdf:about="&Category;Chembox_templates">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Chemical_bond_properties -->
+
+    <skos:Concept rdf:about="&Category;Chemical_bond_properties">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Chemical_bonding -->
+
+    <skos:Concept rdf:about="&Category;Chemical_bonding">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <skos:narrower rdf:resource="&Category;Chemical_bond_properties"/>
+        <skos:narrower rdf:resource="&Category;Infrared_spectroscopy"/>
+        <skos:narrower rdf:resource="&Category;Ions"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Chemical_compounds -->
+
+    <skos:Concept rdf:about="&Category;Chemical_compounds">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Chemical_ecology -->
+
+    <skos:Concept rdf:about="&Category;Chemical_ecology">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Chemical_element_groups -->
+
+    <skos:Concept rdf:about="&Category;Chemical_element_groups">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Chemical_element_templates -->
+
+    <skos:Concept rdf:about="&Category;Chemical_element_templates">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Chemical_elements -->
+
+    <skos:Concept rdf:about="&Category;Chemical_elements">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Chemical_energy -->
+
+    <skos:Concept rdf:about="&Category;Chemical_energy">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <skos:narrower rdf:resource="&Category;Chemical_energy_sources"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Chemical_energy_sources -->
+
+    <skos:Concept rdf:about="&Category;Chemical_energy_sources">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Chemical_engineering -->
+
+    <skos:Concept rdf:about="&Category;Chemical_engineering">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <skos:narrower rdf:resource="&Category;Atmospheric_dispersion_modeling"/>
+        <skos:narrower rdf:resource="&Category;Chemical_processes"/>
+        <skos:narrower rdf:resource="&Category;Chemical_reactors"/>
+        <skos:narrower rdf:resource="&Category;Electrochemical_engineering"/>
+        <skos:narrower rdf:resource="&Category;Engineering_thermodynamics"/>
+        <skos:narrower rdf:resource="&Category;Environmental_engineering"/>
+        <skos:narrower rdf:resource="&Category;Evaporators"/>
+        <skos:narrower rdf:resource="&Category;Green_chemistry"/>
+        <skos:narrower rdf:resource="&Category;Heat_transfer"/>
+        <skos:narrower rdf:resource="&Category;Liquefied_natural_gas_plants"/>
+        <skos:narrower rdf:resource="&Category;Materials_science"/>
+        <skos:narrower rdf:resource="&Category;Natural_gas_technology"/>
+        <skos:narrower rdf:resource="&Category;Oil_refining"/>
+        <skos:narrower rdf:resource="&Category;Oil_shale_technology"/>
+        <skos:narrower rdf:resource="&Category;Petroleum_technology"/>
+        <skos:narrower rdf:resource="&Category;Psychrometrics"/>
+        <skos:narrower rdf:resource="&Category;Scrubbers"/>
+        <skos:narrower rdf:resource="&Category;Separation_processes"/>
+        <skos:narrower rdf:resource="&Category;Tissue_engineering"/>
+        <skos:narrower rdf:resource="&Category;Unit_operations"/>
+        <skos:narrower rdf:resource="&Category;Unit_processes"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Chemical_formulas -->
+
+    <skos:Concept rdf:about="&Category;Chemical_formulas">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Chemical_industry -->
+
+    <skos:Concept rdf:about="&Category;Chemical_industry">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Chemical_kinetics -->
+
+    <skos:Concept rdf:about="&Category;Chemical_kinetics">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Chemical_mixtures -->
+
+    <skos:Concept rdf:about="&Category;Chemical_mixtures">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Chemical_nomenclature -->
+
+    <skos:Concept rdf:about="&Category;Chemical_nomenclature">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <skos:narrower rdf:resource="&Category;Chemical_formulas"/>
+        <skos:narrower rdf:resource="&Category;Chemical_numbering_schemes"/>
+        <skos:narrower rdf:resource="&Category;Chemistry_prefixes_and_suffixes"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Chemical_numbering_schemes -->
+
+    <skos:Concept rdf:about="&Category;Chemical_numbering_schemes">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Chemical_oceanography -->
+
+    <skos:Concept rdf:about="&Category;Chemical_oceanography">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Chemical_pathology -->
+
+    <skos:Concept rdf:about="&Category;Chemical_pathology">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Chemical_processes -->
+
+    <skos:Concept rdf:about="&Category;Chemical_processes">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Chemical_properties -->
+
+    <skos:Concept rdf:about="&Category;Chemical_properties">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <skos:narrower rdf:resource="&Category;Amount_of_substance"/>
+        <skos:narrower rdf:resource="&Category;Properties_of_chemical_elements"/>
+        <skos:narrower rdf:resource="&Category;Thermodynamic_properties"/>
+        <skos:narrower rdf:resource="&Category;Units_of_chemical_measurement"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Chemical_reactors -->
+
+    <skos:Concept rdf:about="&Category;Chemical_reactors">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Chemical_safety -->
+
+    <skos:Concept rdf:about="&Category;Chemical_safety">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <skos:narrower rdf:resource="&Category;Drug_safety"/>
+        <skos:narrower rdf:resource="&Category;Explosion_protection"/>
+        <skos:narrower rdf:resource="&Category;Explosive_chemicals"/>
+        <skos:narrower rdf:resource="&Category;Globally_Harmonized_System"/>
+        <skos:narrower rdf:resource="&Category;Hazardous_materials"/>
+        <skos:narrower rdf:resource="&Category;Industrial_hygiene"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Chemical_structures -->
+
+    <skos:Concept rdf:about="&Category;Chemical_structures">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Chemical_substances -->
+
+    <skos:Concept rdf:about="&Category;Chemical_substances">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <skos:narrower rdf:resource="&Category;Agricultural_chemicals"/>
+        <skos:narrower rdf:resource="&Category;Alchemical_substances"/>
+        <skos:narrower rdf:resource="&Category;Catalysts"/>
+        <skos:narrower rdf:resource="&Category;Chemical_compounds"/>
+        <skos:narrower rdf:resource="&Category;Chemical_elements"/>
+        <skos:narrower rdf:resource="&Category;Chemical_mixtures"/>
+        <skos:narrower rdf:resource="&Category;Chemical_numbering_schemes"/>
+        <skos:narrower rdf:resource="&Category;Clathrates"/>
+        <skos:narrower rdf:resource="&Category;Cleaning_products"/>
+        <skos:narrower rdf:resource="&Category;Contrast_agents"/>
+        <skos:narrower rdf:resource="&Category;Explosive_chemicals"/>
+        <skos:narrower rdf:resource="&Category;Forensic_chemicals"/>
+        <skos:narrower rdf:resource="&Category;Free_radicals"/>
+        <skos:narrower rdf:resource="&Category;Fuels"/>
+        <skos:narrower rdf:resource="&Category;Household_chemicals"/>
+        <skos:narrower rdf:resource="&Category;Ions"/>
+        <skos:narrower rdf:resource="&Category;Light-sensitive_chemicals"/>
+        <skos:narrower rdf:resource="&Category;Metals"/>
+        <skos:narrower rdf:resource="&Category;Oxidizing_agents"/>
+        <skos:narrower rdf:resource="&Category;Petroleum_products"/>
+        <skos:narrower rdf:resource="&Category;Photographic_chemicals"/>
+        <skos:narrower rdf:resource="&Category;Polymers"/>
+        <skos:narrower rdf:resource="&Category;Reagents"/>
+        <skos:narrower rdf:resource="&Category;Reducing_agents"/>
+        <skos:narrower rdf:resource="&Category;Superconductors"/>
+        <skos:narrower rdf:resource="&Category;Teratogens"/>
+        <skos:narrower rdf:resource="&Category;Thickening_agents"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Chemical_synthesis -->
+
+    <skos:Concept rdf:about="&Category;Chemical_synthesis">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Chemical_tests -->
+
+    <skos:Concept rdf:about="&Category;Chemical_tests">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Chemical_thermodynamics -->
+
+    <skos:Concept rdf:about="&Category;Chemical_thermodynamics">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Chemical_warfare -->
+
+    <skos:Concept rdf:about="&Category;Chemical_warfare">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <skos:narrower rdf:resource="&Category;Air_raid_on_Bari"/>
+        <skos:narrower rdf:resource="&Category;Chemical_warfare_facilities"/>
+        <skos:narrower rdf:resource="&Category;Chemical_weapons"/>
+        <skos:narrower rdf:resource="&Category;Chemical_weapons_attacks"/>
+        <skos:narrower rdf:resource="&Category;Chemical_weapons_demilitarization"/>
+        <skos:narrower rdf:resource="&Category;World_War_I_chemical_weapons"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Chemical_warfare_facilities -->
+
+    <skos:Concept rdf:about="&Category;Chemical_warfare_facilities">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Chemical_weapons -->
+
+    <skos:Concept rdf:about="&Category;Chemical_weapons">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Chemical_weapons_attacks -->
+
+    <skos:Concept rdf:about="&Category;Chemical_weapons_attacks">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Chemical_weapons_demilitarization -->
+
+    <skos:Concept rdf:about="&Category;Chemical_weapons_demilitarization">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Cheminformatics -->
+
+    <skos:Concept rdf:about="&Category;Cheminformatics">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Chemistry -->
+
+    <skos:Concept rdf:about="&Category;Chemistry">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <rdfs:comment rdf:datatype="&rdf;XMLLiteral">rootCategory</rdfs:comment>
+        <skos:narrower rdf:resource="&Category;Acid-base_chemistry"/>
+        <skos:narrower rdf:resource="&Category;Analytical_chemistry"/>
+        <skos:narrower rdf:resource="&Category;Astrochemistry"/>
+        <skos:narrower rdf:resource="&Category;Atmospheric_chemistry"/>
+        <skos:narrower rdf:resource="&Category;Atomic_physics"/>
+        <skos:narrower rdf:resource="&Category;Biochemistry"/>
+        <skos:narrower rdf:resource="&Category;Chemical_bonding"/>
+        <skos:narrower rdf:resource="&Category;Chemical_energy"/>
+        <skos:narrower rdf:resource="&Category;Chemical_engineering"/>
+        <skos:narrower rdf:resource="&Category;Chemical_industry"/>
+        <skos:narrower rdf:resource="&Category;Chemical_nomenclature"/>
+        <skos:narrower rdf:resource="&Category;Chemical_processes"/>
+        <skos:narrower rdf:resource="&Category;Chemical_properties"/>
+        <skos:narrower rdf:resource="&Category;Chemical_safety"/>
+        <skos:narrower rdf:resource="&Category;Chemical_substances"/>
+        <skos:narrower rdf:resource="&Category;Chemical_synthesis"/>
+        <skos:narrower rdf:resource="&Category;Chemical_warfare"/>
+        <skos:narrower rdf:resource="&Category;Cheminformatics"/>
+        <skos:narrower rdf:resource="&Category;Chemistry_events"/>
+        <skos:narrower rdf:resource="&Category;Chemistry_lists"/>
+        <skos:narrower rdf:resource="&Category;Chemistry_templates"/>
+        <skos:narrower rdf:resource="&Category;Chemistry_theories"/>
+        <skos:narrower rdf:resource="&Category;Colloidal_chemistry"/>
+        <skos:narrower rdf:resource="&Category;Crystallography"/>
+        <skos:narrower rdf:resource="&Category;Environmental_chemistry"/>
+        <skos:narrower rdf:resource="&Category;Geochemistry"/>
+        <skos:narrower rdf:resource="&Category;Green_chemistry"/>
+        <skos:narrower rdf:resource="&Category;Inorganic_chemistry"/>
+        <skos:narrower rdf:resource="&Category;Laboratory_techniques"/>
+        <skos:narrower rdf:resource="&Category;Materials_science"/>
+        <skos:narrower rdf:resource="&Category;Medicinal_chemistry"/>
+        <skos:narrower rdf:resource="&Category;Metallurgy"/>
+        <skos:narrower rdf:resource="&Category;Microwave_chemistry"/>
+        <skos:narrower rdf:resource="&Category;Molecular_physics"/>
+        <skos:narrower rdf:resource="&Category;Molecules"/>
+        <skos:narrower rdf:resource="&Category;Nuclear_chemistry"/>
+        <skos:narrower rdf:resource="&Category;Organic_chemistry"/>
+        <skos:narrower rdf:resource="&Category;Periodic_table"/>
+        <skos:narrower rdf:resource="&Category;Photochemistry"/>
+        <skos:narrower rdf:resource="&Category;Physical_chemistry"/>
+        <skos:narrower rdf:resource="&Category;Process_chemicals"/>
+        <skos:narrower rdf:resource="&Category;Radiochemistry"/>
+        <skos:narrower rdf:resource="&Category;Separation_processes"/>
+        <skos:narrower rdf:resource="&Category;Solid-state_chemistry"/>
+        <skos:narrower rdf:resource="&Category;Stereochemistry"/>
+        <skos:narrower rdf:resource="&Category;Stoichiometry"/>
+        <skos:narrower rdf:resource="&Category;Subatomic_particles"/>
+        <skos:narrower rdf:resource="&Category;Supramolecular_chemistry"/>
+        <skos:narrower rdf:resource="&Category;Theoretical_chemistry"/>
+        <skos:narrower rdf:resource="&Category;Water_chemistry"/>
+        <skos:narrower rdf:resource="&Category;Wine_chemistry"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Chemistry_citation_templates -->
+
+    <skos:Concept rdf:about="&Category;Chemistry_citation_templates">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Chemistry_compounds_templates -->
+
+    <skos:Concept rdf:about="&Category;Chemistry_compounds_templates">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Chemistry_events -->
+
+    <skos:Concept rdf:about="&Category;Chemistry_events">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Chemistry_images -->
+
+    <skos:Concept rdf:about="&Category;Chemistry_images">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Chemistry_infobox_templates -->
+
+    <skos:Concept rdf:about="&Category;Chemistry_infobox_templates">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Chemistry_lists -->
+
+    <skos:Concept rdf:about="&Category;Chemistry_lists">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <skos:narrower rdf:resource="&Category;Chemical_structures"/>
+        <skos:narrower rdf:resource="&Category;Chemistry_images"/>
+        <skos:narrower rdf:resource="&Category;Dictionary_of_chemical_formulas"/>
+        <skos:narrower rdf:resource="&Category;Drug-related_lists"/>
+        <skos:narrower rdf:resource="&Category;Lists_of_chemical_elements"/>
+        <skos:narrower rdf:resource="&Category;Lists_of_ingredients"/>
+        <skos:narrower rdf:resource="&Category;Lists_of_isomers_of_alkanes"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Chemistry_prefixes_and_suffixes -->
+
+    <skos:Concept rdf:about="&Category;Chemistry_prefixes_and_suffixes">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Chemistry_templates -->
+
+    <skos:Concept rdf:about="&Category;Chemistry_templates">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <skos:narrower rdf:resource="&Category;Biochemistry_templates"/>
+        <skos:narrower rdf:resource="&Category;Chembox_templates"/>
+        <skos:narrower rdf:resource="&Category;Chemical_element_templates"/>
+        <skos:narrower rdf:resource="&Category;Chemistry_citation_templates"/>
+        <skos:narrower rdf:resource="&Category;Chemistry_compounds_templates"/>
+        <skos:narrower rdf:resource="&Category;Chemistry_infobox_templates"/>
+        <skos:narrower rdf:resource="&Category;GHS_templates"/>
+        <skos:narrower rdf:resource="&Category;Isotope_table_templates"/>
+        <skos:narrower rdf:resource="&Category;Nobel_Prize_in_Chemistry_templates"/>
+        <skos:narrower rdf:resource="&Category;Nuclide_templates"/>
+        <skos:narrower rdf:resource="&Category;Periodic_table_templates"/>
+        <skos:narrower rdf:resource="&Category;R-phrase_templates"/>
+        <skos:narrower rdf:resource="&Category;Reactionbox_templates"/>
+        <skos:narrower rdf:resource="&Category;S-phrase_templates"/>
+        <skos:narrower rdf:resource="&Category;WikiPathways"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Chemistry_theories -->
+
+    <skos:Concept rdf:about="&Category;Chemistry_theories">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Clathrates -->
+
+    <skos:Concept rdf:about="&Category;Clathrates">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Cleaning_products -->
+
+    <skos:Concept rdf:about="&Category;Cleaning_products">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Clinical_pharmacology -->
+
+    <skos:Concept rdf:about="&Category;Clinical_pharmacology">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Cluster_chemistry -->
+
+    <skos:Concept rdf:about="&Category;Cluster_chemistry">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Colloidal_chemistry -->
+
+    <skos:Concept rdf:about="&Category;Colloidal_chemistry">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <skos:narrower rdf:resource="&Category;Colloids"/>
+        <skos:narrower rdf:resource="&Category;Food_emulsifiers"/>
+        <skos:narrower rdf:resource="&Category;Gels"/>
+        <skos:narrower rdf:resource="&Category;Surfactants"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Colloids -->
+
+    <skos:Concept rdf:about="&Category;Colloids">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Complexometric_indicators -->
+
+    <skos:Concept rdf:about="&Category;Complexometric_indicators">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Computational_chemistry -->
+
+    <skos:Concept rdf:about="&Category;Computational_chemistry">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Contrast_agents -->
+
+    <skos:Concept rdf:about="&Category;Contrast_agents">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Coordination_chemistry -->
+
+    <skos:Concept rdf:about="&Category;Coordination_chemistry">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Corrosion_inhibitors -->
+
+    <skos:Concept rdf:about="&Category;Corrosion_inhibitors">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Crown_ethers -->
+
+    <skos:Concept rdf:about="&Category;Crown_ethers">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Cryobiology -->
+
+    <skos:Concept rdf:about="&Category;Cryobiology">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Crystalline_solids -->
+
+    <skos:Concept rdf:about="&Category;Crystalline_solids">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Crystallographers -->
+
+    <skos:Concept rdf:about="&Category;Crystallographers">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Crystallographic_databases -->
+
+    <skos:Concept rdf:about="&Category;Crystallographic_databases">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Crystallography -->
+
+    <skos:Concept rdf:about="&Category;Crystallography">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <skos:narrower rdf:resource="&Category;Crystalline_solids"/>
+        <skos:narrower rdf:resource="&Category;Crystallographers"/>
+        <skos:narrower rdf:resource="&Category;Crystallographic_databases"/>
+        <skos:narrower rdf:resource="&Category;Diffraction"/>
+        <skos:narrower rdf:resource="&Category;Honeycombs_(geometry)"/>
+        <skos:narrower rdf:resource="&Category;Mineral_habits"/>
+        <skos:narrower rdf:resource="&Category;X-ray_crystallography"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Dendrimer -->
+
+    <skos:Concept rdf:about="&Category;Dendrimer">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Deoxidizers -->
+
+    <skos:Concept rdf:about="&Category;Deoxidizers">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Dictionary_of_chemical_formulas -->
+
+    <skos:Concept rdf:about="&Category;Dictionary_of_chemical_formulas">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Diffraction -->
+
+    <skos:Concept rdf:about="&Category;Diffraction">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Drug-related_lists -->
+
+    <skos:Concept rdf:about="&Category;Drug-related_lists">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Drug_discovery -->
+
+    <skos:Concept rdf:about="&Category;Drug_discovery">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Drug_safety -->
+
+    <skos:Concept rdf:about="&Category;Drug_safety">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Drug_testing_reagents -->
+
+    <skos:Concept rdf:about="&Category;Drug_testing_reagents">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Electroanalytical_chemistry -->
+
+    <skos:Concept rdf:about="&Category;Electroanalytical_chemistry">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Electrochemical_engineering -->
+
+    <skos:Concept rdf:about="&Category;Electrochemical_engineering">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Electrochemistry -->
+
+    <skos:Concept rdf:about="&Category;Electrochemistry">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Electron -->
+
+    <skos:Concept rdf:about="&Category;Electron">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Elemental_analysis -->
+
+    <skos:Concept rdf:about="&Category;Elemental_analysis">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Emission_spectroscopy -->
+
+    <skos:Concept rdf:about="&Category;Emission_spectroscopy">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Engineering_thermodynamics -->
+
+    <skos:Concept rdf:about="&Category;Engineering_thermodynamics">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Environmental_chemistry -->
+
+    <skos:Concept rdf:about="&Category;Environmental_chemistry">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <skos:narrower rdf:resource="&Category;Bioindicators"/>
+        <skos:narrower rdf:resource="&Category;Soil_contamination"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Environmental_engineering -->
+
+    <skos:Concept rdf:about="&Category;Environmental_engineering">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Environmental_isotopes -->
+
+    <skos:Concept rdf:about="&Category;Environmental_isotopes">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Equilibrium_chemistry -->
+
+    <skos:Concept rdf:about="&Category;Equilibrium_chemistry">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Evaporators -->
+
+    <skos:Concept rdf:about="&Category;Evaporators">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Explosion_protection -->
+
+    <skos:Concept rdf:about="&Category;Explosion_protection">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Explosive_chemicals -->
+
+    <skos:Concept rdf:about="&Category;Explosive_chemicals">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Fermentation -->
+
+    <skos:Concept rdf:about="&Category;Fermentation">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Fermions -->
+
+    <skos:Concept rdf:about="&Category;Fermions">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Fission_products -->
+
+    <skos:Concept rdf:about="&Category;Fission_products">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Flow_cytometry -->
+
+    <skos:Concept rdf:about="&Category;Flow_cytometry">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Food_emulsifiers -->
+
+    <skos:Concept rdf:about="&Category;Food_emulsifiers">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Forensic_chemicals -->
+
+    <skos:Concept rdf:about="&Category;Forensic_chemicals">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Foundational_quantum_physics -->
+
+    <skos:Concept rdf:about="&Category;Foundational_quantum_physics">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Free_radicals -->
+
+    <skos:Concept rdf:about="&Category;Free_radicals">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Fuel_antioxidants -->
+
+    <skos:Concept rdf:about="&Category;Fuel_antioxidants">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Fuels -->
+
+    <skos:Concept rdf:about="&Category;Fuels">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Fullerenes -->
+
+    <skos:Concept rdf:about="&Category;Fullerenes">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Functional_groups -->
+
+    <skos:Concept rdf:about="&Category;Functional_groups">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Fusible_alloys -->
+
+    <skos:Concept rdf:about="&Category;Fusible_alloys">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:GHS_templates -->
+
+    <skos:Concept rdf:about="&Category;GHS_templates">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Gas_laws -->
+
+    <skos:Concept rdf:about="&Category;Gas_laws">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Gels -->
+
+    <skos:Concept rdf:about="&Category;Gels">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Gene_expression -->
+
+    <skos:Concept rdf:about="&Category;Gene_expression">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Geochemistry -->
+
+    <skos:Concept rdf:about="&Category;Geochemistry">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <skos:narrower rdf:resource="&Category;Chemical_oceanography"/>
+        <skos:narrower rdf:resource="&Category;Environmental_isotopes"/>
+        <skos:narrower rdf:resource="&Category;Geochemists"/>
+        <skos:narrower rdf:resource="&Category;Mineralogy"/>
+        <skos:narrower rdf:resource="&Category;Soil_chemistry"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Geochemists -->
+
+    <skos:Concept rdf:about="&Category;Geochemists">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Glass_chemistry -->
+
+    <skos:Concept rdf:about="&Category;Glass_chemistry">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Globally_Harmonized_System -->
+
+    <skos:Concept rdf:about="&Category;Globally_Harmonized_System">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Glycobiology -->
+
+    <skos:Concept rdf:about="&Category;Glycobiology">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Green_chemistry -->
+
+    <skos:Concept rdf:about="&Category;Green_chemistry">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Hadrons -->
+
+    <skos:Concept rdf:about="&Category;Hadrons">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Hazardous_materials -->
+
+    <skos:Concept rdf:about="&Category;Hazardous_materials">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Heat_transfer -->
+
+    <skos:Concept rdf:about="&Category;Heat_transfer">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Honeycombs_(geometry) -->
+
+    <skos:Concept rdf:about="&Category;Honeycombs_(geometry)">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Household_chemicals -->
+
+    <skos:Concept rdf:about="&Category;Household_chemicals">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Hydrates -->
+
+    <skos:Concept rdf:about="&Category;Hydrates">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Hypothetical_elementary_particles -->
+
+    <skos:Concept rdf:about="&Category;Hypothetical_elementary_particles">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Hypothetical_nuclei -->
+
+    <skos:Concept rdf:about="&Category;Hypothetical_nuclei">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Industrial_hygiene -->
+
+    <skos:Concept rdf:about="&Category;Industrial_hygiene">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Infrared_spectroscopy -->
+
+    <skos:Concept rdf:about="&Category;Infrared_spectroscopy">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Inorganic_chemistry -->
+
+    <skos:Concept rdf:about="&Category;Inorganic_chemistry">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <skos:narrower rdf:resource="&Category;Allotropy"/>
+        <skos:narrower rdf:resource="&Category;Coordination_chemistry"/>
+        <skos:narrower rdf:resource="&Category;Glass_chemistry"/>
+        <skos:narrower rdf:resource="&Category;Inorganic_chemists"/>
+        <skos:narrower rdf:resource="&Category;Inorganic_compounds"/>
+        <skos:narrower rdf:resource="&Category;Isomerism"/>
+        <skos:narrower rdf:resource="&Category;Organometallic_chemistry"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Inorganic_chemists -->
+
+    <skos:Concept rdf:about="&Category;Inorganic_chemists">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Inorganic_compounds -->
+
+    <skos:Concept rdf:about="&Category;Inorganic_compounds">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Instrumental_analysis -->
+
+    <skos:Concept rdf:about="&Category;Instrumental_analysis">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Intermetallics -->
+
+    <skos:Concept rdf:about="&Category;Intermetallics">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Ions -->
+
+    <skos:Concept rdf:about="&Category;Ions">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Isomerism -->
+
+    <skos:Concept rdf:about="&Category;Isomerism">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Isotope_table_templates -->
+
+    <skos:Concept rdf:about="&Category;Isotope_table_templates">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Isotopes -->
+
+    <skos:Concept rdf:about="&Category;Isotopes">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Laboratory_techniques -->
+
+    <skos:Concept rdf:about="&Category;Laboratory_techniques">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <skos:narrower rdf:resource="&Category;Air-free_techniques"/>
+        <skos:narrower rdf:resource="&Category;Biochemistry_methods"/>
+        <skos:narrower rdf:resource="&Category;Chemical_tests"/>
+        <skos:narrower rdf:resource="&Category;Flow_cytometry"/>
+        <skos:narrower rdf:resource="&Category;Instrumental_analysis"/>
+        <skos:narrower rdf:resource="&Category;Microbiology_techniques"/>
+        <skos:narrower rdf:resource="&Category;Microscopy"/>
+        <skos:narrower rdf:resource="&Category;Molecular_biology_techniques"/>
+        <skos:narrower rdf:resource="&Category;Polymerase_chain_reaction"/>
+        <skos:narrower rdf:resource="&Category;Protein-protein_interaction_assays"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Light-sensitive_chemicals -->
+
+    <skos:Concept rdf:about="&Category;Light-sensitive_chemicals">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Liquefied_natural_gas_plants -->
+
+    <skos:Concept rdf:about="&Category;Liquefied_natural_gas_plants">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Lists_of_chemical_elements -->
+
+    <skos:Concept rdf:about="&Category;Lists_of_chemical_elements">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Lists_of_ingredients -->
+
+    <skos:Concept rdf:about="&Category;Lists_of_ingredients">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Lists_of_isomers_of_alkanes -->
+
+    <skos:Concept rdf:about="&Category;Lists_of_isomers_of_alkanes">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Luminescence -->
+
+    <skos:Concept rdf:about="&Category;Luminescence">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Macrocycles -->
+
+    <skos:Concept rdf:about="&Category;Macrocycles">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Macromolecules -->
+
+    <skos:Concept rdf:about="&Category;Macromolecules">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Materials_science -->
+
+    <skos:Concept rdf:about="&Category;Materials_science">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Mathematical_chemistry -->
+
+    <skos:Concept rdf:about="&Category;Mathematical_chemistry">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Medicinal_chemistry -->
+
+    <skos:Concept rdf:about="&Category;Medicinal_chemistry">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <skos:narrower rdf:resource="&Category;Clinical_pharmacology"/>
+        <skos:narrower rdf:resource="&Category;Drug_discovery"/>
+        <skos:narrower rdf:resource="&Category;Medicinal_chemistry_journals"/>
+        <skos:narrower rdf:resource="&Category;Natural_products"/>
+        <skos:narrower rdf:resource="&Category;Pharmacology"/>
+        <skos:narrower rdf:resource="&Category;Therapeutics"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Medicinal_chemistry_journals -->
+
+    <skos:Concept rdf:about="&Category;Medicinal_chemistry_journals">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Membrane-active_molecules -->
+
+    <skos:Concept rdf:about="&Category;Membrane-active_molecules">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Metabolism -->
+
+    <skos:Concept rdf:about="&Category;Metabolism">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Metal_companies -->
+
+    <skos:Concept rdf:about="&Category;Metal_companies">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Metallurgical_facilities -->
+
+    <skos:Concept rdf:about="&Category;Metallurgical_facilities">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Metallurgical_processes -->
+
+    <skos:Concept rdf:about="&Category;Metallurgical_processes">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Metallurgists -->
+
+    <skos:Concept rdf:about="&Category;Metallurgists">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Metallurgy -->
+
+    <skos:Concept rdf:about="&Category;Metallurgy">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <skos:narrower rdf:resource="&Category;Deoxidizers"/>
+        <skos:narrower rdf:resource="&Category;Fusible_alloys"/>
+        <skos:narrower rdf:resource="&Category;Intermetallics"/>
+        <skos:narrower rdf:resource="&Category;Metal_companies"/>
+        <skos:narrower rdf:resource="&Category;Metallurgical_facilities"/>
+        <skos:narrower rdf:resource="&Category;Metallurgical_processes"/>
+        <skos:narrower rdf:resource="&Category;Metallurgists"/>
+        <skos:narrower rdf:resource="&Category;Steel"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Metals -->
+
+    <skos:Concept rdf:about="&Category;Metals">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Microbiology_techniques -->
+
+    <skos:Concept rdf:about="&Category;Microbiology_techniques">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Microscopy -->
+
+    <skos:Concept rdf:about="&Category;Microscopy">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Microwave_chemistry -->
+
+    <skos:Concept rdf:about="&Category;Microwave_chemistry">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Mineral_habits -->
+
+    <skos:Concept rdf:about="&Category;Mineral_habits">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Mineralogy -->
+
+    <skos:Concept rdf:about="&Category;Mineralogy">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Molecular_biology -->
+
+    <skos:Concept rdf:about="&Category;Molecular_biology">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Molecular_biology_techniques -->
+
+    <skos:Concept rdf:about="&Category;Molecular_biology_techniques">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Molecular_dynamics -->
+
+    <skos:Concept rdf:about="&Category;Molecular_dynamics">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Molecular_electronics -->
+
+    <skos:Concept rdf:about="&Category;Molecular_electronics">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Molecular_formulas -->
+
+    <skos:Concept rdf:about="&Category;Molecular_formulas">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Molecular_geometry -->
+
+    <skos:Concept rdf:about="&Category;Molecular_geometry">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Molecular_machines -->
+
+    <skos:Concept rdf:about="&Category;Molecular_machines">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Molecular_modelling -->
+
+    <skos:Concept rdf:about="&Category;Molecular_modelling">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Molecular_physics -->
+
+    <skos:Concept rdf:about="&Category;Molecular_physics">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <skos:narrower rdf:resource="&Category;Electron"/>
+        <skos:narrower rdf:resource="&Category;Luminescence"/>
+        <skos:narrower rdf:resource="&Category;Molecular_dynamics"/>
+        <skos:narrower rdf:resource="&Category;Molecular_electronics"/>
+        <skos:narrower rdf:resource="&Category;Molecular_modelling"/>
+        <skos:narrower rdf:resource="&Category;Molecular_vibration"/>
+        <skos:narrower rdf:resource="&Category;Spectroscopy"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Molecular_topology -->
+
+    <skos:Concept rdf:about="&Category;Molecular_topology">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Molecular_vibration -->
+
+    <skos:Concept rdf:about="&Category;Molecular_vibration">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Molecules -->
+
+    <skos:Concept rdf:about="&Category;Molecules">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <skos:narrower rdf:resource="&Category;Biomolecules"/>
+        <skos:narrower rdf:resource="&Category;Chemical_compounds"/>
+        <skos:narrower rdf:resource="&Category;Macromolecules"/>
+        <skos:narrower rdf:resource="&Category;Membrane-active_molecules"/>
+        <skos:narrower rdf:resource="&Category;Molecular_formulas"/>
+        <skos:narrower rdf:resource="&Category;Molecular_geometry"/>
+        <skos:narrower rdf:resource="&Category;Polymers"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Natural_gas_technology -->
+
+    <skos:Concept rdf:about="&Category;Natural_gas_technology">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Natural_products -->
+
+    <skos:Concept rdf:about="&Category;Natural_products">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Neurochemistry -->
+
+    <skos:Concept rdf:about="&Category;Neurochemistry">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Nobel_Prize_in_Chemistry_templates -->
+
+    <skos:Concept rdf:about="&Category;Nobel_Prize_in_Chemistry_templates">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Non-stoichiometric_compounds -->
+
+    <skos:Concept rdf:about="&Category;Non-stoichiometric_compounds">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Nuclear_chemistry -->
+
+    <skos:Concept rdf:about="&Category;Nuclear_chemistry">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <skos:narrower rdf:resource="&Category;Fission_products"/>
+        <skos:narrower rdf:resource="&Category;Isotopes"/>
+        <skos:narrower rdf:resource="&Category;Nuclear_chemists"/>
+        <skos:narrower rdf:resource="&Category;Nuclear_fusion"/>
+        <skos:narrower rdf:resource="&Category;Nuclear_magnetic_resonance"/>
+        <skos:narrower rdf:resource="&Category;Radioactivity"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Nuclear_chemists -->
+
+    <skos:Concept rdf:about="&Category;Nuclear_chemists">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Nuclear_fusion -->
+
+    <skos:Concept rdf:about="&Category;Nuclear_fusion">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Nuclear_magnetic_resonance -->
+
+    <skos:Concept rdf:about="&Category;Nuclear_magnetic_resonance">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Nuclear_physics -->
+
+    <skos:Concept rdf:about="&Category;Nuclear_physics">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Nucleons -->
+
+    <skos:Concept rdf:about="&Category;Nucleons">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Nuclide_templates -->
+
+    <skos:Concept rdf:about="&Category;Nuclide_templates">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Oil_refining -->
+
+    <skos:Concept rdf:about="&Category;Oil_refining">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Oil_shale_technology -->
+
+    <skos:Concept rdf:about="&Category;Oil_shale_technology">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Olfaction -->
+
+    <skos:Concept rdf:about="&Category;Olfaction">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Onium -->
+
+    <skos:Concept rdf:about="&Category;Onium">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Organic_chemistry -->
+
+    <skos:Concept rdf:about="&Category;Organic_chemistry">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <skos:narrower rdf:resource="&Category;Base_catalyzed_reactions"/>
+        <skos:narrower rdf:resource="&Category;Chemical_synthesis"/>
+        <skos:narrower rdf:resource="&Category;Functional_groups"/>
+        <skos:narrower rdf:resource="&Category;Isomerism"/>
+        <skos:narrower rdf:resource="&Category;Organic_chemists"/>
+        <skos:narrower rdf:resource="&Category;Organic_compounds"/>
+        <skos:narrower rdf:resource="&Category;Organometallic_chemistry"/>
+        <skos:narrower rdf:resource="&Category;Physical_organic_chemistry"/>
+        <skos:narrower rdf:resource="&Category;Reagents_for_organic_chemistry"/>
+        <skos:narrower rdf:resource="&Category;Substituents"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Organic_chemists -->
+
+    <skos:Concept rdf:about="&Category;Organic_chemists">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Organic_compounds -->
+
+    <skos:Concept rdf:about="&Category;Organic_compounds">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Organometallic_chemistry -->
+
+    <skos:Concept rdf:about="&Category;Organometallic_chemistry">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Oxidizing_agents -->
+
+    <skos:Concept rdf:about="&Category;Oxidizing_agents">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:PH_indicators -->
+
+    <skos:Concept rdf:about="&Category;PH_indicators">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:People_involved_with_the_periodic_table -->
+
+    <skos:Concept rdf:about="&Category;People_involved_with_the_periodic_table">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Periodic_table -->
+
+    <skos:Concept rdf:about="&Category;Periodic_table">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <skos:narrower rdf:resource="&Category;Chemical_element_groups"/>
+        <skos:narrower rdf:resource="&Category;People_involved_with_the_periodic_table"/>
+        <skos:narrower rdf:resource="&Category;Periodic_table_in_popular_culture"/>
+        <skos:narrower rdf:resource="&Category;Periodic_table_templates"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Periodic_table_in_popular_culture -->
+
+    <skos:Concept rdf:about="&Category;Periodic_table_in_popular_culture">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Periodic_table_templates -->
+
+    <skos:Concept rdf:about="&Category;Periodic_table_templates">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Petroleum_products -->
+
+    <skos:Concept rdf:about="&Category;Petroleum_products">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Petroleum_technology -->
+
+    <skos:Concept rdf:about="&Category;Petroleum_technology">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Pharmacology -->
+
+    <skos:Concept rdf:about="&Category;Pharmacology">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Phases_of_matter -->
+
+    <skos:Concept rdf:about="&Category;Phases_of_matter">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Photochemistry -->
+
+    <skos:Concept rdf:about="&Category;Photochemistry">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <skos:narrower rdf:resource="&Category;Photochemists"/>
+        <skos:narrower rdf:resource="&Category;Photosynthesis"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Photochemists -->
+
+    <skos:Concept rdf:about="&Category;Photochemists">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Photographic_chemicals -->
+
+    <skos:Concept rdf:about="&Category;Photographic_chemicals">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Photosynthesis -->
+
+    <skos:Concept rdf:about="&Category;Photosynthesis">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Physical_chemistry -->
+
+    <skos:Concept rdf:about="&Category;Physical_chemistry">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <skos:narrower rdf:resource="&Category;Atomic,_molecular,_and_optical_physics"/>
+        <skos:narrower rdf:resource="&Category;Chemical_kinetics"/>
+        <skos:narrower rdf:resource="&Category;Chemical_thermodynamics"/>
+        <skos:narrower rdf:resource="&Category;Cluster_chemistry"/>
+        <skos:narrower rdf:resource="&Category;Electrochemistry"/>
+        <skos:narrower rdf:resource="&Category;Equilibrium_chemistry"/>
+        <skos:narrower rdf:resource="&Category;Gas_laws"/>
+        <skos:narrower rdf:resource="&Category;Ions"/>
+        <skos:narrower rdf:resource="&Category;Molecular_vibration"/>
+        <skos:narrower rdf:resource="&Category;Phases_of_matter"/>
+        <skos:narrower rdf:resource="&Category;Physical_chemists"/>
+        <skos:narrower rdf:resource="&Category;Physical_organic_chemistry"/>
+        <skos:narrower rdf:resource="&Category;Quantum_chemistry"/>
+        <skos:narrower rdf:resource="&Category;Spectroscopy"/>
+        <skos:narrower rdf:resource="&Category;Surface_chemistry"/>
+        <skos:narrower rdf:resource="&Category;Thermodynamics"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Physical_chemists -->
+
+    <skos:Concept rdf:about="&Category;Physical_chemists">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Physical_organic_chemistry -->
+
+    <skos:Concept rdf:about="&Category;Physical_organic_chemistry">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Polymerase_chain_reaction -->
+
+    <skos:Concept rdf:about="&Category;Polymerase_chain_reaction">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Polymers -->
+
+    <skos:Concept rdf:about="&Category;Polymers">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Process_chemicals -->
+
+    <skos:Concept rdf:about="&Category;Process_chemicals">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <skos:narrower rdf:resource="&Category;Antistatic_agents"/>
+        <skos:narrower rdf:resource="&Category;Chelating_agents"/>
+        <skos:narrower rdf:resource="&Category;Chemical_processes"/>
+        <skos:narrower rdf:resource="&Category;Corrosion_inhibitors"/>
+        <skos:narrower rdf:resource="&Category;Fuel_antioxidants"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Properties_of_chemical_elements -->
+
+    <skos:Concept rdf:about="&Category;Properties_of_chemical_elements">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Protein-protein_interaction_assays -->
+
+    <skos:Concept rdf:about="&Category;Protein-protein_interaction_assays">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Psychrometrics -->
+
+    <skos:Concept rdf:about="&Category;Psychrometrics">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Quantum_chemistry -->
+
+    <skos:Concept rdf:about="&Category;Quantum_chemistry">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Quasiparticles -->
+
+    <skos:Concept rdf:about="&Category;Quasiparticles">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:R-phrase_templates -->
+
+    <skos:Concept rdf:about="&Category;R-phrase_templates">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Radioactivity -->
+
+    <skos:Concept rdf:about="&Category;Radioactivity">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Radiochemistry -->
+
+    <skos:Concept rdf:about="&Category;Radiochemistry">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Reactionbox_templates -->
+
+    <skos:Concept rdf:about="&Category;Reactionbox_templates">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Reagents -->
+
+    <skos:Concept rdf:about="&Category;Reagents">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Reagents_for_biochemistry -->
+
+    <skos:Concept rdf:about="&Category;Reagents_for_biochemistry">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Reagents_for_organic_chemistry -->
+
+    <skos:Concept rdf:about="&Category;Reagents_for_organic_chemistry">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Redox_indicators -->
+
+    <skos:Concept rdf:about="&Category;Redox_indicators">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Reducing_agents -->
+
+    <skos:Concept rdf:about="&Category;Reducing_agents">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:S-phrase_templates -->
+
+    <skos:Concept rdf:about="&Category;S-phrase_templates">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Salts -->
+
+    <skos:Concept rdf:about="&Category;Salts">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Scattering -->
+
+    <skos:Concept rdf:about="&Category;Scattering">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Scrubbers -->
+
+    <skos:Concept rdf:about="&Category;Scrubbers">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Semiconductor_materials -->
+
+    <skos:Concept rdf:about="&Category;Semiconductor_materials">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Separation_processes -->
+
+    <skos:Concept rdf:about="&Category;Separation_processes">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Signal_transduction -->
+
+    <skos:Concept rdf:about="&Category;Signal_transduction">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Soil_chemistry -->
+
+    <skos:Concept rdf:about="&Category;Soil_chemistry">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Soil_contamination -->
+
+    <skos:Concept rdf:about="&Category;Soil_contamination">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Solid-state_chemistry -->
+
+    <skos:Concept rdf:about="&Category;Solid-state_chemistry">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <skos:narrower rdf:resource="&Category;Non-stoichiometric_compounds"/>
+        <skos:narrower rdf:resource="&Category;Salts"/>
+        <skos:narrower rdf:resource="&Category;Semiconductor_materials"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Spectroscopy -->
+
+    <skos:Concept rdf:about="&Category;Spectroscopy">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Steel -->
+
+    <skos:Concept rdf:about="&Category;Steel">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Stereochemistry -->
+
+    <skos:Concept rdf:about="&Category;Stereochemistry">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <skos:narrower rdf:resource="&Category;Isomerism"/>
+        <skos:narrower rdf:resource="&Category;Molecular_geometry"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Stoichiometry -->
+
+    <skos:Concept rdf:about="&Category;Stoichiometry">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Subatomic_particles -->
+
+    <skos:Concept rdf:about="&Category;Subatomic_particles">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <skos:narrower rdf:resource="&Category;Bosons"/>
+        <skos:narrower rdf:resource="&Category;Fermions"/>
+        <skos:narrower rdf:resource="&Category;Hadrons"/>
+        <skos:narrower rdf:resource="&Category;Hypothetical_elementary_particles"/>
+        <skos:narrower rdf:resource="&Category;Hypothetical_nuclei"/>
+        <skos:narrower rdf:resource="&Category;Nucleons"/>
+        <skos:narrower rdf:resource="&Category;Onium"/>
+        <skos:narrower rdf:resource="&Category;Quasiparticles"/>
+        <skos:narrower rdf:resource="&Category;Tachyons"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Substituents -->
+
+    <skos:Concept rdf:about="&Category;Substituents">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Superconductors -->
+
+    <skos:Concept rdf:about="&Category;Superconductors">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Supramolecular_chemistry -->
+
+    <skos:Concept rdf:about="&Category;Supramolecular_chemistry">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <skos:narrower rdf:resource="&Category;Clathrates"/>
+        <skos:narrower rdf:resource="&Category;Crown_ethers"/>
+        <skos:narrower rdf:resource="&Category;Dendrimer"/>
+        <skos:narrower rdf:resource="&Category;Fullerenes"/>
+        <skos:narrower rdf:resource="&Category;Macrocycles"/>
+        <skos:narrower rdf:resource="&Category;Molecular_machines"/>
+        <skos:narrower rdf:resource="&Category;Molecular_topology"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Surface_chemistry -->
+
+    <skos:Concept rdf:about="&Category;Surface_chemistry">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Surfactants -->
+
+    <skos:Concept rdf:about="&Category;Surfactants">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Tachyons -->
+
+    <skos:Concept rdf:about="&Category;Tachyons">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Teratogens -->
+
+    <skos:Concept rdf:about="&Category;Teratogens">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Theoretical_chemistry -->
+
+    <skos:Concept rdf:about="&Category;Theoretical_chemistry">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <skos:narrower rdf:resource="&Category;Computational_chemistry"/>
+        <skos:narrower rdf:resource="&Category;Mathematical_chemistry"/>
+        <skos:narrower rdf:resource="&Category;Molecular_modelling"/>
+        <skos:narrower rdf:resource="&Category;Quantum_chemistry"/>
+        <skos:narrower rdf:resource="&Category;Theoretical_chemists"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Theoretical_chemists -->
+
+    <skos:Concept rdf:about="&Category;Theoretical_chemists">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Therapeutics -->
+
+    <skos:Concept rdf:about="&Category;Therapeutics">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Thermodynamic_properties -->
+
+    <skos:Concept rdf:about="&Category;Thermodynamic_properties">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Thermodynamics -->
+
+    <skos:Concept rdf:about="&Category;Thermodynamics">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Thickening_agents -->
+
+    <skos:Concept rdf:about="&Category;Thickening_agents">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Tissue_engineering -->
+
+    <skos:Concept rdf:about="&Category;Tissue_engineering">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Titration -->
+
+    <skos:Concept rdf:about="&Category;Titration">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Unit_operations -->
+
+    <skos:Concept rdf:about="&Category;Unit_operations">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Unit_processes -->
+
+    <skos:Concept rdf:about="&Category;Unit_processes">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Units_of_chemical_measurement -->
+
+    <skos:Concept rdf:about="&Category;Units_of_chemical_measurement">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Water_chemistry -->
+
+    <skos:Concept rdf:about="&Category;Water_chemistry">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <skos:narrower rdf:resource="&Category;Hydrates"/>
+        <skos:narrower rdf:resource="&Category;Water_pollution"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Water_pollution -->
+
+    <skos:Concept rdf:about="&Category;Water_pollution">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:WikiPathways -->
+
+    <skos:Concept rdf:about="&Category;WikiPathways">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Wine_chemistry -->
+
+    <skos:Concept rdf:about="&Category;Wine_chemistry">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:World_War_I_chemical_weapons -->
+
+    <skos:Concept rdf:about="&Category;World_War_I_chemical_weapons">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:X-ray_crystallography -->
+
+    <skos:Concept rdf:about="&Category;X-ray_crystallography">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.2.3.1824) http://owlapi.sourceforge.net -->
+

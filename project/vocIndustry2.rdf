@@ -1,0 +1,1162 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY skos "http://www.w3.org/2004/02/skos/core#" >
+    <!ENTITY Category "http://dbpedia.org/resource/Category:" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY Category2 "http://dbpedia.org/resource/Category:3" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+    <!ENTITY Queen "http://dbpedia.org/resource/Category:Queen&#39;" >
+    <!ENTITY Miners "http://dbpedia.org/resource/Category:Miners&#39;" >
+    <!ENTITY Ministers_of_Economic_Affairs "http://dbpedia.org/resource/Category:Ministers_of_Economic_Affairs," >
+    <!ENTITY Colombian_Ministers_of_Commerce "http://dbpedia.org/resource/Category:Colombian_Ministers_of_Commerce," >
+]>
+
+
+<rdf:RDF xmlns="file:/D:/otrobackup/WS_DBPedia/vocIndustry2.rdf#"
+     xml:base="file:/D:/otrobackup/WS_DBPedia/vocIndustry2.rdf"
+     xmlns:Queen="&Category;Queen&#39;"
+     xmlns:Miners="&Category;Miners&#39;"
+     xmlns:Colombian_Ministers_of_Commerce="&Category;Colombian_Ministers_of_Commerce,"
+     xmlns:Category2="&Category;3"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:Category="http://dbpedia.org/resource/Category:"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+     xmlns:Ministers_of_Economic_Affairs="&Category;Ministers_of_Economic_Affairs,">
+    <owl:Ontology rdf:about="file:/D:/otrobackup/WS_DBPedia/vocIndustry2.rdf">
+        <owl:imports rdf:resource="http://www.w3.org/TR/skos-reference/skos-owl1-dl.rdf"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Datatypes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#narrower -->
+
+    <owl:ObjectProperty rdf:about="&skos;narrower"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#Concept -->
+
+    <owl:Class rdf:about="&skos;Concept"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Abrasive_blasting -->
+
+    <skos:Concept rdf:about="&Category;Abrasive_blasting">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Agricultural_production -->
+
+    <skos:Concept rdf:about="&Category;Agricultural_production">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Anime_industry -->
+
+    <skos:Concept rdf:about="&Category;Anime_industry">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Automotive_industry -->
+
+    <skos:Concept rdf:about="&Category;Automotive_industry">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Bakeries -->
+
+    <skos:Concept rdf:about="&Category;Bakeries">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Brickworks -->
+
+    <skos:Concept rdf:about="&Category;Brickworks">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Chemical_industry -->
+
+    <skos:Concept rdf:about="&Category;Chemical_industry">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Chemical_processes -->
+
+    <skos:Concept rdf:about="&Category;Chemical_processes">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Coatings -->
+
+    <skos:Concept rdf:about="&Category;Coatings">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Combustion_engineering -->
+
+    <skos:Concept rdf:about="&Category;Combustion_engineering">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Commercial_item_transport_and_distribution -->
+
+    <skos:Concept rdf:about="&Category;Commercial_item_transport_and_distribution">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Comminution -->
+
+    <skos:Concept rdf:about="&Category;Comminution">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Computer-aided_design -->
+
+    <skos:Concept rdf:about="&Category;Computer-aided_design">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Computer_industry -->
+
+    <skos:Concept rdf:about="&Category;Computer_industry">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Construction_industry -->
+
+    <skos:Concept rdf:about="&Category;Construction_industry">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Consumer_goods -->
+
+    <skos:Concept rdf:about="&Category;Consumer_goods">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Cosmetics -->
+
+    <skos:Concept rdf:about="&Category;Cosmetics">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Decomposition_methods -->
+
+    <skos:Concept rdf:about="&Category;Decomposition_methods">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Electronics_industry -->
+
+    <skos:Concept rdf:about="&Category;Electronics_industry">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Energy_production -->
+
+    <skos:Concept rdf:about="&Category;Energy_production">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Engineering_statistics -->
+
+    <skos:Concept rdf:about="&Category;Engineering_statistics">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Engineering_vehicles -->
+
+    <skos:Concept rdf:about="&Category;Engineering_vehicles">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Farming_tools -->
+
+    <skos:Concept rdf:about="&Category;Farming_tools">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Film_production -->
+
+    <skos:Concept rdf:about="&Category;Film_production">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Fishing_industry -->
+
+    <skos:Concept rdf:about="&Category;Fishing_industry">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Food_industry -->
+
+    <skos:Concept rdf:about="&Category;Food_industry">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Forklift_truck_manufacturers -->
+
+    <skos:Concept rdf:about="&Category;Forklift_truck_manufacturers">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Fur_trade -->
+
+    <skos:Concept rdf:about="&Category;Fur_trade">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Furnaces -->
+
+    <skos:Concept rdf:about="&Category;Furnaces">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Glass_forming -->
+
+    <skos:Concept rdf:about="&Category;Glass_forming">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Grinding_mills -->
+
+    <skos:Concept rdf:about="&Category;Grinding_mills">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Industrial_Ethernet -->
+
+    <skos:Concept rdf:about="&Category;Industrial_Ethernet">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Industrial_agriculture -->
+
+    <skos:Concept rdf:about="&Category;Industrial_agriculture">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Industrial_buildings -->
+
+    <skos:Concept rdf:about="&Category;Industrial_buildings">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <skos:narrower rdf:resource="&Category;Bakeries"/>
+        <skos:narrower rdf:resource="&Category;Brickworks"/>
+        <skos:narrower rdf:resource="&Category;Grinding_mills"/>
+        <skos:narrower rdf:resource="&Category;Liquefied_natural_gas_plants"/>
+        <skos:narrower rdf:resource="&Category;Metallurgical_facilities"/>
+        <skos:narrower rdf:resource="&Category;Natural_gas_platforms"/>
+        <skos:narrower rdf:resource="&Category;Oil_platforms"/>
+        <skos:narrower rdf:resource="&Category;Oil_refineries"/>
+        <skos:narrower rdf:resource="&Category;Power_stations"/>
+        <skos:narrower rdf:resource="&Category;Pulp_and_paper_mills"/>
+        <skos:narrower rdf:resource="&Category;Shipyards"/>
+        <skos:narrower rdf:resource="&Category;Tanneries"/>
+        <skos:narrower rdf:resource="&Category;Textile_mills"/>
+        <skos:narrower rdf:resource="&Category;Water_treatment_facilities"/>
+        <skos:narrower rdf:resource="&Category;Watermills"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Industrial_classifications -->
+
+    <skos:Concept rdf:about="&Category;Industrial_classifications">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Industrial_composting -->
+
+    <skos:Concept rdf:about="&Category;Industrial_composting">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Industrial_design -->
+
+    <skos:Concept rdf:about="&Category;Industrial_design">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <skos:narrower rdf:resource="&Category;Computer-aided_design"/>
+        <skos:narrower rdf:resource="&Category;Consumer_goods"/>
+        <skos:narrower rdf:resource="&Category;Industrial_designs"/>
+        <skos:narrower rdf:resource="&Category;Product_design"/>
+        <skos:narrower rdf:resource="&Category;Sensory_design"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Industrial_designs -->
+
+    <skos:Concept rdf:about="&Category;Industrial_designs">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Industrial_engineering -->
+
+    <skos:Concept rdf:about="&Category;Industrial_engineering">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <skos:narrower rdf:resource="&Category;Decomposition_methods"/>
+        <skos:narrower rdf:resource="&Category;Engineering_statistics"/>
+        <skos:narrower rdf:resource="&Category;Industrial_engineers"/>
+        <skos:narrower rdf:resource="&Category;Turkish_industrial_engineering_scientists"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Industrial_engineers -->
+
+    <skos:Concept rdf:about="&Category;Industrial_engineers">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Industrial_equipment -->
+
+    <skos:Concept rdf:about="&Category;Industrial_equipment">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <skos:narrower rdf:resource="&Category;Engineering_vehicles"/>
+        <skos:narrower rdf:resource="&Category;Farming_tools"/>
+        <skos:narrower rdf:resource="&Category;Forklift_truck_manufacturers"/>
+        <skos:narrower rdf:resource="&Category;Industrial_Ethernet"/>
+        <skos:narrower rdf:resource="&Category;Industrial_machine_manufacturers"/>
+        <skos:narrower rdf:resource="&Category;Industrial_ovens"/>
+        <skos:narrower rdf:resource="&Category;Industrial_robots"/>
+        <skos:narrower rdf:resource="&Category;Kilns"/>
+        <skos:narrower rdf:resource="&Category;Machine_tools"/>
+        <skos:narrower rdf:resource="&Category;Materials_handling"/>
+        <skos:narrower rdf:resource="&Category;Mining_equipment"/>
+        <skos:narrower rdf:resource="&Category;Packaging_machinery"/>
+        <skos:narrower rdf:resource="&Category;Semiconductor_fabrication_equipment"/>
+        <skos:narrower rdf:resource="&Category;Weaving_equipment"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Industrial_machine_manufacturers -->
+
+    <skos:Concept rdf:about="&Category;Industrial_machine_manufacturers">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Industrial_machinery -->
+
+    <skos:Concept rdf:about="&Category;Industrial_machinery">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Industrial_ovens -->
+
+    <skos:Concept rdf:about="&Category;Industrial_ovens">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Industrial_processes -->
+
+    <skos:Concept rdf:about="&Category;Industrial_processes">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <skos:narrower rdf:resource="&Category;Abrasive_blasting"/>
+        <skos:narrower rdf:resource="&Category;Chemical_processes"/>
+        <skos:narrower rdf:resource="&Category;Coatings"/>
+        <skos:narrower rdf:resource="&Category;Combustion_engineering"/>
+        <skos:narrower rdf:resource="&Category;Comminution"/>
+        <skos:narrower rdf:resource="&Category;Furnaces"/>
+        <skos:narrower rdf:resource="&Category;Glass_forming"/>
+        <skos:narrower rdf:resource="&Category;Industrial_machinery"/>
+        <skos:narrower rdf:resource="&Category;Joining"/>
+        <skos:narrower rdf:resource="&Category;Machining"/>
+        <skos:narrower rdf:resource="&Category;Metallurgical_processes"/>
+        <skos:narrower rdf:resource="&Category;Packaging"/>
+        <skos:narrower rdf:resource="&Category;Papermaking"/>
+        <skos:narrower rdf:resource="&Category;Photographic_processes"/>
+        <skos:narrower rdf:resource="&Category;Plasma_processing"/>
+        <skos:narrower rdf:resource="&Category;Printing_processes"/>
+        <skos:narrower rdf:resource="&Category;Process_chemicals"/>
+        <skos:narrower rdf:resource="&Category;Semiconductor_device_fabrication"/>
+        <skos:narrower rdf:resource="&Category;Shot_peening"/>
+        <skos:narrower rdf:resource="&Category;Synthetic_fuel_technologies"/>
+        <skos:narrower rdf:resource="&Category;Thin_film_deposition"/>
+        <skos:narrower rdf:resource="&Category;Unit_processes"/>
+        <skos:narrower rdf:resource="&Category;Waste_treatment_technology"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Industrial_robots -->
+
+    <skos:Concept rdf:about="&Category;Industrial_robots">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Industries -->
+
+    <skos:Concept rdf:about="&Category;Industries">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <skos:narrower rdf:resource="&Category;Anime_industry"/>
+        <skos:narrower rdf:resource="&Category;Automotive_industry"/>
+        <skos:narrower rdf:resource="&Category;Chemical_industry"/>
+        <skos:narrower rdf:resource="&Category;Commercial_item_transport_and_distribution"/>
+        <skos:narrower rdf:resource="&Category;Computer_industry"/>
+        <skos:narrower rdf:resource="&Category;Construction_industry"/>
+        <skos:narrower rdf:resource="&Category;Cosmetics"/>
+        <skos:narrower rdf:resource="&Category;Electronics_industry"/>
+        <skos:narrower rdf:resource="&Category;Fishing_industry"/>
+        <skos:narrower rdf:resource="&Category;Food_industry"/>
+        <skos:narrower rdf:resource="&Category;Fur_trade"/>
+        <skos:narrower rdf:resource="&Category;Industrial_agriculture"/>
+        <skos:narrower rdf:resource="&Category;Media_industry"/>
+        <skos:narrower rdf:resource="&Category;Military_industry"/>
+        <skos:narrower rdf:resource="&Category;Mining"/>
+        <skos:narrower rdf:resource="&Category;Music_industry"/>
+        <skos:narrower rdf:resource="&Category;Petroleum_economics_and_industry"/>
+        <skos:narrower rdf:resource="&Category;Pharmaceutical_industry"/>
+        <skos:narrower rdf:resource="&Category;Private_spaceflight"/>
+        <skos:narrower rdf:resource="&Category;Publishing"/>
+        <skos:narrower rdf:resource="&Category;Pulp_and_paper_industry"/>
+        <skos:narrower rdf:resource="&Category;Service_industries"/>
+        <skos:narrower rdf:resource="&Category;Shipping"/>
+        <skos:narrower rdf:resource="&Category;Space_industry"/>
+        <skos:narrower rdf:resource="&Category;Steel_industry"/>
+        <skos:narrower rdf:resource="&Category;Textile_industry"/>
+        <skos:narrower rdf:resource="&Category;Timber_industry"/>
+        <skos:narrower rdf:resource="&Category;Toy_industry"/>
+        <skos:narrower rdf:resource="&Category;Trade_unions_by_industry"/>
+        <skos:narrower rdf:resource="&Category;Transport"/>
+        <skos:narrower rdf:resource="&Category;Video_game_industry"/>
+        <skos:narrower rdf:resource="&Category;Water_industry"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Industry -->
+
+    <skos:Concept rdf:about="&Category;Industry">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <rdfs:comment rdf:datatype="&rdf;XMLLiteral">rootCategory</rdfs:comment>
+        <skos:narrower rdf:resource="&Category;Industrial_buildings"/>
+        <skos:narrower rdf:resource="&Category;Industrial_classifications"/>
+        <skos:narrower rdf:resource="&Category;Industrial_composting"/>
+        <skos:narrower rdf:resource="&Category;Industrial_design"/>
+        <skos:narrower rdf:resource="&Category;Industrial_engineering"/>
+        <skos:narrower rdf:resource="&Category;Industrial_equipment"/>
+        <skos:narrower rdf:resource="&Category;Industrial_processes"/>
+        <skos:narrower rdf:resource="&Category;Industries"/>
+        <skos:narrower rdf:resource="&Category;Manufacturing"/>
+        <skos:narrower rdf:resource="&Category;Production_and_manufacturing"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Joining -->
+
+    <skos:Concept rdf:about="&Category;Joining">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Kilns -->
+
+    <skos:Concept rdf:about="&Category;Kilns">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Lean_concepts -->
+
+    <skos:Concept rdf:about="&Category;Lean_concepts">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Liquefied_natural_gas_plants -->
+
+    <skos:Concept rdf:about="&Category;Liquefied_natural_gas_plants">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Machine_tools -->
+
+    <skos:Concept rdf:about="&Category;Machine_tools">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Machining -->
+
+    <skos:Concept rdf:about="&Category;Machining">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Manufacturing -->
+
+    <skos:Concept rdf:about="&Category;Manufacturing">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Materials_handling -->
+
+    <skos:Concept rdf:about="&Category;Materials_handling">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Media_industry -->
+
+    <skos:Concept rdf:about="&Category;Media_industry">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Metallurgical_facilities -->
+
+    <skos:Concept rdf:about="&Category;Metallurgical_facilities">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Metallurgical_processes -->
+
+    <skos:Concept rdf:about="&Category;Metallurgical_processes">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Military_industry -->
+
+    <skos:Concept rdf:about="&Category;Military_industry">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Mining -->
+
+    <skos:Concept rdf:about="&Category;Mining">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Mining_equipment -->
+
+    <skos:Concept rdf:about="&Category;Mining_equipment">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Music_industry -->
+
+    <skos:Concept rdf:about="&Category;Music_industry">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Natural_gas_platforms -->
+
+    <skos:Concept rdf:about="&Category;Natural_gas_platforms">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Nondestructive_testing -->
+
+    <skos:Concept rdf:about="&Category;Nondestructive_testing">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Oil_platforms -->
+
+    <skos:Concept rdf:about="&Category;Oil_platforms">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Oil_refineries -->
+
+    <skos:Concept rdf:about="&Category;Oil_refineries">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Packaging -->
+
+    <skos:Concept rdf:about="&Category;Packaging">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Packaging_machinery -->
+
+    <skos:Concept rdf:about="&Category;Packaging_machinery">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Papermaking -->
+
+    <skos:Concept rdf:about="&Category;Papermaking">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Petroleum_economics_and_industry -->
+
+    <skos:Concept rdf:about="&Category;Petroleum_economics_and_industry">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Pharmaceutical_industry -->
+
+    <skos:Concept rdf:about="&Category;Pharmaceutical_industry">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Photographic_processes -->
+
+    <skos:Concept rdf:about="&Category;Photographic_processes">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Plasma_processing -->
+
+    <skos:Concept rdf:about="&Category;Plasma_processing">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Power_stations -->
+
+    <skos:Concept rdf:about="&Category;Power_stations">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Printing -->
+
+    <skos:Concept rdf:about="&Category;Printing">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Printing_processes -->
+
+    <skos:Concept rdf:about="&Category;Printing_processes">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Private_spaceflight -->
+
+    <skos:Concept rdf:about="&Category;Private_spaceflight">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Process_chemicals -->
+
+    <skos:Concept rdf:about="&Category;Process_chemicals">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Product_design -->
+
+    <skos:Concept rdf:about="&Category;Product_design">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Product_development -->
+
+    <skos:Concept rdf:about="&Category;Product_development">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Product_recalls -->
+
+    <skos:Concept rdf:about="&Category;Product_recalls">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Production_and_manufacturing -->
+
+    <skos:Concept rdf:about="&Category;Production_and_manufacturing">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <skos:narrower rdf:resource="&Category;Agricultural_production"/>
+        <skos:narrower rdf:resource="&Category;Energy_production"/>
+        <skos:narrower rdf:resource="&Category;Film_production"/>
+        <skos:narrower rdf:resource="&Category;Lean_concepts"/>
+        <skos:narrower rdf:resource="&Category;Manufacturing"/>
+        <skos:narrower rdf:resource="&Category;Nondestructive_testing"/>
+        <skos:narrower rdf:resource="&Category;Packaging"/>
+        <skos:narrower rdf:resource="&Category;Printing"/>
+        <skos:narrower rdf:resource="&Category;Product_development"/>
+        <skos:narrower rdf:resource="&Category;Product_recalls"/>
+        <skos:narrower rdf:resource="&Category;Production_economics"/>
+        <skos:narrower rdf:resource="&Category;Prototypes"/>
+        <skos:narrower rdf:resource="&Category;Quality_management"/>
+        <skos:narrower rdf:resource="&Category;Research_and_development"/>
+        <skos:narrower rdf:resource="&Category;Resources"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Production_economics -->
+
+    <skos:Concept rdf:about="&Category;Production_economics">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Prototypes -->
+
+    <skos:Concept rdf:about="&Category;Prototypes">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Publishing -->
+
+    <skos:Concept rdf:about="&Category;Publishing">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Pulp_and_paper_industry -->
+
+    <skos:Concept rdf:about="&Category;Pulp_and_paper_industry">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Pulp_and_paper_mills -->
+
+    <skos:Concept rdf:about="&Category;Pulp_and_paper_mills">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Quality_management -->
+
+    <skos:Concept rdf:about="&Category;Quality_management">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Research_and_development -->
+
+    <skos:Concept rdf:about="&Category;Research_and_development">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Resources -->
+
+    <skos:Concept rdf:about="&Category;Resources">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Semiconductor_device_fabrication -->
+
+    <skos:Concept rdf:about="&Category;Semiconductor_device_fabrication">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Semiconductor_fabrication_equipment -->
+
+    <skos:Concept rdf:about="&Category;Semiconductor_fabrication_equipment">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Sensory_design -->
+
+    <skos:Concept rdf:about="&Category;Sensory_design">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Service_industries -->
+
+    <skos:Concept rdf:about="&Category;Service_industries">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Shipping -->
+
+    <skos:Concept rdf:about="&Category;Shipping">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Shipyards -->
+
+    <skos:Concept rdf:about="&Category;Shipyards">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Shot_peening -->
+
+    <skos:Concept rdf:about="&Category;Shot_peening">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Space_industry -->
+
+    <skos:Concept rdf:about="&Category;Space_industry">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Steel_industry -->
+
+    <skos:Concept rdf:about="&Category;Steel_industry">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Synthetic_fuel_technologies -->
+
+    <skos:Concept rdf:about="&Category;Synthetic_fuel_technologies">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Tanneries -->
+
+    <skos:Concept rdf:about="&Category;Tanneries">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Textile_industry -->
+
+    <skos:Concept rdf:about="&Category;Textile_industry">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Textile_mills -->
+
+    <skos:Concept rdf:about="&Category;Textile_mills">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Thin_film_deposition -->
+
+    <skos:Concept rdf:about="&Category;Thin_film_deposition">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Timber_industry -->
+
+    <skos:Concept rdf:about="&Category;Timber_industry">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Toy_industry -->
+
+    <skos:Concept rdf:about="&Category;Toy_industry">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Trade_unions_by_industry -->
+
+    <skos:Concept rdf:about="&Category;Trade_unions_by_industry">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Transport -->
+
+    <skos:Concept rdf:about="&Category;Transport">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Turkish_industrial_engineering_scientists -->
+
+    <skos:Concept rdf:about="&Category;Turkish_industrial_engineering_scientists">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Unit_processes -->
+
+    <skos:Concept rdf:about="&Category;Unit_processes">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Video_game_industry -->
+
+    <skos:Concept rdf:about="&Category;Video_game_industry">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Waste_treatment_technology -->
+
+    <skos:Concept rdf:about="&Category;Waste_treatment_technology">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Water_industry -->
+
+    <skos:Concept rdf:about="&Category;Water_industry">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Water_treatment_facilities -->
+
+    <skos:Concept rdf:about="&Category;Water_treatment_facilities">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Watermills -->
+
+    <skos:Concept rdf:about="&Category;Watermills">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://dbpedia.org/resource/Category:Weaving_equipment -->
+
+    <skos:Concept rdf:about="&Category;Weaving_equipment">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </skos:Concept>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.2.3.1824) http://owlapi.sourceforge.net -->
+
