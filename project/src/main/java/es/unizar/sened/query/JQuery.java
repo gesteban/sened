@@ -34,6 +34,7 @@ public class JQuery {
 
 	public JResult doQuery() throws ResultSetException {
 		Log.i(TAG, "<doQuery> Realizando consulta a DBPedia...");
+		Log.d(TAG, "\n" + this.toString());
 		ResultSet resultSet = qexec.execSelect();
 		JResult rs = new JResult(resultSet);
 		qexec.close();
