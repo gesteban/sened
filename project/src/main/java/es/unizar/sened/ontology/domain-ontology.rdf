@@ -1,0 +1,263 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY s "http://schema.org/" >
+    <!ENTITY dcterms "http://purl.org/dc/terms/" >
+    <!ENTITY foaf "http://xmlns.com/foaf/0.1/" >
+    <!ENTITY sened "http://sened.unizar.es/def#" >
+    <!ENTITY dbo "http://dbpedia.org/ontology/" >
+    <!ENTITY dbp "http://dbpedia.org/property/" >
+    <!ENTITY yago "http://dbpedia.org/class/yago/" >
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY skos "http://www.w3.org/2004/02/skos/core#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+]>
+
+
+<rdf:RDF xmlns="http://sened.unizar.es/def#"
+     xml:base="http://sened.unizar.es/def"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:yago="http://dbpedia.org/class/yago/"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:dbo="http://dbpedia.org/ontology/"
+     xmlns:s="http://schema.org/"
+     xmlns:dbp="http://dbpedia.org/property/"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:dcterms="http://purl.org/dc/terms/"
+     xmlns:foaf="http://xmlns.com/foaf/0.1/"
+     xmlns:sened="http://sened.unizar.es/def#">
+    <owl:Ontology rdf:about="http://sened.unizar.es/def#">
+        <taxonomyDefinedBy>categories</taxonomyDefinedBy>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://sened.unizar.es/def#dataRetrievable -->
+
+    <owl:AnnotationProperty rdf:about="&sened;dataRetrievable"/>
+    
+
+
+    <!-- http://sened.unizar.es/def#kwdSearchable -->
+
+    <owl:AnnotationProperty rdf:about="&sened;kwdSearchable"/>
+    
+
+
+    <!-- http://sened.unizar.es/def#queryLanguage -->
+
+    <owl:AnnotationProperty rdf:about="&sened;queryLanguage"/>
+    
+
+
+    <!-- http://sened.unizar.es/def#taxonomyDefinedBy -->
+
+    <owl:AnnotationProperty rdf:about="&sened;taxonomyDefinedBy"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://dbpedia.org/ontology/knownFor -->
+
+    <owl:ObjectProperty rdf:about="&dbo;knownFor">
+        <rdfs:domain rdf:resource="&dbo;Person"/>
+        <rdfs:range rdf:resource="&sened;Articulo"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://dbpedia.org/property/workplaces -->
+
+    <owl:ObjectProperty rdf:about="&dbp;workplaces">
+        <rdfs:range rdf:resource="&yago;Institute108407330"/>
+        <rdfs:domain rdf:resource="&dbo;Person"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/dc/terms/subject -->
+
+    <owl:ObjectProperty rdf:about="&dcterms;subject">
+        <rdfs:domain rdf:resource="&sened;Articulo"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#broader -->
+
+    <owl:ObjectProperty rdf:about="&skos;broader">
+        <rdf:type rdf:resource="&owl;TransitiveProperty"/>
+        <owl:inverseOf rdf:resource="&skos;narrower"/>
+        <rdfs:subPropertyOf rdf:resource="&skos;semanticRelation"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#narrower -->
+
+    <owl:ObjectProperty rdf:about="&skos;narrower">
+        <rdf:type rdf:resource="&owl;TransitiveProperty"/>
+        <rdfs:subPropertyOf rdf:resource="&skos;semanticRelation"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#semanticRelation -->
+
+    <owl:ObjectProperty rdf:about="&skos;semanticRelation">
+        <rdfs:range rdf:resource="&skos;Concept"/>
+        <rdfs:domain rdf:resource="&skos;Concept"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/primaryTopic -->
+
+    <owl:ObjectProperty rdf:about="&foaf;primaryTopic">
+        <dataRetrievable>yes</dataRetrievable>
+        <rdfs:range rdf:resource="&sened;Articulo"/>
+        <rdfs:domain rdf:resource="&foaf;Document"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://dbpedia.org/ontology/abstract -->
+
+    <owl:DatatypeProperty rdf:about="&dbo;abstract">
+        <queryLanguage rdf:datatype="&xsd;language">en</queryLanguage>
+        <dataRetrievable>yes</dataRetrievable>
+        <kwdSearchable>yes</kwdSearchable>
+        <rdfs:domain rdf:resource="&yago;Institute108407330"/>
+        <rdfs:domain rdf:resource="&dbo;Person"/>
+        <rdfs:domain rdf:resource="&sened;Articulo"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.w3.org/2000/01/rdf-schema#label -->
+
+    <owl:DatatypeProperty rdf:about="&rdfs;label">
+        <rdfs:domain rdf:resource="&yago;Institute108407330"/>
+        <rdfs:domain rdf:resource="&dbo;Person"/>
+        <rdfs:domain rdf:resource="&sened;Articulo"/>
+        <rdfs:domain rdf:resource="&skos;Concept"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://dbpedia.org/class/yago/Institute108407330 -->
+
+    <owl:Class rdf:about="&yago;Institute108407330">
+        <rdfs:comment xml:lang="en">Institute</rdfs:comment>
+        <rdfs:comment xml:lang="es">Instituto</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://dbpedia.org/ontology/Person -->
+
+    <owl:Class rdf:about="&dbo;Person">
+        <rdfs:comment xml:lang="en">Person</rdfs:comment>
+        <rdfs:comment xml:lang="es">Persona</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://sened.unizar.es/def#Articulo -->
+
+    <owl:Class rdf:about="&sened;Articulo">
+        <rdfs:label xml:lang="en">Article</rdfs:label>
+        <rdfs:label xml:lang="es">Articulo</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#Concept -->
+
+    <owl:Class rdf:about="&skos;Concept">
+        <rdfs:label xml:lang="en">Category</rdfs:label>
+        <rdfs:label xml:lang="es">Categoria</rdfs:label>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&skos;semanticRelation"/>
+                <owl:allValuesFrom rdf:resource="&skos;Concept"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/Document -->
+
+    <owl:Class rdf:about="&foaf;Document">
+        <rdfs:subClassOf rdf:resource="&owl;Thing"/>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotations
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description rdf:about="&rdfs;label">
+        <queryLanguage rdf:datatype="&xsd;language">en</queryLanguage>
+        <dataRetrievable>yes</dataRetrievable>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.5.1) http://owlapi.sourceforge.net -->
+
