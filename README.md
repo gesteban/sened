@@ -1,2 +1,2 @@
 # sened
-Retrieve information from DBpedia
+System to retrieve information from the DBpedia.
