@@ -1,4 +1,4 @@
-package es.unizar.sened.ontology;
+package es.unizar.sened.model;
 
 import java.util.HashMap;
 import java.util.HashSet;
@@ -11,11 +11,11 @@ import com.google.common.base.MoreObjects.ToStringHelper;
 /**
  * @author gesteban@unizar.es
  */
-public class Article extends Resource {
+public class SResource extends Resource {
 
 	private Map<String, Set<String>> propertyMap;
 
-	public Article(String stringURI) {
+	public SResource(String stringURI) {
 		super(stringURI);
 		propertyMap = new HashMap<String, Set<String>>();
 	}
@@ -42,11 +42,13 @@ public class Article extends Resource {
 
 	@Override
 	public String getName() {
-		return getURI().toString().substring(getURI().toString().lastIndexOf("/"));
+		return getURI().toString().substring(
+				getURI().toString().lastIndexOf("/"));
 	}
 
 	public String toString() {
-		ToStringHelper stringHelper = MoreObjects.toStringHelper(Article.class);
+		ToStringHelper stringHelper = MoreObjects
+				.toStringHelper(SResource.class);
 		for (String key : propertyMap.keySet()) {
 			stringHelper.add(key, propertyMap.get(key));
 		}

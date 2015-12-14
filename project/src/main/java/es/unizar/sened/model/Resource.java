@@ -1,4 +1,4 @@
-package es.unizar.sened.ontology;
+package es.unizar.sened.model;
 
 import java.net.URI;
 

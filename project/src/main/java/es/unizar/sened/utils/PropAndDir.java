@@ -1,23 +1,23 @@
 package es.unizar.sened.utils;
 
-import org.semanticweb.owlapi.model.OWLProperty;
+import org.apache.jena.ontology.OntProperty;
 
 import com.google.common.base.MoreObjects;
 
 public class PropAndDir {
 
-	public OWLProperty prop;
+	public OntProperty prop;
 	public boolean straight;
 
-	// TODO what about direction of property?
-	public PropAndDir(OWLProperty prop, boolean straight) {
+	public PropAndDir(OntProperty prop, boolean straight) {
 		this.prop = prop;
 		this.straight = straight;
 	}
 
 	@Override
 	public String toString() {
-		return MoreObjects.toStringHelper(PropAndDir.class).add("prop", prop.getIRI().toString())
-				.add("straight", straight).toString();
+		return MoreObjects.toStringHelper(OntProperty.class)
+				.add("prop", prop.getURI()).add("straight", straight)
+				.toString();
 	}
 }

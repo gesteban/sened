@@ -5,24 +5,20 @@ import org.apache.jena.query.QueryExecution;
 import org.apache.jena.query.QueryExecutionFactory;
 import org.apache.jena.query.QueryFactory;
 import org.apache.jena.query.ResultSet;
+import org.apache.jena.rdf.model.Model;
 import org.apache.jena.sparql.resultset.ResultSetException;
-
-import es.unizar.sened.utils.Log;
 
 /**
  * @author gesteban@unizar.es
  */
-public class JQuery {
+public class SQuery {
 
-	public static final String TAG = JQuery.class.getSimpleName();
+	public static final String TAG = SQuery.class.getSimpleName();
 
 	private Query query;
 	private QueryExecution qexec;
 
-	protected JQuery(String queryString, JQueryFactoryConfig config) {
-		for (String key : config.getDatasetMap().keySet()) {
-			queryString = queryString.replace(key, config.getDatasetMap().get(key));
-		}
+	protected SQuery(String queryString, SQueryFactoryConfig config) {
 		this.query = QueryFactory.create(queryString);
 		this.qexec = QueryExecutionFactory.sparqlService(config.getEndpoint(), query);
 	}
@@ -32,12 +28,18 @@ public class JQuery {
 		return query.toString();
 	}
 
-	public JResult doQuery() throws ResultSetException {
-		Log.i(TAG, "<doQuery> Realizando consulta a DBPedia...");
-		Log.d(TAG, "\n" + this.toString());
+	public SQueryResult doSelect() throws ResultSetException {
 		ResultSet resultSet = qexec.execSelect();
-		JResult rs = new JResult(resultSet);
+		SQueryResult rs = new SQueryResult(resultSet);
 		qexec.close();
 		return rs;
 	}
+	
+	public Model doDescribe() throws ResultSetException {
+		Model resultModel = qexec.execDescribe();
+		qexec.close();
+		return resultModel;
+	}
+	
+	
 }

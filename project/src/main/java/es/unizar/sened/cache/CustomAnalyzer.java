@@ -1,4 +1,4 @@
-package es.unizar.sened.lucene;
+package es.unizar.sened.cache;
 
 import java.io.IOException;
 

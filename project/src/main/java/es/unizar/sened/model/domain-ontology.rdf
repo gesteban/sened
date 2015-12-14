@@ -32,6 +32,7 @@
      xmlns:foaf="http://xmlns.com/foaf/0.1/"
      xmlns:sened="http://sened.unizar.es/def#">
     <owl:Ontology rdf:about="http://sened.unizar.es/def#">
+        <queryLanguage>en</queryLanguage>
         <taxonomyDefinedBy>categories</taxonomyDefinedBy>
     </owl:Ontology>
     
@@ -72,6 +73,12 @@
     
 
 
+    <!-- http://www.w3.org/2000/01/rdf-schema#label -->
+
+    <owl:AnnotationProperty rdf:about="&rdfs;label"/>
+    
+
+
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
@@ -87,7 +94,7 @@
 
     <owl:ObjectProperty rdf:about="&dbo;knownFor">
         <rdfs:domain rdf:resource="&dbo;Person"/>
-        <rdfs:range rdf:resource="&sened;Articulo"/>
+        <rdfs:range rdf:resource="&sened;Void"/>
     </owl:ObjectProperty>
     
 
@@ -104,7 +111,7 @@
     <!-- http://purl.org/dc/terms/subject -->
 
     <owl:ObjectProperty rdf:about="&dcterms;subject">
-        <rdfs:domain rdf:resource="&sened;Articulo"/>
+        <rdfs:domain rdf:resource="&sened;Void"/>
     </owl:ObjectProperty>
     
 
@@ -141,7 +148,7 @@
 
     <owl:ObjectProperty rdf:about="&foaf;primaryTopic">
         <dataRetrievable>yes</dataRetrievable>
-        <rdfs:range rdf:resource="&sened;Articulo"/>
+        <rdfs:range rdf:resource="&sened;Void"/>
         <rdfs:domain rdf:resource="&foaf;Document"/>
     </owl:ObjectProperty>
     
@@ -166,7 +173,7 @@
         <kwdSearchable>yes</kwdSearchable>
         <rdfs:domain rdf:resource="&yago;Institute108407330"/>
         <rdfs:domain rdf:resource="&dbo;Person"/>
-        <rdfs:domain rdf:resource="&sened;Articulo"/>
+        <rdfs:domain rdf:resource="&sened;Void"/>
     </owl:DatatypeProperty>
     
 
@@ -174,10 +181,11 @@
     <!-- http://www.w3.org/2000/01/rdf-schema#label -->
 
     <owl:DatatypeProperty rdf:about="&rdfs;label">
+		    <queryLanguage rdf:datatype="&xsd;language">en</queryLanguage>
+		    <dataRetrievable>yes</dataRetrievable>
         <rdfs:domain rdf:resource="&yago;Institute108407330"/>
         <rdfs:domain rdf:resource="&dbo;Person"/>
-        <rdfs:domain rdf:resource="&sened;Articulo"/>
-        <rdfs:domain rdf:resource="&skos;Concept"/>
+        <rdfs:domain rdf:resource="&sened;Void"/>
     </owl:DatatypeProperty>
     
 
@@ -211,11 +219,10 @@
     
 
 
-    <!-- http://sened.unizar.es/def#Articulo -->
+    <!-- http://sened.unizar.es/def#Void -->
 
-    <owl:Class rdf:about="&sened;Articulo">
-        <rdfs:label xml:lang="en">Article</rdfs:label>
-        <rdfs:label xml:lang="es">Articulo</rdfs:label>
+    <owl:Class rdf:about="&sened;Void">
+        <rdfs:comment xml:lang="en">Special class fitting all the DBpedia resources that do not have rdf:type defined. We know these kind of resources as &quot;Articles&quot;.</rdfs:comment>
     </owl:Class>
     
 
@@ -225,12 +232,6 @@
     <owl:Class rdf:about="&skos;Concept">
         <rdfs:label xml:lang="en">Category</rdfs:label>
         <rdfs:label xml:lang="es">Categoria</rdfs:label>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&skos;semanticRelation"/>
-                <owl:allValuesFrom rdf:resource="&skos;Concept"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
     </owl:Class>
     
 

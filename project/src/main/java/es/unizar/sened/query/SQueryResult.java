@@ -10,18 +10,18 @@ import org.apache.jena.query.QuerySolution;
 import org.apache.jena.query.ResultSet;
 import org.apache.jena.query.ResultSetFormatter;
 
-import es.unizar.sened.ontology.Article;
-import es.unizar.sened.ontology.SKOSCategory;
+import es.unizar.sened.model.SKOSCategory;
+import es.unizar.sened.model.SResource;
 
 /**
  * @author gesteban@unizar.es
  */
-public class JResult {
+public class SQueryResult {
 
 	private List<String> varNames;
 	private List<QuerySolution> results;
 
-	protected JResult(ResultSet rs) {
+	protected SQueryResult(ResultSet rs) {
 		this.varNames = rs.getResultVars();
 		this.results = ResultSetFormatter.toList(rs);
 	}
@@ -34,11 +34,11 @@ public class JResult {
 		return varNames.size();
 	}
 
-	public Set<Article> asArticleSet() throws Exception {
-		Set<Article> articleSet = new HashSet<Article>();
+	public Set<SResource> asArticleSet() throws Exception {
+		Set<SResource> articleSet = new HashSet<SResource>();
 		for (QuerySolution qs : results) {
 			// Creamos el articulo a partir del resultado
-			Article article = new Article(URLDecoder.decode(qs.get("uri").toString(), "UTF-8"));
+			SResource article = new SResource(URLDecoder.decode(qs.get("uri").toString(), "UTF-8"));
 			for (String varName : varNames) {
 				// article.add(varName, URLDecoder.decode(qs.get(varName).toString(), "UTF-8"));
 				article.add(varName, new String(qs.get(varName).toString().getBytes(), "UTF-8"));
