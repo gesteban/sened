@@ -6,57 +6,58 @@ import es.unizar.sened.utils.SerializationUtils;
 
 public class TestMe {
 
-	public static void main(String[] args) throws Exception {
-		Log.i("test", "start");
+    static String test1_1[] = { "cat",
+            "http://dbpedia.org/resource/Category:Mechanics" };
+    static String test1_2[] = { "web build",
+            "http://dbpedia.org/resource/Category:Mechanics" };
+    static String test1_3[] = { "japan process",
+            "http://dbpedia.org/resource/Category:Industry" };
+    static String test1_4[] = { "market reaction",
+            "http://dbpedia.org/resource/Category:Industry" };
+    static String test1_5[] = { "flame extinguisher",
+            "http://dbpedia.org/resource/Category:Chemistry" };
+    static String test1_6[] = { "water transfer",
+            "http://dbpedia.org/resource/Category:Chemistry" };
+    static String test1_7[] = { "bubble size",
+            "http://dbpedia.org/resource/Category:Chemistry" };
 
-		// Keyword search by CATEGORY taxonomy (WORKING)
-		// TODO check language response
-		testSearchByKeywordUsingCategoryTaxonomy();
+    static String test2_1[] = { "senegal",
+            "http://dbpedia.org/ontology/Country" };
 
-		// Keyword search by CLASS taxonomy (NOT WORKING)
-		// testSearchByKeywordUsingClassTaxonomy();
+    static String test3_1 = "http://dbpedia.org/resource/Albert_Einstein";
+    static String test3_2 = "http://dbpedia.org/resource/Falling_cat_problem";
 
-		// Related search (NOT WORKING)
-		// testSearchByRelated();
+    public static void main(String[] args) throws Exception {
+        Log.i("test", "start");
 
-		// meh
-		// ServiceSingleton.getInstance().searchRelated(
-		// "http://dbpedia.org/resource/Falling_cat_problem");
+        // Keyword search by CATEGORY taxonomy (WORKING)
+        // testSearchByKeyword_CategoryTaxonomy(test1_1);
 
-		Log.i("test", "done");
-	}
+        // Keyword search by CLASS taxonomy (NOT WORKING)
+        // testSearchByKeyword_ClassTaxonomy(test2_1);
 
-	public static void testSearchByKeywordUsingCategoryTaxonomy()
-			throws Exception {
-		Log.i("test", SerializationUtils.toString(Sened.getInstance()
-				.searchKeyword("cat",
-						"http://dbpedia.org/resource/Category:Mechanics")));
-		// ServiceSingleton.getInstance()
-		// .searchKeywords("fish movement",
-		// "http://dbpedia.org/resource/Category:Mechanics");
-		// System.out.println(ServiceSingleton.getInstance().searchKeywords("web build",
-		// "http://dbpedia.org/resource/Category:Industry"));
-		// System.out.println(ServiceSingleton.getInstance().searchKeywords("japan process",
-		// "http://dbpedia.org/resource/Category:Industry"));
-		// System.out.println(ServiceSingleton.getInstance().searchKeywords("market reaction",
-		// "http://dbpedia.org/resource/Category:Chemistry"));
-		// System.out.println(ServiceSingleton.getInstance().searchKeywords("flame extinguisher",
-		// "http://dbpedia.org/resource/Category:Chemistry"));
-		// System.out.println(ServiceSingleton.getInstance().searchKeywords("water transfer",
-		// "http://dbpedia.org/resource/Category:Chemistry"));
-		// System.out.println(ServiceSingleton.getInstance().searchKeywords("bubble size",
-		// "http://dbpedia.org/resource/Category:Chemistry"));
-	}
+        // Related search (NOT WORKING)
+        testSearchByRelated(test3_1);
 
-	public static void testSearchByKeywordUsingClassTaxonomy() throws Exception {
-		Sened.getInstance().searchKeyword("senegal",
-				"http://dbpedia.org/ontology/Country");
-	}
+        Log.i("test", "done");
+    }
 
-	public static void testSearchByRelated() throws Exception {
-		// ServiceSingleton.getInstance().searchRelated("http://dbpedia.org/resource/Albert_Einstein");
-		Sened.getInstance().searchRelated(
-				"http://dbpedia.org/resource/Falling_cat_problem");
-	}
+    public static void testSearchByKeyword_CategoryTaxonomy(
+            String[] keywordsAndCategory) throws Exception {
+        Log.i("test",
+                "\n" + SerializationUtils.toString(Sened.getInstance()
+                        .searchKeyword(keywordsAndCategory[0],
+                                keywordsAndCategory[1])));
+    }
+
+    public static void testSearchByKeyword_ClassTaxonomy(
+            String[] keywordsAndClass) throws Exception {
+        Sened.getInstance().searchKeyword(keywordsAndClass[0],
+                keywordsAndClass[1]);
+    }
+
+    public static void testSearchByRelated(String resource) throws Exception {
+        Sened.getInstance().searchRelated(resource);
+    }
 
 }
