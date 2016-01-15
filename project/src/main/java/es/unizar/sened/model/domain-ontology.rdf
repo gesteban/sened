@@ -75,7 +75,11 @@
 
     <!-- http://www.w3.org/2000/01/rdf-schema#label -->
 
-    <owl:AnnotationProperty rdf:about="&rdfs;label"/>
+    <owl:AnnotationProperty rdf:about="&rdfs;label">
+        <rdfs:domain rdf:resource="&yago;Institute108407330"/>
+        <rdfs:domain rdf:resource="&dbo;Person"/>
+        <rdfs:domain rdf:resource="&sened;Void"/>
+    </owl:AnnotationProperty>
     
 
 
@@ -171,22 +175,22 @@
         <queryLanguage rdf:datatype="&xsd;language">en</queryLanguage>
         <dataRetrievable>yes</dataRetrievable>
         <kwdSearchable>yes</kwdSearchable>
-        <rdfs:domain rdf:resource="&yago;Institute108407330"/>
-        <rdfs:domain rdf:resource="&dbo;Person"/>
-        <rdfs:domain rdf:resource="&sened;Void"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&yago;Institute108407330"/>
+                    <rdf:Description rdf:about="&dbo;Person"/>
+                    <rdf:Description rdf:about="&sened;Void"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
     </owl:DatatypeProperty>
     
 
 
     <!-- http://www.w3.org/2000/01/rdf-schema#label -->
 
-    <owl:DatatypeProperty rdf:about="&rdfs;label">
-		    <queryLanguage rdf:datatype="&xsd;language">en</queryLanguage>
-		    <dataRetrievable>yes</dataRetrievable>
-        <rdfs:domain rdf:resource="&yago;Institute108407330"/>
-        <rdfs:domain rdf:resource="&dbo;Person"/>
-        <rdfs:domain rdf:resource="&sened;Void"/>
-    </owl:DatatypeProperty>
+    <owl:DatatypeProperty rdf:about="&rdfs;label"/>
     
 
 

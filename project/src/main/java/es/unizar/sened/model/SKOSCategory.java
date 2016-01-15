@@ -1,5 +1,6 @@
 package es.unizar.sened.model;
 
+import java.net.URI;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -16,102 +17,128 @@ import es.unizar.sened.utils.Log;
  * @deprecated
  * @author gesteban@unizar.es
  */
-public class SKOSCategory extends Resource {
+public class SKOSCategory {
 
-    public static final String TAG = SKOSCategory.class.getSimpleName();
-    public static final String PREFIX = "http://dbpedia.org/resource/Category:";
+  protected final URI URI;
+  protected final String uriString;
 
-    private Set<SKOSCategory> subCategories;
+  public SKOSCategory(String stringURI) {
+    this.uriString = stringURI;
+    this.URI = java.net.URI.create(stringURI.replace(" ", ","));
+    subCategories = new HashSet<SKOSCategory>();
+  }
 
-    public SKOSCategory(String URI) {
-        super(URI);
-        subCategories = new HashSet<SKOSCategory>();
+  public SKOSCategory(URI URI) {
+    this.URI = URI;
+    this.uriString = URI.toASCIIString();
+  }
+
+  public String getURI() {
+    return uriString;
+  }
+
+  @Override
+  public boolean equals(Object obj) {
+    if (obj == null) {
+      return false;
     }
-
-    public Set<SKOSCategory> getSubCategories() {
-        return subCategories;
+    if (getClass() != obj.getClass()) {
+      return false;
     }
-
-    @Override
-    public String getName() {
-        return getURI().toString().replace(PREFIX, "");
+    final SKOSCategory other = (SKOSCategory) obj;
+    if ((this.uriString == null) ? (other.uriString != null) : !this.uriString.equals(other.uriString)) {
+      return false;
     }
+    return true;
+  }
 
-    public void addSubCategory(SKOSCategory cat) {
-        if (!subCategories.contains(cat))
-            subCategories.add(cat);
-    }
+  @Override
+  public int hashCode() {
+    int hash = 3;
+    hash = 47 * hash + (this.uriString != null ? this.uriString.hashCode() : 0);
+    return hash;
+  }
 
-    static public Set<SKOSCategory> visited = new HashSet<SKOSCategory>();
+  public static final String TAG = SKOSCategory.class.getSimpleName();
+  public static final String PREFIX = "http://dbpedia.org/resource/Category:";
 
-    /**
-     * Método para explorar a partir de la DBpedia todas las subcategorias de
-     * ésta categoría recursivamente hasta un nivel de profundidad dado.
-     * 
-     * @param deep
-     *            Profundidad de la búsqueda.<br>
-     *            Se recomienda que éste valor no supere los 6 grados.
-     * @param visited
-     *            Conjunto de categorías ya visitadas.
-     *            <p>
-     *            Este parámetro se usa para no repetir búsquedas ya hechas
-     *            sobre la DBPedia, sin embargo, nótese que puede usarse como
-     *            filtro para determinadas categorías, si se añade la categoría
-     *            [Black_holes] por ejemplo, al encontrar tal categoría el
-     *            buscador pensará que ya está incluída en los resultados, por
-     *            lo que tal acción funcionará como filtro.
-     * @param qf
-     *            JQueryFactory que se usará para construir las JQuery que
-     *            realizarán la exploración
-     */
-    // TODO move this method out of here (no searching in this class) || remove
-    // it
-    public void explore(int deep, SQueryFactory qf,
-            Set<String> uriStringFilter) {
-        if (deep != 0) {
-            if (visited.contains(this))
-                Log.d(TAG, "<:exploreImproved> Categoría [" + this.getName()
-                        + "] repetida");
-            else {
-                // Consultamos a la DBPedia y creamos una lista de categorias
-                Log.d(TAG, "<exploreImproved> Buscando subcategorias de ["
-                        + this.getName() + "]");
-                SQuery query = qf.getSubCategoryQuery(uriString);
-                SQueryResult res = query.doSelect();
-                Set<SKOSCategory> subCategorySet = res.asCategorySet();
-                // Marcamos la categoría como visitada
-                visited.add(this);
+  private Set<SKOSCategory> subCategories;
 
-                // Las añadimos a la categoría actual como subcategorías de ésta
-                // siempre y cuando no esten presentes en alguno de los filtros
-                for (SKOSCategory newCategory : subCategorySet) {
-                    if (!visited.contains(newCategory)) {
-                        boolean addNewCategory = true;
-                        for (String filterString : uriStringFilter) {
-                            if (newCategory.getURI().toLowerCase()
-                                    .contains(filterString.toLowerCase())) {
-                                addNewCategory = false;
-                                break;
-                            }
-                        }
-                        if (addNewCategory) {
-                            this.subCategories.add(newCategory);
-                        }
-                    }
-                }
-                // this.subCategories.addAll(subCategorySet);
-                // Ahora exploramos con 1 nivel de profundidad menos todas las
-                // subcategorías encontradas
-                for (SKOSCategory subCat : subCategories)
-                    subCat.explore(deep - 1, qf, uriStringFilter);
+  public Set<SKOSCategory> getSubCategories() {
+    return subCategories;
+  }
+
+  public String getName() {
+    return getURI().toString().replace(PREFIX, "");
+  }
+
+  public void addSubCategory(SKOSCategory cat) {
+    if (!subCategories.contains(cat))
+      subCategories.add(cat);
+  }
+
+  static public Set<SKOSCategory> visited = new HashSet<SKOSCategory>();
+
+  /**
+   * Método para explorar a partir de la DBpedia todas las subcategorias de ésta categoría recursivamente hasta un nivel
+   * de profundidad dado.
+   * 
+   * @param deep
+   *          Profundidad de la búsqueda.<br>
+   *          Se recomienda que éste valor no supere los 6 grados.
+   * @param visited
+   *          Conjunto de categorías ya visitadas.
+   *          <p>
+   *          Este parámetro se usa para no repetir búsquedas ya hechas sobre la DBPedia, sin embargo, nótese que puede
+   *          usarse como filtro para determinadas categorías, si se añade la categoría [Black_holes] por ejemplo, al
+   *          encontrar tal categoría el buscador pensará que ya está incluída en los resultados, por lo que tal acción
+   *          funcionará como filtro.
+   * @param qf
+   *          JQueryFactory que se usará para construir las JQuery que realizarán la exploración
+   */
+  // TODO move this method out of here (no searching in this class) || remove
+  // it
+  public void explore(int deep, SQueryFactory qf, Set<String> uriStringFilter) {
+    if (deep != 0) {
+      if (visited.contains(this))
+        Log.d(TAG, "<:exploreImproved> Categoría [" + this.getName() + "] repetida");
+      else {
+        // Consultamos a la DBPedia y creamos una lista de categorias
+        Log.d(TAG, "<exploreImproved> Buscando subcategorias de [" + this.getName() + "]");
+        SQuery query = qf.getSubCategoryQuery(uriString);
+        SQueryResult res = query.doSelect();
+        Set<SKOSCategory> subCategorySet = res.asCategorySet();
+        // Marcamos la categoría como visitada
+        visited.add(this);
+
+        // Las añadimos a la categoría actual como subcategorías de ésta
+        // siempre y cuando no esten presentes en alguno de los filtros
+        for (SKOSCategory newCategory : subCategorySet) {
+          if (!visited.contains(newCategory)) {
+            boolean addNewCategory = true;
+            for (String filterString : uriStringFilter) {
+              if (newCategory.getURI().toLowerCase().contains(filterString.toLowerCase())) {
+                addNewCategory = false;
+                break;
+              }
             }
+            if (addNewCategory) {
+              this.subCategories.add(newCategory);
+            }
+          }
         }
+        // this.subCategories.addAll(subCategorySet);
+        // Ahora exploramos con 1 nivel de profundidad menos todas las
+        // subcategorías encontradas
+        for (SKOSCategory subCat : subCategories)
+          subCat.explore(deep - 1, qf, uriStringFilter);
+      }
     }
+  }
 
-    @Override
-    public String toString() {
-        return MoreObjects.toStringHelper(SKOSCategory.class)
-                .add("URI", this.uriString).toString();
-    }
+  @Override
+  public String toString() {
+    return MoreObjects.toStringHelper(SKOSCategory.class).add("URI", this.uriString).toString();
+  }
 
 }

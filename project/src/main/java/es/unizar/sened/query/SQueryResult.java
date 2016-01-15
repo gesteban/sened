@@ -18,75 +18,75 @@ import es.unizar.sened.model.SResource;
  */
 public class SQueryResult {
 
-	private List<String> varNames;
-	private List<QuerySolution> results;
+  private List<String> varNames;
+  private List<QuerySolution> results;
 
-	protected SQueryResult(ResultSet rs) {
-		this.varNames = rs.getResultVars();
-		this.results = ResultSetFormatter.toList(rs);
-	}
+  protected SQueryResult(ResultSet rs) {
+    this.varNames = rs.getResultVars();
+    this.results = ResultSetFormatter.toList(rs);
+  }
 
-	public int getResultSize() {
-		return results.size();
-	}
+  public int getResultSize() {
+    return results.size();
+  }
 
-	public int getColumnCount() {
-		return varNames.size();
-	}
+  public int getColumnCount() {
+    return varNames.size();
+  }
 
-	public Set<SResource> asArticleSet() throws Exception {
-		Set<SResource> articleSet = new HashSet<SResource>();
-		for (QuerySolution qs : results) {
-			// Creamos el articulo a partir del resultado
-			SResource article = new SResource(URLDecoder.decode(qs.get("uri").toString(), "UTF-8"));
-			for (String varName : varNames) {
-				// article.add(varName, URLDecoder.decode(qs.get(varName).toString(), "UTF-8"));
-				article.add(varName, new String(qs.get(varName).toString().getBytes(), "UTF-8"));
-			}
-			articleSet.add(article);
-		}
-		return articleSet;
-	}
+  public Set<SResource> asArticleSet() throws Exception {
+    Set<SResource> articleSet = new HashSet<SResource>();
+    for (QuerySolution qs : results) {
+      // Creamos el articulo a partir del resultado
+      SResource article = new SResource(URLDecoder.decode(qs.get("uri").toString(), "UTF-8"));
+      for (String varName : varNames) {
+        // article.add(varName, URLDecoder.decode(qs.get(varName).toString(), "UTF-8"));
+        article.add(varName, new String(qs.get(varName).toString().getBytes(), "UTF-8"));
+      }
+      articleSet.add(article);
+    }
+    return articleSet;
+  }
 
-	public Set<SKOSCategory> asCategorySet() {
-		List<String> uriList = this.getColumn(0);
-		Set<SKOSCategory> categorySet = new HashSet<SKOSCategory>();
-		for (int i = 0; i < uriList.size(); i++) {
-			categorySet.add(new SKOSCategory(uriList.get(i)));
-		}
-		return categorySet;
-	}
+  public Set<SKOSCategory> asCategorySet() {
+    List<String> uriList = this.getColumn(0);
+    Set<SKOSCategory> categorySet = new HashSet<SKOSCategory>();
+    for (int i = 0; i < uriList.size(); i++) {
+      categorySet.add(new SKOSCategory(uriList.get(i)));
+    }
+    return categorySet;
+  }
 
-	public Set<String> asSimpleColumn() {
-		return new HashSet<String>(this.getColumn(0));
-	}
+  public Set<String> asSimpleColumn() {
+    return new HashSet<String>(this.getColumn(0));
+  }
 
-	public List<String> getRow(int row) {
-		List<String> returnThis = new ArrayList<String>();
-		for (int i = 0; i < varNames.size(); i++) {
-			returnThis.add(results.get(row).get(varNames.get(i)).toString());
-		}
-		return returnThis;
-	}
+  public List<String> getRow(int row) {
+    List<String> returnThis = new ArrayList<String>();
+    for (int i = 0; i < varNames.size(); i++) {
+      returnThis.add(results.get(row).get(varNames.get(i)).toString());
+    }
+    return returnThis;
+  }
 
-	public List<String> getColumn(int column) {
-		List<String> returnThis = new ArrayList<String>();
-		for (int i = 0; i < results.size(); i++) {
-			returnThis.add(results.get(i).get(varNames.get(column)).toString());
-		}
-		return returnThis;
-	}
+  public List<String> getColumn(int column) {
+    List<String> returnThis = new ArrayList<String>();
+    for (int i = 0; i < results.size(); i++) {
+      returnThis.add(results.get(i).get(varNames.get(column)).toString());
+    }
+    return returnThis;
+  }
 
-	public String getColumnName(int column) {
-		return varNames.get(column);
-	}
+  public String getColumnName(int column) {
+    return varNames.get(column);
+  }
 
-	public String getElement(int row, int column) {
-		return results.get(row).get(varNames.get(column)).toString();
-	}
+  public String getElement(int row, int column) {
+    return results.get(row).get(varNames.get(column)).toString();
+  }
 
-	public String getElemment(int row, String columnName) {
-		return results.get(row).get(columnName).toString();
-	}
+  public String getElemment(int row, String columnName) {
+    return results.get(row).get(columnName).toString();
+  }
 
 }
