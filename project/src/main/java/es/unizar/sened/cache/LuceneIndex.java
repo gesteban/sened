@@ -103,7 +103,7 @@ public class LuceneIndex {
       _directory.copyFrom(newDirectory, str, str, IOContext.DEFAULT);
     }
     newDirectory.close();
-    Log.d(TAG, "<load> Cargado índice desde " + LUCENE_INDEX_PATH);
+    Log.d(TAG, "<load> Index loaded from [" + LUCENE_INDEX_PATH + "]");
   }
 
   private IndexWriterConfig newConfig() {
@@ -402,7 +402,7 @@ public class LuceneIndex {
       } else {
         throw new Exception("non valid taxonomy type");
       }
-      Set<PropAndDir> queryAbout = DomainOntology.getRetrievableProperties(type);
+      Set<PropAndDir> queryAbout = DomainOntology.getProperties(type);
       for (PropAndDir propAndDir : queryAbout) {
         if (DomainOntology.isKeywordSearchable(propAndDir.prop)) {
           keyToLookFor = propAndDir.prop.getLocalName();
@@ -497,7 +497,7 @@ public class LuceneIndex {
       PhraseQuery phraseQuery2 = phraseQueryBuilder2.build();
       booleanBuilder2.add(phraseQuery2, BooleanClause.Occur.MUST);
       String kwdSearchableProp = null;
-      for (OntProperty prop : DomainOntology.getAllRetrievableProperties()) {
+      for (OntProperty prop : DomainOntology.getProperties()) {
         if (DomainOntology.isKeywordSearchable(prop)) {
           kwdSearchableProp = prop.getLocalName();
         }

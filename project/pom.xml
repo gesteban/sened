@@ -8,7 +8,12 @@
 	<packaging>jar</packaging>
 
 	<name>sened</name>
-	<url>http://maven.apache.org</url>
+	<url>https://github.com/gesteban/sened</url>
+
+	<organization>
+		<name>University of Zaragoza</name>
+		<url>http://www.unizar.es/</url>
+	</organization>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -49,4 +54,5 @@
 			<version>3.6.2</version>
 		</dependency>
 	</dependencies>
+
 </project>

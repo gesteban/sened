@@ -19,19 +19,15 @@ public class SQueryFactory {
   private static final String QF_TYPE = "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> \n"
       + "SELECT DISTINCT ?type WHERE { <#uri> rdf:type ?type }";
 
-  private SQueryFactoryConfig config;
+  private String _endpoint;
 
-  public SQueryFactory(SQueryFactoryConfig config) {
-    this.config = config;
-  }
-
-  public SQueryFactory() {
-    this.config = new SQueryFactoryConfig();
+  public SQueryFactory(String endpoint) {
+    _endpoint = endpoint;
   }
 
   public SQuery getKeywordQuery_CategoryTaxonomy(String keyword, String categoryUri, int categoryDeep) {
 
-    Set<PropAndDir> retrievableProps = DomainOntology.getRetrievableProperties(DomainOntology.Void);
+    Set<PropAndDir> retrievableProps = DomainOntology.getProperties(DomainOntology.Void);
     String queryString = PREFIX_ALL + "SELECT DISTINCT ?uri";
     for (PropAndDir propAndDir : retrievableProps) {
       queryString += " ?" + propAndDir.prop.getLocalName();
@@ -71,27 +67,27 @@ public class SQueryFactory {
       }
     }
     queryString += "}";
-    return new SQuery(queryString, config);
+    return new SQuery(queryString, _endpoint);
   }
 
   public SQuery getSubCategoryQuery(String categoryURI) {
     String queryString = QF_SUBCATEGORIES;
     queryString = queryString.replace("#categoryURI", categoryURI);
-    return new SQuery(queryString, config);
+    return new SQuery(queryString, _endpoint);
   }
 
   public SQuery getTypeQuery(String URI) {
     String queryString = QF_TYPE;
     queryString = queryString.replace("#uri", URI);
-    return new SQuery(queryString, config);
+    return new SQuery(queryString, _endpoint);
   }
 
   public SQuery getCustomQuery(String query) {
-    return new SQuery(query, config);
+    return new SQuery(query, _endpoint);
   }
 
   public SQuery getDescribeQuery(String URI) {
-    return new SQuery("DESCRIBE <" + URI + ">", config);
+    return new SQuery("DESCRIBE <" + URI + ">", _endpoint);
   }
 
   public static void main(String[] args) {

@@ -20,9 +20,9 @@ public class SQuery {
   private Query query;
   private QueryExecution qexec;
 
-  protected SQuery(String queryString, SQueryFactoryConfig config) {
+  protected SQuery(String queryString, String endpoint) {
     this.query = QueryFactory.create(queryString);
-    this.qexec = QueryExecutionFactory.sparqlService(config.getEndpoint(), query);
+    this.qexec = QueryExecutionFactory.sparqlService(endpoint, query);
   }
 
   @Override

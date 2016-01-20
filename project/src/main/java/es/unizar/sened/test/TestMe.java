@@ -1,10 +1,29 @@
 package es.unizar.sened.test;
 
+import org.apache.jena.atlas.web.auth.HttpAuthenticator;
+import org.apache.jena.atlas.web.auth.SimpleAuthenticator;
+import org.apache.jena.query.Query;
+import org.apache.jena.query.QueryExecution;
+import org.apache.jena.query.QueryExecutionFactory;
+import org.apache.jena.query.QueryFactory;
+import org.apache.jena.rdf.model.Model;
+import org.apache.jena.riot.RDFDataMgr;
+import org.apache.jena.riot.RDFFormat;
+import org.apache.jena.update.Update;
+import org.apache.jena.update.UpdateExecutionFactory;
+import org.apache.jena.update.UpdateFactory;
+import org.apache.jena.update.UpdateProcessor;
+import org.apache.jena.update.UpdateRequest;
+
 import es.unizar.sened.Sened;
+import es.unizar.sened.query.SQueryFactory;
 import es.unizar.sened.utils.Log;
 import es.unizar.sened.utils.SerializationUtils;
 
 public class TestMe {
+
+  static String update_string = "insert data { graph <http://testgraph.com/> "
+      + "{ <http://test.com/resource> <http://test.com/property> <http://test.com/object> } }";
 
   public static void main(String[] args) throws Exception {
     Log.i("test", "start");
@@ -19,6 +38,7 @@ public class TestMe {
     testSearchByRelated(test3_1);
 
     Log.i("test", "done");
+
   }
 
   static String test1_1[] = { "cat", "http://dbpedia.org/resource/Category:Mechanics" };
@@ -48,6 +68,26 @@ public class TestMe {
 
   public static void testSearchByRelated(String resource) throws Exception {
     Sened.getInstance().searchRelated(resource);
+  }
+
+  public static void testVarious() {
+    // Query query = QueryFactory.create("SELECT * WHERE { ?s a ?type }");
+    // QueryExecution qe = QueryExecutionFactory.sparqlService("http://localhost:8890/sparql-auth", query);
+    HttpAuthenticator authenticator = new SimpleAuthenticator("dba", "PASSWORD-HERE".toCharArray());
+    QueryExecution qe = QueryExecutionFactory.sparqlService("http://localhost:8890/sparql-auth",
+        "SELECT * WHERE { ?s a ?type }", authenticator);
+
+    Log.i("tag", qe.execSelect().getRowNumber() + "");
+
+    // Model model = qe.execSelect().getResourceModel();
+    // RDFDataMgr.write(System.out, model, RDFFormat.TURTLE_PRETTY);
+
+    // UpdateRequest update = UpdateFactory.create(update_string);
+    // UpdateProcessor updateProc = UpdateExecutionFactory.createRemoteForm(update, "http://localhost:8890/sparql");
+    // updateProc.execute();
+
+    // SQueryFactory fact = new SQueryFactory("http://localhost:8890/sparql");
+    // fact.getCustomQuery(update_string);
   }
 
 }

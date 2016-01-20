@@ -5,12 +5,13 @@ import java.util.Collections;
 import java.util.HashSet;
 import java.util.Set;
 
-import org.apache.jena.ontology.BooleanClassDescription;
 import org.apache.jena.ontology.OntClass;
 import org.apache.jena.ontology.OntModel;
 import org.apache.jena.ontology.OntModelSpec;
 import org.apache.jena.ontology.OntProperty;
+import org.apache.jena.ontology.OntResource;
 import org.apache.jena.rdf.model.ModelFactory;
+import org.apache.jena.util.iterator.ExtendedIterator;
 
 import es.unizar.sened.utils.Log;
 
@@ -30,24 +31,21 @@ public class DomainOntology {
   public static final OntProperty taxonomyDefinedBy;
   public static final OntProperty queryLanguage;
   public static final OntProperty kwdSearchable;
-  public static final OntProperty dataRetrievable;
 
   public static final String TAXONOMY_CATEGORIES = "TAXONOMY_CATEGORIES";
   public static final String TAXONOMY_CLASSES = "TAXONOMY_CLASSES";
 
   protected static final OntModel _ontology;
   protected static final String _taxonomyType;
-  protected static OntModel _factory;
 
   static {
-    _ontology = ModelFactory.createOntologyModel(OntModelSpec.OWL_MEM);
+    _ontology = ModelFactory.createOntologyModel(OntModelSpec.OWL_DL_MEM_TRANS_INF);
     InputStream in = DomainOntology.class.getResourceAsStream(PATH);
     _ontology.read(in, BASE_URI);
     Void = _ontology.getOntClass(BASE_URI + "Void");
     taxonomyDefinedBy = _ontology.getOntProperty(BASE_URI + "taxonomyDefinedBy");
     queryLanguage = _ontology.getOntProperty(BASE_URI + "queryLanguage");
     kwdSearchable = _ontology.getOntProperty(BASE_URI + "kwdSearchable");
-    dataRetrievable = _ontology.getOntProperty(BASE_URI + "dataRetrievable");
     // TODO retrieve _taxonomyType from _ontology properly
     _taxonomyType = TAXONOMY_CATEGORIES;
   }
@@ -56,23 +54,22 @@ public class DomainOntology {
     return _ontology.listClasses().toSet();
   }
 
-  public static Set<PropAndDir> getRetrievableProperties(OntClass aClass) {
+  public static Set<OntProperty> getProperties() {
+    return _ontology.listAllOntProperties().toSet();
+  }
+
+  public static Set<PropAndDir> getProperties(OntClass aClass) {
     if (!getClasses().contains(aClass))
       return Collections.emptySet();
-    Log.i(TAG, "get retrievable properties from " + aClass.toString());
     Set<PropAndDir> propSet = new HashSet<>();
-    for (OntProperty prop : DomainOntology._ontology.listAllOntProperties().toSet()) {
-      if (prop.hasProperty(dataRetrievable)) {
-        Log.i(TAG, "prop = " + prop.toString());
-        Log.i(TAG, "domain = " + prop.getDomain());
-        if(prop.getDomain() instanceof BooleanClassDescription) {
-          Log.i(TAG, "ALELUYA hermano");
-        } else {
-          Log.i(TAG, ((BooleanClassDescription)prop.getDomain()).toString());
-        }
-        if (prop.getDomain() != null && prop.getDomain().equals(aClass)) {
+    for (OntProperty prop : getProperties()) {
+      for (ExtendedIterator<? extends OntResource> iter = prop.listDomain(); iter.hasNext();) {
+        if (iter.next().equals(aClass)) {
           propSet.add(new PropAndDir(prop, true));
-        } else if (prop.getRange() != null && prop.getRange().equals(aClass)) {
+        }
+      }
+      for (ExtendedIterator<? extends OntResource> iter = prop.listRange(); iter.hasNext();) {
+        if (iter.next().equals(aClass)) {
           propSet.add(new PropAndDir(prop, false));
         }
       }
@@ -80,14 +77,8 @@ public class DomainOntology {
     return propSet;
   }
 
-  public static Set<OntProperty> getAllRetrievableProperties() {
-    Set<OntProperty> propSet = new HashSet<OntProperty>();
-    for (OntProperty prop : DomainOntology._ontology.listAllOntProperties().toSet()) {
-      if (prop.hasProperty(dataRetrievable)) {
-        propSet.add(prop);
-      }
-    }
-    return propSet;
+  public static Set<PropAndDir> getObjectProperties(OntClass aClass) {
+    return null;
   }
 
   public static String getQueryLanguage(OntProperty property) {

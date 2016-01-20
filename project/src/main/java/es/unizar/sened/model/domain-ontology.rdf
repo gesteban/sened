@@ -75,11 +75,13 @@
 
     <!-- http://www.w3.org/2000/01/rdf-schema#label -->
 
-    <owl:AnnotationProperty rdf:about="&rdfs;label">
+    <rdf:Description rdf:about="&rdfs;label">
         <rdfs:domain rdf:resource="&yago;Institute108407330"/>
         <rdfs:domain rdf:resource="&dbo;Person"/>
         <rdfs:domain rdf:resource="&sened;Void"/>
-    </owl:AnnotationProperty>
+        <rdfs:domain rdf:resource="&skos;Concept"/>
+        <rdfs:domain rdf:resource="&foaf;Document"/>
+    </rdf:Description>
     
 
 
@@ -98,6 +100,7 @@
 
     <owl:ObjectProperty rdf:about="&dbo;knownFor">
         <rdfs:domain rdf:resource="&dbo;Person"/>
+        <rdfs:range rdf:resource="&dbo;Person"/>
         <rdfs:range rdf:resource="&sened;Void"/>
     </owl:ObjectProperty>
     
@@ -112,46 +115,11 @@
     
 
 
-    <!-- http://purl.org/dc/terms/subject -->
-
-    <owl:ObjectProperty rdf:about="&dcterms;subject">
-        <rdfs:domain rdf:resource="&sened;Void"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://www.w3.org/2004/02/skos/core#broader -->
-
-    <owl:ObjectProperty rdf:about="&skos;broader">
-        <rdf:type rdf:resource="&owl;TransitiveProperty"/>
-        <owl:inverseOf rdf:resource="&skos;narrower"/>
-        <rdfs:subPropertyOf rdf:resource="&skos;semanticRelation"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://www.w3.org/2004/02/skos/core#narrower -->
-
-    <owl:ObjectProperty rdf:about="&skos;narrower">
-        <rdf:type rdf:resource="&owl;TransitiveProperty"/>
-        <rdfs:subPropertyOf rdf:resource="&skos;semanticRelation"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://www.w3.org/2004/02/skos/core#semanticRelation -->
-
-    <owl:ObjectProperty rdf:about="&skos;semanticRelation">
-        <rdfs:range rdf:resource="&skos;Concept"/>
-        <rdfs:domain rdf:resource="&skos;Concept"/>
-    </owl:ObjectProperty>
-    
-
-
     <!-- http://xmlns.com/foaf/0.1/primaryTopic -->
 
     <owl:ObjectProperty rdf:about="&foaf;primaryTopic">
-        <dataRetrievable>yes</dataRetrievable>
+        <rdfs:range rdf:resource="&yago;Institute108407330"/>
+        <rdfs:range rdf:resource="&dbo;Person"/>
         <rdfs:range rdf:resource="&sened;Void"/>
         <rdfs:domain rdf:resource="&foaf;Document"/>
     </owl:ObjectProperty>
@@ -173,17 +141,10 @@
 
     <owl:DatatypeProperty rdf:about="&dbo;abstract">
         <queryLanguage rdf:datatype="&xsd;language">en</queryLanguage>
-        <dataRetrievable>yes</dataRetrievable>
         <kwdSearchable>yes</kwdSearchable>
-        <rdfs:domain>
-            <owl:Class>
-                <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="&yago;Institute108407330"/>
-                    <rdf:Description rdf:about="&dbo;Person"/>
-                    <rdf:Description rdf:about="&sened;Void"/>
-                </owl:unionOf>
-            </owl:Class>
-        </rdfs:domain>
+        <rdfs:domain rdf:resource="&yago;Institute108407330"/>
+        <rdfs:domain rdf:resource="&dbo;Person"/>
+        <rdfs:domain rdf:resource="&sened;Void"/>
     </owl:DatatypeProperty>
     
 
@@ -231,15 +192,6 @@
     
 
 
-    <!-- http://www.w3.org/2004/02/skos/core#Concept -->
-
-    <owl:Class rdf:about="&skos;Concept">
-        <rdfs:label xml:lang="en">Category</rdfs:label>
-        <rdfs:label xml:lang="es">Categoria</rdfs:label>
-    </owl:Class>
-    
-
-
     <!-- http://xmlns.com/foaf/0.1/Document -->
 
     <owl:Class rdf:about="&foaf;Document">
@@ -258,7 +210,6 @@
 
     <rdf:Description rdf:about="&rdfs;label">
         <queryLanguage rdf:datatype="&xsd;language">en</queryLanguage>
-        <dataRetrievable>yes</dataRetrievable>
     </rdf:Description>
 </rdf:RDF>
 
