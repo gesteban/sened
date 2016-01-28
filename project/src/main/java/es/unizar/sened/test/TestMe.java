@@ -55,11 +55,8 @@ public class TestMe {
   static String test3_2 = "http://dbpedia.org/resource/Falling_cat_problem";
 
   public static void testSearchByKeyword_CategoryTaxonomy(String[] keywordsAndCategory) throws Exception {
-    Log.i(
-        "test",
-        "\n"
-            + SerializationUtils.toString(Sened.getInstance().searchKeyword(keywordsAndCategory[0],
-                keywordsAndCategory[1])));
+    System.out.println(SerializationUtils.toString(Sened.getInstance().searchKeyword(keywordsAndCategory[0],
+        keywordsAndCategory[1])));
   }
 
   public static void testSearchByKeyword_ClassTaxonomy(String[] keywordsAndClass) throws Exception {

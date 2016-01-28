@@ -15,6 +15,7 @@ package sid.VOXII.propertyRanking.implementations;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashSet;
+import java.util.Set;
 
 import org.apache.jena.rdf.model.Model;
 import org.apache.jena.rdf.model.NodeIterator;
@@ -28,7 +29,7 @@ import sid.VOXII.propertyRanking.utils.DefinedObjectPropertyFilter;
 public class InstanceNumberInboundDepth1Ranker extends PropertyRanker {
 
   public ArrayList<InstanceNumberRankedProperty> rankDefinedObjectProperties(Model RDFModel,
-      HashSet<String> definedObjectProperties, String initialResource) {
+      Set<String> definedObjectProperties, String initialResource) {
     int totalInstances = 0;
     int numInstances = 0;
     Property relevantProperty = null;

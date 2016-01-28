@@ -27,12 +27,13 @@ import org.w3c.dom.*;
 public class SerializationUtils {
 
   public static String toString(List<SResource> resources) {
-    String returnThis = "";
-    for (SResource resource : resources) {
-      Log.i("qwe", resource.getURI());
-      returnThis += resource.toString() + "\n";
+    StringBuilder str = new StringBuilder();
+    for (int i = 0; i < resources.size(); i++) {
+      str.append(resources.get(i).toString());
+      if (i + 1 < resources.size())
+        str.append("\n");
     }
-    return returnThis;
+    return str.toString();
   }
 
   public static String toXml(Set<SKOSCategory> categoryList) {

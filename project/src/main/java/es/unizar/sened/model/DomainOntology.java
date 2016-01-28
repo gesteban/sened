@@ -5,6 +5,7 @@ import java.util.Collections;
 import java.util.HashSet;
 import java.util.Set;
 
+import org.apache.jena.ontology.ObjectProperty;
 import org.apache.jena.ontology.OntClass;
 import org.apache.jena.ontology.OntModel;
 import org.apache.jena.ontology.OntModelSpec;
@@ -57,6 +58,10 @@ public class DomainOntology {
   public static Set<OntProperty> getProperties() {
     return _ontology.listAllOntProperties().toSet();
   }
+  
+  public static Set<ObjectProperty> getObjectProperties() {
+    return _ontology.listObjectProperties().toSet();
+  }
 
   public static Set<PropAndDir> getProperties(OntClass aClass) {
     if (!getClasses().contains(aClass))
@@ -78,7 +83,22 @@ public class DomainOntology {
   }
 
   public static Set<PropAndDir> getObjectProperties(OntClass aClass) {
-    return null;
+    if (!getClasses().contains(aClass))
+      return Collections.emptySet();
+    Set<PropAndDir> propSet = new HashSet<>();
+    for (OntProperty prop : getObjectProperties()) {
+      for (ExtendedIterator<? extends OntResource> iter = prop.listDomain(); iter.hasNext();) {
+        if (iter.next().equals(aClass)) {
+          propSet.add(new PropAndDir(prop, true));
+        }
+      }
+      for (ExtendedIterator<? extends OntResource> iter = prop.listRange(); iter.hasNext();) {
+        if (iter.next().equals(aClass)) {
+          propSet.add(new PropAndDir(prop, false));
+        }
+      }
+    }
+    return propSet;
   }
 
   public static String getQueryLanguage(OntProperty property) {

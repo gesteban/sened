@@ -33,6 +33,7 @@ import es.unizar.sened.cache.LuceneIndex;
 import es.unizar.sened.model.DomainOntology;
 import es.unizar.sened.model.PropAndDir;
 import es.unizar.sened.model.SResource;
+import es.unizar.sened.model.SenedResource;
 import es.unizar.sened.query.SQuery;
 import es.unizar.sened.query.SQueryFactory;
 import es.unizar.sened.query.SQueryResult;
@@ -56,19 +57,16 @@ public class Sened {
 
   private final LoadingCache<QueryParameters, SQueryResult> _queryProxy = CacheBuilder.newBuilder().maximumSize(100)
       .build(new CacheLoader<QueryParameters, SQueryResult>() {
-
         @Override
         public SQueryResult load(QueryParameters params) throws Exception {
           SQuery query = null;
-          if (DomainOntology.getTaxonomyType().equals(DomainOntology.TAXONOMY_CLASSES)) {
+          if (DomainOntology.getTaxonomyType().equals(DomainOntology.TAXONOMY_CLASSES))
             throw new NotImplementedException("class taxonomy not implemented yet");
-          } else if (DomainOntology.getTaxonomyType().equals(DomainOntology.TAXONOMY_CATEGORIES)) {
+          else if (DomainOntology.getTaxonomyType().equals(DomainOntology.TAXONOMY_CATEGORIES))
             query = _queryFactory.getKeywordQuery_CategoryTaxonomy(params.getKeyword(), params.getResource().getURI(),
                 QUERY_DEEP);
-          }
           Log.d(TAG, "<LoadingCache> performing search of " + params.toString());
           return query == null ? null : query.doSelect();
-
         }
       });
 
@@ -93,9 +91,8 @@ public class Sened {
   private void init(boolean loadPreviousLuceneIndex) throws IOException {
 
     _li = new LuceneIndex();
-    if (loadPreviousLuceneIndex) {
+    if (loadPreviousLuceneIndex)
       _li.load();
-    }
 
     _queryFactory = new SQueryFactory(DBPEDIA_ENDPOINT);
 
@@ -105,14 +102,13 @@ public class Sened {
     SQuery query = _queryFactory.getTypeQuery(instanceURI);
     SQueryResult result = query.doSelect();
     Set<OntClass> classes = new HashSet<OntClass>();
-    for (String classUri : result.asSimpleColumn()) {
+    for (String classUri : result.asSimpleColumn())
       classes.add(Utils.createClass(classUri));
-    }
-    // Special DBpedia case: returning at least the special Void class.
+    // special DBpedia case: returning at least the special Void class
     // TODO remove DBpedia specific code (if possible)
-    if (classes.size() == 0) {
+    if (classes.size() == 0)
       classes.add(DomainOntology.Void);
-    }
+
     return classes;
   }
 
@@ -122,11 +118,11 @@ public class Sened {
   }
 
   public List<SResource> searchKeyword(String keywords, String uri) throws Exception {
-    if (DomainOntology.getTaxonomyType().equals(DomainOntology.TAXONOMY_CLASSES)) {
+    if (DomainOntology.getTaxonomyType().equals(DomainOntology.TAXONOMY_CLASSES))
       throw new NotImplemented("class taxonomy type not implemented yet");
-    } else if (DomainOntology.getTaxonomyType().equals(DomainOntology.TAXONOMY_CATEGORIES)) {
+    else if (DomainOntology.getTaxonomyType().equals(DomainOntology.TAXONOMY_CATEGORIES))
       return searchKeyword_CategoryTaxonomy(keywords, Utils.createResource(uri));
-    }
+
     throw new Exception("no valid taxonomy type found");
   }
 
@@ -135,18 +131,18 @@ public class Sened {
     // Parsing keywords string, each keyword is separated by a space.
     Set<String> keywordSet = new HashSet<String>();
     keywordSet.addAll(Arrays.asList(keywords.split(" ")));
-    for (String keyword : keywordSet) {
+    for (String keyword : keywordSet)
       // Looking for already stored results.
       if (!_li.existsKeywordDocument(keyword, category.getLocalName())) {
         // If it does not exist, perform a SPARQL query.
         SQueryResult result = _queryProxy.get(new QueryParameters(keyword, category));
         _li.add(keyword, result.asArticleSet(), category.getLocalName());
       }
-    }
+
     return _li.searchKeywords(keywordSet, category.getLocalName());
   }
 
-  public List<Statement> searchRelated(String resourceURI) {
+  public SenedResource searchRelated(String resourceURI) {
     Log.i(TAG, "<searchRelated> Searching related information of [" + resourceURI + "]");
 
     // sparql describe of resource
@@ -154,66 +150,51 @@ public class Sened {
     Model resultModel = query.doDescribe();
     // RDFDataMgr.write(System.out, resultModel, RDFFormat.TURTLE_PRETTY);
 
+    // ranking object properties
+    SenedResource res = new SenedResource(resourceURI);
+    res.addModel(resultModel);
+    Utils.printRank(res.getObjectProperties(PropertyRankerFactory.INSTANCE_NUMBER_RANKING_BIDIR_DEPTH_1));
+
+    /*               */
+    /*               */
+    /*               */
+
     // get relevant properties of the resource using domain ontology
-    Set<PropAndDir> propSetAux = new HashSet<>();
-    Set<PropAndDir> propSet = new HashSet<>();
-    for (OntClass aClass : getTypes(resourceURI)) {
-      propSetAux = DomainOntology.getProperties(aClass);
-      if (propSetAux.size() > 0) {
-        propSet.addAll(propSetAux);
-        Log.d(TAG, "<searchRelated> Properties related with [" + aClass.toString() + "] : " + propSet.size() + "");
-        for (PropAndDir propAndDir : propSetAux) {
-          Log.d(TAG, "<searchRelated> \t" + propAndDir.toString());
-        }
-      }
-    }
-
-    // extracting all triples using relevant properties
-    Set<Statement> stmtSet = new HashSet<>();
-    Resource resource = _dataFactory.createResource(resourceURI);
-    for (PropAndDir prop : propSet) {
-      if (prop.straight) {
-        // TODO delete specific language on properties (use general setting)
-        String language = DomainOntology.getQueryLanguage(prop.prop);
-        for (StmtIterator stmtIter = resultModel.listStatements(resource, prop.prop, (RDFNode) null); stmtIter
-            .hasNext();) {
-          Statement stmt = stmtIter.next();
-          if (language == null || (language != null && language.equals(stmt.getLanguage()))) {
-            stmtSet.add(stmt);
-          }
-        }
-      } else {
-        stmtSet.addAll(resultModel.listStatements(null, prop.prop, resource).toSet());
-      }
-    }
-
-    HashSet<String> definedProperties = new HashSet<>();
-    for (OntProperty prop : DomainOntology.getProperties()) {
-      definedProperties.add(prop.getURI());
-    }
-    PropertyRanker propRanker = PropertyRankerFactory
-        .getPropertyRanker(PropertyRankerFactory.INSTANCE_NUMBER_RANKING_BIDIR_DEPTH_1);
-    ArrayList<? extends RankedProperty> rankedProperties = propRanker.rankDefinedObjectProperties(resultModel,
-        definedProperties, resource.getURI());
-
-    Log.i(TAG, "Ranking: " + PropertyRankerFactory.INSTANCE_NUMBER_RANKING_BIDIR_DEPTH_1);
-    Log.i(TAG, "-------------------------");
-    for (int i = 0; i < rankedProperties.size(); i++) {
-      RankedProperty auxInfo = rankedProperties.get(i);
-      Log.i(TAG, " " + i + "# " + auxInfo.getPropertyURI());
-      Log.i(TAG, "     value:" + auxInfo.getRankValue() );//+ "  #instances:" + auxInfo.getNumberOfInstances());
-    }
-
-    // for (Statement stmt : stmtSet) {
-    // Log.i("<<>>", stmt.toString());
+    // Set<PropAndDir> propSetAux = new HashSet<>();
+    // Set<PropAndDir> propSet = new HashSet<>();
+    // for (OntClass aClass : getTypes(resourceURI)) {
+    // propSetAux = DomainOntology.getObjectProperties(aClass);
+    // if (propSetAux.size() > 0) {
+    // propSet.addAll(propSetAux);
+    // Log.d(TAG, "<searchRelated> Properties related with [" + aClass.toString() + "] : " + propSet.size() + "");
+    // for (PropAndDir propAndDir : propSetAux)
+    // Log.d(TAG, "<searchRelated> \t" + propAndDir.toString());
     // }
-    // Log.i("<<>>", "size = " + stmtSet.size());
+    // }
 
-    // List<SResource> resourceList = new ArrayList<>();
-    // Map<PropAndDir, List<SResource>> map = new HashMap<>();
+    // extracting all statements using relevant properties
+    // Resource resource = _dataFactory.createResource(resourceURI);
+    // Set<Statement> stmtSet = new HashSet<>();
+    // for (PropAndDir prop : propSet) {
+    // if (prop.straight) {
+    // // TODO delete specific language on properties (use general setting)
+    // String language = DomainOntology.getQueryLanguage(prop.prop);
+    // for (StmtIterator stmtIter = resultModel.listStatements(resource, prop.prop, (RDFNode) null); stmtIter
+    // .hasNext();) {
+    // Statement stmt = stmtIter.next();
+    // if (language == null || (language != null && language.equals(stmt.getLanguage()))) {
+    // stmtSet.add(stmt);
+    // }
+    // }
+    // } else {
+    // stmtSet.addAll(resultModel.listStatements(null, prop.prop, resource).toSet());
+    // }
+    // }
+    // for (Statement stmt : stmtSet)
+    // Log.d("<<>>", stmt.toString());
+    // Log.d("<<>>", "size = " + stmtSet.size());
 
-    return null;
-
+    return res;
   }
 
   private class QueryParameters {

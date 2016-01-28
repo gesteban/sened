@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 
 import org.apache.jena.rdf.model.Model;
 import org.apache.jena.rdf.model.NodeIterator;
@@ -71,7 +72,7 @@ public class TestInformationExtractor {
 
     PropertyRanker propRanker = PropertyRankerFactory
         .getPropertyRanker(PropertyRankerFactory.INSTANCE_NUMBER_RANKING_BIDIR_DEPTH_1);
-    ArrayList<? extends RankedProperty> rankedProperties = propRanker.rankDefinedObjectProperties(model,
+    List<? extends RankedProperty> rankedProperties = propRanker.rankDefinedObjectProperties(model,
         definedProperties, resource);
     out.println("Ranking: " + PropertyRankerFactory.INSTANCE_NUMBER_RANKING_BIDIR_DEPTH_1);
     out.println("-------------------------");

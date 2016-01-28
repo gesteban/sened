@@ -96,21 +96,28 @@
     
 
 
+    <!-- http://dbpedia.org/ontology/birthPlace -->
+
+    <owl:ObjectProperty rdf:about="&dbo;birthPlace">
+        <rdfs:domain rdf:resource="&dbo;Person"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://dbpedia.org/ontology/deathPlace -->
+
+    <owl:ObjectProperty rdf:about="&dbo;deathPlace">
+        <rdfs:domain rdf:resource="&dbo;Person"/>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://dbpedia.org/ontology/knownFor -->
 
     <owl:ObjectProperty rdf:about="&dbo;knownFor">
         <rdfs:domain rdf:resource="&dbo;Person"/>
         <rdfs:range rdf:resource="&dbo;Person"/>
         <rdfs:range rdf:resource="&sened;Void"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://dbpedia.org/property/workplaces -->
-
-    <owl:ObjectProperty rdf:about="&dbp;workplaces">
-        <rdfs:range rdf:resource="&yago;Institute108407330"/>
-        <rdfs:domain rdf:resource="&dbo;Person"/>
     </owl:ObjectProperty>
     
 

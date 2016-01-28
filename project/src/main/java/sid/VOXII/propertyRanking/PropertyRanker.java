@@ -14,13 +14,14 @@ package sid.VOXII.propertyRanking;
 
 import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 
 import org.apache.jena.rdf.model.Model;
 
 public abstract class PropertyRanker {
 
   /**
-   * 
    * Method that ranks the relevant properties (marked in the domain ontology as so), and returns an ORDERED arraylist
    * with such properties along with their ranking information.
    * 
@@ -32,11 +33,10 @@ public abstract class PropertyRanker {
    *          Resource which we are ranking the properties for
    * @return Ordered arrayList of ranked properties
    */
-  public abstract ArrayList<? extends RankedProperty> rankDefinedObjectProperties(Model RDFModel,
-      HashSet<String> definedObjectProperties, String initialResource);
+  public abstract List<? extends RankedProperty> rankDefinedObjectProperties(Model RDFModel,
+      Set<String> definedObjectProperties, String initialResource);
 
   /**
-   * 
    * Method that ranks the rest of the properties (properties which are not defined/marked in the domain ontology, but
    * which appear in the data model retrieved), and returns an ORDERED arraylist with such properties along with their
    * ranking information.

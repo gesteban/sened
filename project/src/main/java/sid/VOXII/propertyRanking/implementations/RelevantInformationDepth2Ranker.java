@@ -15,6 +15,7 @@ package sid.VOXII.propertyRanking.implementations;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashSet;
+import java.util.Set;
 
 import org.apache.jena.rdf.model.Model;
 import org.apache.jena.rdf.model.NodeIterator;
@@ -30,7 +31,7 @@ public class RelevantInformationDepth2Ranker extends PropertyRanker {
 
   @Override
   public ArrayList<RelevantInformationRankedProperty> rankDefinedObjectProperties(Model model,
-      HashSet<String> definedObjectProperties, String initialResource) {
+      Set<String> definedObjectProperties, String initialResource) {
 
     double totalWeight = 0.0;
     ArrayList<RelevantInformationRankedProperty> result = new ArrayList<RelevantInformationRankedProperty>();
@@ -94,7 +95,7 @@ public class RelevantInformationDepth2Ranker extends PropertyRanker {
     return null;
   }
 
-  private double obtainRelevantInformationWeight(Model model, HashSet<String> definedObjectProperties, Resource res) {
+  private double obtainRelevantInformationWeight(Model model, Set<String> definedObjectProperties, Resource res) {
     // TODO check method, maybe try different weight assign
     double result = 0.0;
     for (String property : definedObjectProperties) {
