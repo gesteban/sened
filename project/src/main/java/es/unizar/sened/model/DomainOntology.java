@@ -12,9 +12,12 @@ import org.apache.jena.ontology.OntModelSpec;
 import org.apache.jena.ontology.OntProperty;
 import org.apache.jena.ontology.OntResource;
 import org.apache.jena.rdf.model.ModelFactory;
+import org.apache.jena.rdf.model.Property;
+import org.apache.jena.rdf.model.Resource;
 import org.apache.jena.util.iterator.ExtendedIterator;
 
 import es.unizar.sened.utils.Log;
+import es.unizar.sened.utils.Utils;
 
 /**
  * TODO make this class non-static
@@ -114,4 +117,11 @@ public class DomainOntology {
     return _taxonomyType;
   }
 
+  public static void main(String[] args) {
+    Resource knownFor = Utils.createResource("http://dbpedia.org/ontology/knownFor");
+    for(ObjectProperty prop : DomainOntology.getObjectProperties()) {
+      
+    }
+  }
+  
 }

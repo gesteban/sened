@@ -1,5 +1,6 @@
 .settings/
 .directory/
+.sened_tdb/
 target/
 bin/
 

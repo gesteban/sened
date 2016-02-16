@@ -1,4 +1,4 @@
-package es.unizar.sened.cache;
+package es.unizar.sened.index;
 
 import java.util.ArrayList;
 import java.util.Date;

@@ -119,19 +119,6 @@
         <rdfs:range rdf:resource="&dbo;Person"/>
         <rdfs:range rdf:resource="&sened;Void"/>
     </owl:ObjectProperty>
-    
-
-
-    <!-- http://xmlns.com/foaf/0.1/primaryTopic -->
-
-    <owl:ObjectProperty rdf:about="&foaf;primaryTopic">
-        <rdfs:range rdf:resource="&yago;Institute108407330"/>
-        <rdfs:range rdf:resource="&dbo;Person"/>
-        <rdfs:range rdf:resource="&sened;Void"/>
-        <rdfs:domain rdf:resource="&foaf;Document"/>
-    </owl:ObjectProperty>
-    
-
 
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////

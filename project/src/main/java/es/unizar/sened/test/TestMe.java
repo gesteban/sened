@@ -37,7 +37,7 @@ public class TestMe {
     // Related search (NOT WORKING)
     testSearchByRelated(test3_1);
 
-    Log.i("test", "done");
+    Log.i("test", "done"); // TODO generate jar
 
   }
 
@@ -48,11 +48,13 @@ public class TestMe {
   static String test1_5[] = { "flame extinguisher", "http://dbpedia.org/resource/Category:Chemistry" };
   static String test1_6[] = { "water transfer", "http://dbpedia.org/resource/Category:Chemistry" };
   static String test1_7[] = { "bubble size", "http://dbpedia.org/resource/Category:Chemistry" };
+  static String test1_8[] = { "cancer", "http://dbpedia.org/resource/Category:Oncology" }; // TODO test this properly
 
   static String test2_1[] = { "senegal", "http://dbpedia.org/ontology/Country" };
 
   static String test3_1 = "http://dbpedia.org/resource/Albert_Einstein";
   static String test3_2 = "http://dbpedia.org/resource/Falling_cat_problem";
+  static String test3_3 = "http://dbpedia.org/resource/Elsa_Einstein";
 
   public static void testSearchByKeyword_CategoryTaxonomy(String[] keywordsAndCategory) throws Exception {
     System.out.println(SerializationUtils.toString(Sened.getInstance().searchKeyword(keywordsAndCategory[0],

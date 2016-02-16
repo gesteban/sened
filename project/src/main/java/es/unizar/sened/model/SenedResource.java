@@ -6,26 +6,25 @@ import java.util.Set;
 
 import org.apache.jena.ontology.OntProperty;
 import org.apache.jena.rdf.model.Model;
+import org.apache.jena.rdf.model.NodeIterator;
+import org.apache.jena.rdf.model.RDFNode;
 
+import es.unizar.sened.utils.Utils;
 import sid.VOXII.propertyRanking.PropertyRanker;
-import sid.VOXII.propertyRanking.PropertyRankerFactory;
 import sid.VOXII.propertyRanking.RankedProperty;
 
 public class SenedResource {
 
-  private String _URI;
+  private String _resourceUri;
   private Model _model;
 
-  public SenedResource(String URI) {
-    _URI = URI;
+  public SenedResource(String resourceUri, Model model) {
+    _resourceUri = resourceUri;
+    _model = model;
   }
 
   public String getURI() {
-    return _URI;
-  }
-
-  public void addModel(Model model) {
-    _model = model;
+    return _resourceUri;
   }
 
   /**
@@ -36,8 +35,19 @@ public class SenedResource {
     Set<String> definedProperties = new HashSet<>();
     for (OntProperty prop : DomainOntology.getObjectProperties())
       definedProperties.add(prop.getURI());
-    PropertyRanker propRanker = PropertyRankerFactory.getPropertyRanker(rankType);
-    return propRanker == null ? null : propRanker.rankDefinedObjectProperties(_model, definedProperties, _URI);
+    PropertyRanker propRanker = PropertyRanker.create(rankType);
+    return propRanker == null ? null : propRanker.rankDefinedObjectProperties(_model, definedProperties, _resourceUri);
   }
-  
+
+  public Set<String> getObjectsOfProperty(String propertyUri) {
+    Set<String> resultSet = new HashSet<>();
+    for (NodeIterator iter = _model.listObjectsOfProperty(Utils.createResource(_resourceUri),
+        Utils.createProperty(propertyUri)); iter.hasNext();) {
+      RDFNode node = iter.next();
+      if (node.isURIResource())
+        resultSet.add(node.asResource().getURI());
+    }
+    return resultSet;
+  }
+
 }

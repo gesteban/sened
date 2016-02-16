@@ -1,5 +1,7 @@
 package es.unizar.sened.query;
 
+import org.apache.jena.atlas.web.HttpException;
+import org.apache.jena.query.Dataset;
 import org.apache.jena.query.Query;
 import org.apache.jena.query.QueryExecution;
 import org.apache.jena.query.QueryExecutionFactory;
@@ -25,23 +27,52 @@ public class SQuery {
     this.qexec = QueryExecutionFactory.sparqlService(endpoint, query);
   }
 
+  protected SQuery(String queryString, Model model) {
+    this.query = QueryFactory.create(queryString);
+    this.qexec = QueryExecutionFactory.create(query, model);
+  }
+
+  protected SQuery(String queryString, Dataset dataset) {
+    this.query = QueryFactory.create(queryString);
+    this.qexec = QueryExecutionFactory.create(query, dataset);
+  }
+
   @Override
   public String toString() {
     return query.toString();
   }
 
-  public SQueryResult doSelect() throws ResultSetException {
+  public SQueryResult doSelect() throws ResultSetException, HttpException {
     ResultSet resultSet = qexec.execSelect();
     SQueryResult rs = new SQueryResult(resultSet);
     qexec.close();
     return rs;
   }
 
-  public Model doDescribe() throws ResultSetException {
-    QueryEngineHTTP qehttp = (QueryEngineHTTP) qexec;
-    qehttp.setModelContentType(WebContent.contentTypeJSONLD);
-    Model resultModel = qehttp.execDescribe();
-    qehttp.close();
+  public Model doDescribe() throws ResultSetException, HttpException {
+    Model resultModel;
+    if (qexec instanceof QueryEngineHTTP) {
+      QueryEngineHTTP qehttp = (QueryEngineHTTP) qexec;
+      qehttp.setModelContentType(WebContent.contentTypeJSONLD);
+      resultModel = qehttp.execDescribe();
+      qehttp.close();
+    } else {
+      resultModel = qexec.execDescribe();
+    }
+    qexec.close();
+    return resultModel;
+  }
+
+  public Model doConstruct() throws ResultSetException, HttpException {
+    Model resultModel;
+    if (qexec instanceof QueryEngineHTTP) {
+      QueryEngineHTTP qehttp = (QueryEngineHTTP) qexec;
+      qehttp.setModelContentType(WebContent.contentTypeJSONLD);
+      resultModel = qehttp.execConstruct();
+      qehttp.close();
+    } else {
+      resultModel = qexec.execConstruct();
+    }
     qexec.close();
     return resultModel;
   }

@@ -11,15 +11,17 @@ import org.apache.commons.lang3.NotImplementedException;
 import org.apache.jena.atlas.lib.NotImplemented;
 import org.apache.jena.ontology.OntClass;
 import org.apache.jena.ontology.OntProperty;
+import org.apache.jena.query.ResultSetFormatter;
 import org.apache.jena.rdf.model.Model;
 import org.apache.jena.rdf.model.ModelFactory;
 import org.apache.jena.rdf.model.RDFNode;
 import org.apache.jena.rdf.model.Resource;
 import org.apache.jena.rdf.model.Statement;
 import org.apache.jena.rdf.model.StmtIterator;
+import org.apache.jena.riot.RDFDataMgr;
+import org.apache.jena.riot.RDFFormat;
 
 import sid.VOXII.propertyRanking.PropertyRanker;
-import sid.VOXII.propertyRanking.PropertyRankerFactory;
 import sid.VOXII.propertyRanking.RankedProperty;
 import sid.VOXII.propertyRanking.implementations.InstanceNumberRankedProperty;
 
@@ -29,7 +31,7 @@ import com.google.common.cache.CacheBuilder;
 import com.google.common.cache.CacheLoader;
 import com.google.common.cache.LoadingCache;
 
-import es.unizar.sened.cache.LuceneIndex;
+import es.unizar.sened.index.LuceneIndex;
 import es.unizar.sened.model.DomainOntology;
 import es.unizar.sened.model.PropAndDir;
 import es.unizar.sened.model.SResource;
@@ -47,15 +49,18 @@ public class Sened {
 
   private static final String TAG = Sened.class.getSimpleName();
 
-  public static final String DBPEDIA_ENDPOINT = "http://dbpedia.org/sparql";
+  public static final boolean LOAD_LUCENE_INDEX = true;
+
+  public static final String REMOTE_ENDPOINT = "http://dbpedia.org/sparql";
   public static final String LANGUAGE = "en";
   public static final int QUERY_DEEP = 2;
 
   private LuceneIndex _li;
-  private SQueryFactory _queryFactory;
+  private SQueryFactory _remoteQuery;
   private Model _dataFactory = ModelFactory.createDefaultModel();
+  private TdbProxy _tdb;
 
-  private final LoadingCache<QueryParameters, SQueryResult> _queryProxy = CacheBuilder.newBuilder().maximumSize(100)
+  private final LoadingCache<QueryParameters, SQueryResult> _resultCache = CacheBuilder.newBuilder().maximumSize(100)
       .build(new CacheLoader<QueryParameters, SQueryResult>() {
         @Override
         public SQueryResult load(QueryParameters params) throws Exception {
@@ -63,9 +68,10 @@ public class Sened {
           if (DomainOntology.getTaxonomyType().equals(DomainOntology.TAXONOMY_CLASSES))
             throw new NotImplementedException("class taxonomy not implemented yet");
           else if (DomainOntology.getTaxonomyType().equals(DomainOntology.TAXONOMY_CATEGORIES))
-            query = _queryFactory.getKeywordQuery_CategoryTaxonomy(params.getKeyword(), params.getResource().getURI(),
+            query = _remoteQuery.getKeywordQuery_CategoryTaxonomy(params.getKeyword(), params.getResource().getURI(),
                 QUERY_DEEP);
-          Log.d(TAG, "<LoadingCache> performing search of " + params.toString());
+          System.out.println(query);
+          Log.d(TAG + "/LoadingCache", "Performing search of " + params.toString());
           return query == null ? null : query.doSelect();
         }
       });
@@ -81,35 +87,16 @@ public class Sened {
 
   private Sened() {
     try {
-      init(true);
+      _li = new LuceneIndex();
+      if (LOAD_LUCENE_INDEX)
+        _li.load();
+      _remoteQuery = new SQueryFactory(REMOTE_ENDPOINT);
+      _tdb = new TdbProxy(_remoteQuery);
+
     } catch (IOException ex) {
       Log.e(TAG, "error creating service singleton");
       ex.printStackTrace();
     }
-  }
-
-  private void init(boolean loadPreviousLuceneIndex) throws IOException {
-
-    _li = new LuceneIndex();
-    if (loadPreviousLuceneIndex)
-      _li.load();
-
-    _queryFactory = new SQueryFactory(DBPEDIA_ENDPOINT);
-
-  }
-
-  private Set<OntClass> getTypes(String instanceURI) {
-    SQuery query = _queryFactory.getTypeQuery(instanceURI);
-    SQueryResult result = query.doSelect();
-    Set<OntClass> classes = new HashSet<OntClass>();
-    for (String classUri : result.asSimpleColumn())
-      classes.add(Utils.createClass(classUri));
-    // special DBpedia case: returning at least the special Void class
-    // TODO remove DBpedia specific code (if possible)
-    if (classes.size() == 0)
-      classes.add(DomainOntology.Void);
-
-    return classes;
   }
 
   public void maintenance() throws IOException {
@@ -128,32 +115,30 @@ public class Sened {
 
   public List<SResource> searchKeyword_CategoryTaxonomy(String keywords, org.apache.jena.rdf.model.Resource category)
       throws Exception {
-    // Parsing keywords string, each keyword is separated by a space.
+    // parsing keywords string, each keyword is separated by a space
     Set<String> keywordSet = new HashSet<String>();
     keywordSet.addAll(Arrays.asList(keywords.split(" ")));
     for (String keyword : keywordSet)
-      // Looking for already stored results.
+      // looking for already stored results
       if (!_li.existsKeywordDocument(keyword, category.getLocalName())) {
-        // If it does not exist, perform a SPARQL query.
-        SQueryResult result = _queryProxy.get(new QueryParameters(keyword, category));
+        // if it does not exist, perform a SPARQL query
+        SQueryResult result = _resultCache.get(new QueryParameters(keyword, category));
+        System.out.println(result.toString());
         _li.add(keyword, result.asArticleSet(), category.getLocalName());
       }
 
     return _li.searchKeywords(keywordSet, category.getLocalName());
   }
 
-  public SenedResource searchRelated(String resourceURI) {
-    Log.i(TAG, "<searchRelated> Searching related information of [" + resourceURI + "]");
+  public SenedResource searchRelated(String resourceUri) throws Exception {
+    Log.i(TAG + "/searchRelated", "Searching related information of [" + resourceUri + "]");
 
     // sparql describe of resource
-    SQuery query = _queryFactory.getDescribeQuery(resourceURI);
-    Model resultModel = query.doDescribe();
-    // RDFDataMgr.write(System.out, resultModel, RDFFormat.TURTLE_PRETTY);
+    Model resultModel = _tdb.getDepth2(resourceUri);
 
     // ranking object properties
-    SenedResource res = new SenedResource(resourceURI);
-    res.addModel(resultModel);
-    Utils.printRank(res.getObjectProperties(PropertyRankerFactory.INSTANCE_NUMBER_RANKING_BIDIR_DEPTH_1));
+    SenedResource res = new SenedResource(resourceUri, resultModel);
+    Utils.printResource(res, PropertyRanker.INSTANCE_NUMBER_RANKING_BIDIR_DEPTH_1);
 
     /*               */
     /*               */

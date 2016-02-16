@@ -13,32 +13,32 @@ package sid.VOXII.propertyRanking;
 
 public class RankedProperty implements Comparable<RankedProperty> {
 
-  String propertyURI = "";
-  double rankValue = 0.0;
+  String _propertyUri = "";
+  double _rankValue = 0.0;
 
   public RankedProperty(String propertyURI) {
-    this.propertyURI = propertyURI;
-    this.rankValue = 0.0;
+    this._propertyUri = propertyURI;
+    this._rankValue = 0.0;
   }
 
-  public String getPropertyURI() {
-    return propertyURI;
+  public String getPropertyUri() {
+    return _propertyUri;
   }
 
   public void setPropertyURI(String propertyURI) {
-    this.propertyURI = propertyURI;
+    this._propertyUri = propertyURI;
   }
 
   public double getRankValue() {
-    return rankValue;
+    return _rankValue;
   }
 
   public void setRankValue(double rankValue) {
-    this.rankValue = rankValue;
+    this._rankValue = rankValue;
   }
 
   public int compareTo(RankedProperty o) {
-    if (this.rankValue >= o.getRankValue())
+    if (this._rankValue >= o.getRankValue())
       return -1;
     else
       return 1;

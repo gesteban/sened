@@ -13,7 +13,6 @@ import sid.VOXII.informationExtraction.InformationExtractor;
 import sid.VOXII.informationExtraction.InformationExtractorFactory;
 import sid.VOXII.informationExtraction.implementations.PrunedDescribeDepth2IExtractor;
 import sid.VOXII.propertyRanking.PropertyRanker;
-import sid.VOXII.propertyRanking.PropertyRankerFactory;
 import sid.VOXII.propertyRanking.RankedProperty;
 import sid.VOXII.propertyRanking.implementations.InstanceNumberRankedProperty;
 import sid.VOXII.propertyRanking.implementations.RelevantInformationRankedProperty;
@@ -70,53 +69,50 @@ public class TestInformationExtractor {
     // now the different rankings:
     HashSet<String> definedProperties = new HashSet<String>(relevantProperties);
 
-    PropertyRanker propRanker = PropertyRankerFactory
-        .getPropertyRanker(PropertyRankerFactory.INSTANCE_NUMBER_RANKING_BIDIR_DEPTH_1);
-    List<? extends RankedProperty> rankedProperties = propRanker.rankDefinedObjectProperties(model,
-        definedProperties, resource);
-    out.println("Ranking: " + PropertyRankerFactory.INSTANCE_NUMBER_RANKING_BIDIR_DEPTH_1);
+    PropertyRanker propRanker = PropertyRanker.create(PropertyRanker.INSTANCE_NUMBER_RANKING_BIDIR_DEPTH_1);
+    List<? extends RankedProperty> rankedProperties = propRanker.rankDefinedObjectProperties(model, definedProperties,
+        resource);
+    out.println("Ranking: " + PropertyRanker.INSTANCE_NUMBER_RANKING_BIDIR_DEPTH_1);
     out.println("-------------------------");
     for (int i = 0; i < rankedProperties.size(); i++) {
       InstanceNumberRankedProperty auxInfo = (InstanceNumberRankedProperty) rankedProperties.get(i);
-      out.println(" " + i + "# " + auxInfo.getPropertyURI());
+      out.println(" " + i + "# " + auxInfo.getPropertyUri());
       out.println("     value:" + auxInfo.getRankValue() + "  #instances:" + auxInfo.getNumberOfInstances());
     }
     out.println();
     out.flush();
 
-    propRanker = PropertyRankerFactory.getPropertyRanker(PropertyRankerFactory.INSTANCE_NUMBER_RANKING_INBOUND_DEPTH_1);
+    propRanker = PropertyRanker.create(PropertyRanker.INSTANCE_NUMBER_RANKING_INBOUND_DEPTH_1);
     rankedProperties = propRanker.rankDefinedObjectProperties(model, definedProperties, resource);
-    out.println("Ranking: " + PropertyRankerFactory.INSTANCE_NUMBER_RANKING_INBOUND_DEPTH_1);
+    out.println("Ranking: " + PropertyRanker.INSTANCE_NUMBER_RANKING_INBOUND_DEPTH_1);
     out.println("-------------------------");
     for (int i = 0; i < rankedProperties.size(); i++) {
       InstanceNumberRankedProperty auxInfo = (InstanceNumberRankedProperty) rankedProperties.get(i);
-      out.println(" " + i + "# " + auxInfo.getPropertyURI());
+      out.println(" " + i + "# " + auxInfo.getPropertyUri());
       out.println("     value:" + auxInfo.getRankValue() + "  #instances:" + auxInfo.getNumberOfInstances());
     }
     out.println();
     out.flush();
 
-    propRanker = PropertyRankerFactory
-        .getPropertyRanker(PropertyRankerFactory.INSTANCE_NUMBER_RANKING_OUTBOUND_DEPTH_1);
+    propRanker = PropertyRanker.create(PropertyRanker.INSTANCE_NUMBER_RANKING_OUTBOUND_DEPTH_1);
     rankedProperties = propRanker.rankDefinedObjectProperties(model, definedProperties, resource);
-    out.println("Ranking: " + PropertyRankerFactory.INSTANCE_NUMBER_RANKING_OUTBOUND_DEPTH_1);
+    out.println("Ranking: " + PropertyRanker.INSTANCE_NUMBER_RANKING_OUTBOUND_DEPTH_1);
     out.println("-------------------------");
     for (int i = 0; i < rankedProperties.size(); i++) {
       InstanceNumberRankedProperty auxInfo = (InstanceNumberRankedProperty) rankedProperties.get(i);
-      out.println(" " + i + "# " + auxInfo.getPropertyURI());
+      out.println(" " + i + "# " + auxInfo.getPropertyUri());
       out.println("     value:" + auxInfo.getRankValue() + "  #instances:" + auxInfo.getNumberOfInstances());
     }
     out.println();
     out.flush();
 
-    propRanker = PropertyRankerFactory
-        .getPropertyRanker(PropertyRankerFactory.RELEVANT_INFORMATION_AMOUNT_RANKING_DEPTH_2);
+    propRanker = PropertyRanker.create(PropertyRanker.RELEVANT_INFORMATION_AMOUNT_RANKING_DEPTH_2);
     rankedProperties = propRanker.rankDefinedObjectProperties(model, definedProperties, resource);
-    out.println("Ranking: " + PropertyRankerFactory.RELEVANT_INFORMATION_AMOUNT_RANKING_DEPTH_2);
+    out.println("Ranking: " + PropertyRanker.RELEVANT_INFORMATION_AMOUNT_RANKING_DEPTH_2);
     out.println("-------------------------");
     for (int i = 0; i < rankedProperties.size(); i++) {
       RelevantInformationRankedProperty auxInfo = (RelevantInformationRankedProperty) rankedProperties.get(i);
-      out.println(" " + i + "# " + auxInfo.getPropertyURI());
+      out.println(" " + i + "# " + auxInfo.getPropertyUri());
       out.println("     value:" + auxInfo.getRankValue() + "  #reachable:" + auxInfo.getReachableResources()
           + "  #weight:" + auxInfo.getInformationWeight());
 

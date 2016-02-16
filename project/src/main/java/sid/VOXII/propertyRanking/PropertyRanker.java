@@ -19,7 +19,34 @@ import java.util.Set;
 
 import org.apache.jena.rdf.model.Model;
 
+import sid.VOXII.propertyRanking.implementations.InstanceNumberBidirDepth1Ranker;
+import sid.VOXII.propertyRanking.implementations.InstanceNumberInboundDepth1Ranker;
+import sid.VOXII.propertyRanking.implementations.InstanceNumberOutboundDepth1Ranker;
+import sid.VOXII.propertyRanking.implementations.RelevantInformationDepth2Ranker;
+
 public abstract class PropertyRanker {
+
+  public static final String INSTANCE_NUMBER_RANKING_BIDIR_DEPTH_1 = "instanceNumberRanking-depth1";
+  public static final String INSTANCE_NUMBER_RANKING_INBOUND_DEPTH_1 = "instanceNumberRankingInbound-depth1";
+  public static final String INSTANCE_NUMBER_RANKING_OUTBOUND_DEPTH_1 = "instanceNumberRankingOutbound-depth1";
+  public static final String RELEVANT_INFORMATION_AMOUNT_RANKING_DEPTH_2 = "relevantInformationAmountRanking-depth2";
+
+  public static PropertyRanker create(String type) {
+    PropertyRanker instance = null;
+    if (type.equals(INSTANCE_NUMBER_RANKING_BIDIR_DEPTH_1))
+
+      instance = new InstanceNumberBidirDepth1Ranker();
+    else if (type.equals(INSTANCE_NUMBER_RANKING_INBOUND_DEPTH_1))
+
+      instance = new InstanceNumberInboundDepth1Ranker();
+    else if (type.equals(INSTANCE_NUMBER_RANKING_OUTBOUND_DEPTH_1))
+      instance = new InstanceNumberOutboundDepth1Ranker();
+
+    else if (type.equals(RELEVANT_INFORMATION_AMOUNT_RANKING_DEPTH_2))
+      instance = new RelevantInformationDepth2Ranker();
+
+    return instance;
+  }
 
   /**
    * Method that ranks the relevant properties (marked in the domain ontology as so), and returns an ORDERED arraylist

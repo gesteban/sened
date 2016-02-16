@@ -1,4 +1,4 @@
-package es.unizar.sened.cache;
+package es.unizar.sened.index;
 
 import java.io.File;
 import java.io.IOException;
@@ -80,7 +80,7 @@ public class LuceneIndex {
       writer.commit();
       writer.close();
     } catch (Exception ex) {
-      Log.e(TAG, "<LuceneIndex> Error al construir");
+      Log.e(TAG, "Error al construir");
       ex.printStackTrace();
     }
   }
@@ -103,7 +103,7 @@ public class LuceneIndex {
       _directory.copyFrom(newDirectory, str, str, IOContext.DEFAULT);
     }
     newDirectory.close();
-    Log.d(TAG, "<load> Index loaded from [" + LUCENE_INDEX_PATH + "]");
+    Log.d(TAG + "/load", "Index loaded from " + LUCENE_INDEX_PATH);
   }
 
   private IndexWriterConfig newConfig() {
@@ -148,7 +148,7 @@ public class LuceneIndex {
       writer.commit();
       writer.close();
     } catch (Exception ex) {
-      Log.e(TAG, "<addDocument> Exception");
+      Log.e(TAG + "/addDocument", "Exception");
       ex.printStackTrace();
     }
   }
@@ -175,7 +175,7 @@ public class LuceneIndex {
     PhraseQuery phraseQuery2 = phraseQueryBuilder2.build();
     booleanBuilder.add(phraseQuery2, BooleanClause.Occur.MUST);
     BooleanQuery booleanQuery = booleanBuilder.build();
-    Log.d(TAG, "<existsKeywordDocument> Query: " + booleanQuery.toString());
+    Log.d(TAG + "/existsKeywordDocument", "Query: " + booleanQuery.toString());
     IndexReader reader = DirectoryReader.open(_directory);
     IndexSearcher searcher = new IndexSearcher(reader);
     TopDocs hits = searcher.search(booleanQuery, MAX_SEARCHER_RESULTS);
@@ -220,12 +220,12 @@ public class LuceneIndex {
     if (hits.totalHits == 0) {
       // Sin hits, se crea una nueva entrada.
       addDocument(doc);
-      Log.d(TAG, "<updateKeywordDocument> Documento KEYWORD añadido (" + doc.get(Fields.KEYWORD.toString()) + ")");
+      Log.d(TAG + "/updateKeywordDocument", "Documento KEYWORD añadido (" + doc.get(Fields.KEYWORD.toString()) + ")");
       reader.close();
       return 1;
     } else if (hits.totalHits > 1) {
       // Mas de un hit, problema.
-      Log.e(TAG, "<updateKeywordDocument> Encontrados más de un hit buscando por un keyword");
+      Log.e(TAG + "/updateKeywordDocument", "Encontrados más de un hit buscando por un keyword");
       reader.close();
       return -1;
     } else { // totalHits == 1
@@ -250,17 +250,16 @@ public class LuceneIndex {
         writer.deleteDocuments(booleanQuery);
         writer.addDocument(auxDoc);
         writer.close();
-        Log.d(TAG, "<updateKeywordDocument> Documento KEYWORD actualizado (" + doc.get(Fields.KEYWORD.toString()) + ")");
+        Log.d(TAG + "/updateKeywordDocument", "Documento KEYWORD actualizado (" + doc.get(Fields.KEYWORD.toString())
+            + ")");
         reader.close();
         return 0;
       } else {
         // El hit encontrado ya tiene la categoria que le ibamos a
         // incluir.
         // Significa que hemos hecho algo mal en el código.
-        Log.e(
-            TAG,
-            "<updateKeywordDocument> Ya existe la categoria que ibamos" + " a incluir en el keyword "
-                + auxDoc.get(Fields.KEYWORD.toString()));
+        Log.e(TAG + "/updateKeywordDocument", "Ya existe la categoria que ibamos" + " a incluir en el keyword "
+            + auxDoc.get(Fields.KEYWORD.toString()));
         reader.close();
         return -1;
       }
@@ -301,15 +300,13 @@ public class LuceneIndex {
     if (hits.totalHits == 0) {
       // Sin hits, se crea una nueva entrada.
       addDocument(newDoc);
-      Log.d(
-          TAG,
-          "<updateResourceDocument> Documento RESOURCE añadido (" + newDoc.get(Fields.URI) + " - "
-              + newDoc.get(Fields.CATEGORY) + ")");
+      Log.d(TAG + "/updateResourceDocument",
+          "Documento RESOURCE añadido (" + newDoc.get(Fields.URI) + " - " + newDoc.get(Fields.CATEGORY) + ")");
       reader.close();
       return 1;
     } else if (hits.totalHits > 1) {
       // Mas de un hit, problema.
-      Log.e(TAG, "<updateDocument> Encontrados más de un hit buscando por URI");
+      Log.e(TAG + "/updateResourceDocument", "Encontrados más de un hit buscando por URI");
       reader.close();
       return -1;
     } else { // totalHits == 1
@@ -325,7 +322,7 @@ public class LuceneIndex {
           doc.removeField(Fields.COUNT);
           doc.add(new StringField(Fields.COUNT, String.valueOf(oldValue + 1), Field.Store.YES));
         } catch (Exception ex) {
-          Log.e(TAG, "<updateResourceDocument> Error parseando el entero de FieldID.COUNT");
+          Log.e(TAG + "/updateResourceDocument", "Error parseando el entero de FieldID.COUNT");
         }
       }
       // Ahora buscamos en el documento por si la categoria que queremos
@@ -345,7 +342,7 @@ public class LuceneIndex {
         writer.deleteDocuments(booleanQuery);
         writer.addDocument(doc);
         writer.close();
-        Log.d(TAG, "<updateDocument> Documento actualizado (" + doc.get(Fields.URI) + ")");
+        Log.d(TAG + "/updateResourceDocument", "Documento actualizado (" + doc.get(Fields.URI) + ")");
         reader.close();
         return 0;
       } else {
@@ -361,11 +358,11 @@ public class LuceneIndex {
           writer.deleteDocuments(booleanQuery);
           writer.addDocument(doc);
           writer.close();
-          Log.d(TAG, "<updateDocument> Documento actualizado (" + doc.get(Fields.URI) + ")");
+          Log.d(TAG + "/updateResourceDocument", "Documento actualizado (" + doc.get(Fields.URI) + ")");
           reader.close();
           return 0;
         } else {
-          Log.d(TAG, "<updateDocument> Documento ya existente (" + doc.get(Fields.URI) + ")");
+          Log.d(TAG + "/updateResourceDocument", "Documento ya existente (" + doc.get(Fields.URI) + ")");
           reader.close();
           return -1;
         }
@@ -410,7 +407,7 @@ public class LuceneIndex {
         }
       }
 
-      // Querying index.
+      // querying index
       QueryParser qp = new QueryParser(keyToLookFor, _analyzer);
       String qs = "";
       for (String kw : keywordSet)
@@ -423,28 +420,28 @@ public class LuceneIndex {
       booleanBuilder.add(parsedQuery, BooleanClause.Occur.MUST);
       booleanBuilder.add(phraseQuery, BooleanClause.Occur.MUST);
       BooleanQuery booleanQuery = booleanBuilder.build();
-      Log.d(TAG, "<searchKeywords> Query: " + booleanQuery.toString());
+      Log.d(TAG + "/searchKeywords", "Query: " + booleanQuery.toString());
       IndexReader reader = DirectoryReader.open(_directory);
       IndexSearcher searcher = new IndexSearcher(reader);
       TopDocs hits = searcher.search(booleanQuery, MAX_SEARCHER_RESULTS);
-      Log.i(TAG, "<searchKeywords> " + hits.totalHits + " resultados encontrados en LuceneIndex");
+      Log.i(TAG + "/searchKeywords", hits.totalHits + " resultados encontrados en LuceneIndex");
 
-      // Listing all hits.
+      // listing all hits
       List<Document> hitDocs = new ArrayList<Document>();
       for (int i = 0; i < hits.totalHits && i < MAX_SEARCHER_RESULTS; i++) {
         hitDocs.add(searcher.doc(hits.scoreDocs[i].doc));
       }
 
-      // Print best result.
+      // print best result
       if (hits.totalHits != 0) {
         Document topDoc = searcher.doc(hits.scoreDocs[0].doc);
-        Log.i(TAG, "<searchKeywords> Mejor resultado: " + hits.getMaxScore() + " -- " + topDoc.get(Fields.URI));
+        Log.i(TAG + "/searchKeywords", "Mejor resultado: " + hits.getMaxScore() + " -- " + topDoc.get(Fields.URI));
       }
       reader.close();
       return DocumentUtils.documentsToResources(hitDocs);
 
     } catch (ParseException ex) {
-      Log.e(TAG, "<searchKeywords> ParseException");
+      Log.e(TAG + "/searchKeywords", "ParseException");
       return null;
     }
   }
@@ -517,7 +514,7 @@ public class LuceneIndex {
       // CUALQUIERA DE LAS CATEGORIAS
       // QUE TIENE EL KW_DOC (Y EL KEYWORD POR SUPUESTO)
       // /////////////////////////////////////////////////
-      Log.d(TAG, "<deleteLastUsedKeywordSearch> Query de resourceDocuments: " + booleanQuery2.toString());
+      Log.d(TAG + "/deleteLastUsedKeywordSearch", "Query de resourceDocuments: " + booleanQuery2.toString());
 
       // Ahora buscaremos y recorreremos los documentos enlazados a este
       // keywordDocument
@@ -525,7 +522,7 @@ public class LuceneIndex {
       // en caso
       // de quedarse con valor 0, eliminarlos del índice.
       TopDocs hits2 = searcher.search(booleanQuery2, MAX_SEARCHER_RESULTS);
-      Log.d(TAG, "<deleteLastUsedKeywordSearch> " + hits2.totalHits
+      Log.d(TAG + "/deleteLastUsedKeywordSearch", hits2.totalHits
           + " resultados encontrados en LuceneIndex para borrar/actualizar");
 
       // Creo una lista con los documentos encontrados que vayan a ser
@@ -557,7 +554,7 @@ public class LuceneIndex {
       writer.close();
 
     } catch (Exception ex) {
-      Log.e(TAG, "<deleteLastUsedKeywordSearch> Exception (superb info, good luck)");
+      Log.e(TAG + "/deleteLastUsedKeywordSearch", "Exception (superb info, good luck)");
       ex.printStackTrace();
     }
   }

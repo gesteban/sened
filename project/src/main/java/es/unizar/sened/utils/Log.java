@@ -52,10 +52,10 @@ public final class Log {
       case DEBUG:
       case INFO:
       case WARNINGS:
-        System.out.println("WARN  [" + tag + "] " + message);
+        System.out.println("WRN[" + tag + "] " + message);
         break;
       case FILE:
-        out.write("WARN  [" + tag + "] " + message + "\n");
+        out.write("WRN[" + tag + "] " + message + "\n");
       }
     } catch (IOException ex) {
       Log.e(TAG, "IOException, no se pudo escribir en fichero");
@@ -69,10 +69,10 @@ public final class Log {
       switch (behaviour) {
       case DEBUG:
       case INFO:
-        System.out.println("INFO  [" + tag + "] " + message);
+        System.out.println("NFO[" + tag + "] " + message);
         break;
       case FILE:
-        out.write("INFO [" + tag + "] " + message + "\n");
+        out.write("NFO[" + tag + "] " + message + "\n");
       default:
       }
     } catch (IOException ex) {
@@ -86,10 +86,10 @@ public final class Log {
     try {
       switch (behaviour) {
       case DEBUG:
-        System.out.println("DEBUG [" + tag + "] " + message);
+        System.out.println("DBG[" + tag + "] " + message);
         break;
       case FILE:
-        out.write("DEBUG [" + tag + "] " + message + "\n");
+        out.write("DBG[" + tag + "] " + message + "\n");
       default:
       }
     } catch (IOException ex) {

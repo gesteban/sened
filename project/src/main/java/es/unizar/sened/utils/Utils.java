@@ -6,10 +6,12 @@ import org.apache.jena.ontology.OntClass;
 import org.apache.jena.ontology.OntModel;
 import org.apache.jena.ontology.OntModelSpec;
 import org.apache.jena.rdf.model.ModelFactory;
+import org.apache.jena.rdf.model.Property;
 import org.apache.jena.rdf.model.Resource;
 import org.apache.jena.rdf.model.ResourceFactory;
 
-import sid.VOXII.propertyRanking.PropertyRankerFactory;
+import es.unizar.sened.model.SenedResource;
+import sid.VOXII.propertyRanking.PropertyRanker;
 import sid.VOXII.propertyRanking.RankedProperty;
 import sid.VOXII.propertyRanking.implementations.InstanceNumberRankedProperty;
 
@@ -31,16 +33,28 @@ public class Utils {
     return _factory.createClass(uri);
   }
 
-  public static void printRank(List<? extends RankedProperty> rankedProperties) {
-    Log.d(TAG, "<printRank> " + PropertyRankerFactory.INSTANCE_NUMBER_RANKING_BIDIR_DEPTH_1);
+  public static Property createProperty(String uri) {
+    return _factory.createProperty(uri);
+  }
+
+  public static void printResource(SenedResource resource, String propertyRank) {
+    Log.d(TAG + "/printResource", "Ranked properties according to "
+        + PropertyRanker.INSTANCE_NUMBER_RANKING_BIDIR_DEPTH_1);
+    List<? extends RankedProperty> rankedProperties = resource.getObjectProperties(propertyRank);
     for (int i = 0; i < rankedProperties.size(); i++) {
       RankedProperty auxInfo = rankedProperties.get(i);
       StringBuilder str = new StringBuilder();
-      str.append("  " + i + "# " + auxInfo.getPropertyURI());
-      str.append("  value:" + auxInfo.getRankValue());
+      str.append("  " + i + "# <" + auxInfo.getPropertyUri());
+      str.append(">  value:" + auxInfo.getRankValue());
       if (auxInfo instanceof InstanceNumberRankedProperty)
         str.append("  instances:" + ((InstanceNumberRankedProperty) auxInfo).getNumberOfInstances());
-      Log.d(TAG, str.toString());
+      Log.d(TAG + "/printResource", str.toString());
+    }
+    for (int i = 0; i < rankedProperties.size(); i++) {
+      Log.d(TAG + "/printResource", "Objects of <" + rankedProperties.get(i).getPropertyUri() + ">");
+      for (String resourceUri : resource.getObjectsOfProperty(rankedProperties.get(i).getPropertyUri())) {
+        Log.d(TAG + "/printResource", "  <" + resourceUri + ">");
+      }
     }
   }
 

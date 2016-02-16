@@ -2,6 +2,9 @@ package es.unizar.sened.query;
 
 import java.util.Set;
 
+import org.apache.jena.query.Dataset;
+import org.apache.jena.rdf.model.Model;
+
 import es.unizar.sened.model.DomainOntology;
 import es.unizar.sened.model.PropAndDir;
 
@@ -14,15 +17,33 @@ public class SQueryFactory {
 
   private static final String PREFIX_ALL = "PREFIX dcterms: <http://purl.org/dc/terms/> \n"
       + "PREFIX skos: <http://www.w3.org/2004/02/skos/core#> \n" + "PREFIX xsd: <http://www.w3.org/2001/XMLSchema#> \n";
-  private static final String QF_SUBCATEGORIES = "PREFIX skos: <http://www.w3.org/2004/02/skos/core#> \n"
+  private static final String QUERY_SUBCATEGORIES = "PREFIX skos: <http://www.w3.org/2004/02/skos/core#> \n"
       + "SELECT ?subcat \n" + "WHERE { \n" + "  ?subcat skos:broader <#categoryURI> \n}";
-  private static final String QF_TYPE = "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> \n"
+  private static final String QUERY_TYPE = "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> \n"
       + "SELECT DISTINCT ?type WHERE { <#uri> rdf:type ?type }";
+  private static final String QUERY_MANUALDESCRIBE = "construct { ?x ?y ?z } where { "
+      + "{ <#uri> ?y ?z BIND(<#uri> AS ?x) } UNION { ?x ?y <#uri> BIND(<#uri> AS ?z) } }";
 
   private String _endpoint;
+  private Model _model;
+  private Dataset _dataset;
 
   public SQueryFactory(String endpoint) {
     _endpoint = endpoint;
+    _model = null;
+    _dataset = null;
+  }
+
+  public SQueryFactory(Model model) {
+    _endpoint = null;
+    _model = model;
+    _dataset = null;
+  }
+
+  public SQueryFactory(Dataset dataset) {
+    _endpoint = null;
+    _model = null;
+    _dataset = dataset;
   }
 
   public SQuery getKeywordQuery_CategoryTaxonomy(String keyword, String categoryUri, int categoryDeep) {
@@ -67,30 +88,69 @@ public class SQueryFactory {
       }
     }
     queryString += "}";
-    return new SQuery(queryString, _endpoint);
+    if (_endpoint != null)
+      return new SQuery(queryString, _endpoint);
+    else if (_model != null)
+      return new SQuery(queryString, _model);
+    else
+      // _dataset != null
+      return new SQuery(queryString, _dataset);
   }
 
-  public SQuery getSubCategoryQuery(String categoryURI) {
-    String queryString = QF_SUBCATEGORIES;
-    queryString = queryString.replace("#categoryURI", categoryURI);
-    return new SQuery(queryString, _endpoint);
+  public SQuery getSubCategoryQuery(String categoryUri) {
+    String queryString = QUERY_SUBCATEGORIES;
+    queryString = queryString.replace("#categoryURI", categoryUri);
+    if (_endpoint != null)
+      return new SQuery(queryString, _endpoint);
+    else if (_model != null)
+      return new SQuery(queryString, _model);
+    else
+      // _dataset != null
+      return new SQuery(queryString, _dataset);
   }
 
-  public SQuery getTypeQuery(String URI) {
-    String queryString = QF_TYPE;
-    queryString = queryString.replace("#uri", URI);
-    return new SQuery(queryString, _endpoint);
+  public SQuery getTypeQuery(String resourceUri) {
+    String queryString = QUERY_TYPE;
+    queryString = queryString.replace("#uri", resourceUri);
+    if (_endpoint != null)
+      return new SQuery(queryString, _endpoint);
+    else if (_model != null)
+      return new SQuery(queryString, _model);
+    else
+      // _dataset != null
+      return new SQuery(queryString, _dataset);
   }
 
-  public SQuery getCustomQuery(String query) {
-    return new SQuery(query, _endpoint);
+  public SQuery getCustomQuery(String queryString) {
+    if (_endpoint != null)
+      return new SQuery(queryString, _endpoint);
+    else if (_model != null)
+      return new SQuery(queryString, _model);
+    else
+      // _dataset != null
+      return new SQuery(queryString, _dataset);
   }
 
-  public SQuery getDescribeQuery(String URI) {
-    return new SQuery("DESCRIBE <" + URI + ">", _endpoint);
+  public SQuery getDescribeQuery(String resourceUri) {
+    if (_endpoint != null)
+      return new SQuery("DESCRIBE <" + resourceUri + ">", _endpoint);
+    else if (_model != null)
+      return new SQuery("DESCRIBE <" + resourceUri + ">", _model);
+    else
+      // _dataset != null
+      return new SQuery("DESCRIBE <" + resourceUri + ">", _dataset);
   }
 
-  public static void main(String[] args) {
-
+  public SQuery getManualDescribeQuery(String resourceUri) {
+    String queryString = QUERY_MANUALDESCRIBE;
+    queryString = queryString.replaceAll("#uri", resourceUri);
+    if (_endpoint != null)
+      return new SQuery(queryString, _endpoint);
+    else if (_model != null)
+      return new SQuery(queryString, _model);
+    else
+      // _dataset != null
+      return new SQuery(queryString, _dataset);
   }
+
 }
