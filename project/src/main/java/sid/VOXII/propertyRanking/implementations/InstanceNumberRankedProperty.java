@@ -1,8 +1,8 @@
 package sid.VOXII.propertyRanking.implementations;
 
-import sid.VOXII.propertyRanking.RankedProperty;
+import es.unizar.vox2.rank.RankedResource;
 
-public class InstanceNumberRankedProperty extends RankedProperty {
+public class InstanceNumberRankedProperty extends RankedResource {
 
   int numberOfInstances = 0;
 

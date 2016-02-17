@@ -1,29 +1,18 @@
 package es.unizar.sened;
 
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
+import java.util.concurrent.ExecutionException;
 
 import org.apache.commons.lang3.NotImplementedException;
 import org.apache.jena.atlas.lib.NotImplemented;
-import org.apache.jena.ontology.OntClass;
 import org.apache.jena.ontology.OntProperty;
-import org.apache.jena.query.ResultSetFormatter;
 import org.apache.jena.rdf.model.Model;
-import org.apache.jena.rdf.model.ModelFactory;
+import org.apache.jena.rdf.model.NodeIterator;
 import org.apache.jena.rdf.model.RDFNode;
-import org.apache.jena.rdf.model.Resource;
-import org.apache.jena.rdf.model.Statement;
-import org.apache.jena.rdf.model.StmtIterator;
-import org.apache.jena.riot.RDFDataMgr;
-import org.apache.jena.riot.RDFFormat;
-
-import sid.VOXII.propertyRanking.PropertyRanker;
-import sid.VOXII.propertyRanking.RankedProperty;
-import sid.VOXII.propertyRanking.implementations.InstanceNumberRankedProperty;
 
 import com.google.common.base.MoreObjects;
 import com.google.common.base.Preconditions;
@@ -33,14 +22,15 @@ import com.google.common.cache.LoadingCache;
 
 import es.unizar.sened.index.LuceneIndex;
 import es.unizar.sened.model.DomainOntology;
-import es.unizar.sened.model.PropAndDir;
 import es.unizar.sened.model.SResource;
-import es.unizar.sened.model.SenedResource;
 import es.unizar.sened.query.SQuery;
 import es.unizar.sened.query.SQueryFactory;
 import es.unizar.sened.query.SQueryResult;
 import es.unizar.sened.utils.Log;
 import es.unizar.sened.utils.Utils;
+import es.unizar.vox2.rank.PropertyRanker;
+import es.unizar.vox2.rank.RankedResource;
+import es.unizar.vox2.rank.ResourceRanker;
 
 /**
  * @author gesteban@unizar.es
@@ -57,7 +47,6 @@ public class Sened {
 
   private LuceneIndex _li;
   private SQueryFactory _remoteQuery;
-  private Model _dataFactory = ModelFactory.createDefaultModel();
   private TdbProxy _tdb;
 
   private final LoadingCache<QueryParameters, SQueryResult> _resultCache = CacheBuilder.newBuilder().maximumSize(100)
@@ -77,7 +66,6 @@ public class Sened {
       });
 
   private static class ServiceSingletonHolder {
-
     public static final Sened instance = new Sened();
   }
 
@@ -130,15 +118,44 @@ public class Sened {
     return _li.searchKeywords(keywordSet, category.getLocalName());
   }
 
-  public SenedResource searchRelated(String resourceUri) throws Exception {
-    Log.i(TAG + "/searchRelated", "Searching related information of [" + resourceUri + "]");
+  public List<? extends RankedResource> getObjectProperties(String resourceUri, String rankType)
+      throws ExecutionException {
+    Model model = _tdb.get(resourceUri, 2);
+    Set<String> definedProperties = new HashSet<>();
+    for (OntProperty prop : DomainOntology.getObjectProperties())
+      definedProperties.add(prop.getURI());
+    PropertyRanker propRanker = PropertyRanker.create(rankType);
+    if (propRanker == null)
+      return null;
+    else {
+      List<? extends RankedResource> rankedProperties = propRanker.rankDefinedObjectProperties(model,
+          definedProperties, resourceUri);
+      Utils.printRank(rankType, rankedProperties);
+      return rankedProperties;
+    }
+  }
 
-    // sparql describe of resource
-    Model resultModel = _tdb.getDepth2(resourceUri);
+  public List<? extends RankedResource> getObjectsOfProperty(String resourceUri, String propertyUri, String rankType)
+      throws ExecutionException {
+    Model model = _tdb.get(resourceUri, 2);
+    Set<String> resourceSet = new HashSet<>();
+    for (NodeIterator iter = model.listObjectsOfProperty(Utils.createResource(resourceUri),
+        Utils.createProperty(propertyUri)); iter.hasNext();) {
+      RDFNode node = iter.next();
+      if (node.isURIResource())
+        resourceSet.add(node.asResource().getURI());
+    }
+    ResourceRanker resRanker = ResourceRanker.create(rankType);
+    if (resRanker == null)
+      return null;
+    else {
+      List<? extends RankedResource> rankedResources = resRanker.rankResources(model, resourceSet, resourceUri);
+      Utils.printRank(rankType, rankedResources);
+      return rankedResources;
+    }
+  }
 
-    // ranking object properties
-    SenedResource res = new SenedResource(resourceUri, resultModel);
-    Utils.printResource(res, PropertyRanker.INSTANCE_NUMBER_RANKING_BIDIR_DEPTH_1);
+  private void someCode(String resourceUri) throws Exception {
 
     /*               */
     /*               */
@@ -169,8 +186,7 @@ public class Sened {
     // Statement stmt = stmtIter.next();
     // if (language == null || (language != null && language.equals(stmt.getLanguage()))) {
     // stmtSet.add(stmt);
-    // }
-    // }
+    // } // }
     // } else {
     // stmtSet.addAll(resultModel.listStatements(null, prop.prop, resource).toSet());
     // }
@@ -178,8 +194,6 @@ public class Sened {
     // for (Statement stmt : stmtSet)
     // Log.d("<<>>", stmt.toString());
     // Log.d("<<>>", "size = " + stmtSet.size());
-
-    return res;
   }
 
   private class QueryParameters {

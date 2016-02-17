@@ -15,14 +15,16 @@ public class SQueryFactory {
 
   public static final String TAG = SQueryFactory.class.getSimpleName();
 
-  private static final String PREFIX_ALL = "PREFIX dcterms: <http://purl.org/dc/terms/> \n"
-      + "PREFIX skos: <http://www.w3.org/2004/02/skos/core#> \n" + "PREFIX xsd: <http://www.w3.org/2001/XMLSchema#> \n";
-  private static final String QUERY_SUBCATEGORIES = "PREFIX skos: <http://www.w3.org/2004/02/skos/core#> \n"
-      + "SELECT ?subcat \n" + "WHERE { \n" + "  ?subcat skos:broader <#categoryURI> \n}";
+  private static final String PREFIX_ALL = "PREFIX dcterms: <http://purl.org/dc/terms/> "
+      + "PREFIX skos: <http://www.w3.org/2004/02/skos/core#> PREFIX xsd: <http://www.w3.org/2001/XMLSchema#> ";
+  private static final String QUERY_SUBCATEGORIES = "PREFIX skos: <http://www.w3.org/2004/02/skos/core#> "
+      + "SELECT ?subcat  WHERE { ?subcat skos:broader <#categoryURI> }";
   private static final String QUERY_TYPE = "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> \n"
       + "SELECT DISTINCT ?type WHERE { <#uri> rdf:type ?type }";
   private static final String QUERY_MANUALDESCRIBE = "construct { ?x ?y ?z } where { "
       + "{ <#uri> ?y ?z BIND(<#uri> AS ?x) } UNION { ?x ?y <#uri> BIND(<#uri> AS ?z) } }";
+  private static final String QUERY_DIRECTDISTANCE = "select (count(distinct ?x) as ?count) where { { <#resourceOne> ?x <#resourceTwo> } "
+      + " UNION { <#resourceTwo> ?x <#resourceOne> } }";
 
   private String _endpoint;
   private Model _model;
@@ -144,6 +146,19 @@ public class SQueryFactory {
   public SQuery getManualDescribeQuery(String resourceUri) {
     String queryString = QUERY_MANUALDESCRIBE;
     queryString = queryString.replaceAll("#uri", resourceUri);
+    if (_endpoint != null)
+      return new SQuery(queryString, _endpoint);
+    else if (_model != null)
+      return new SQuery(queryString, _model);
+    else
+      // _dataset != null
+      return new SQuery(queryString, _dataset);
+  }
+
+  public SQuery getDirectDistanceQuery(String resourceOne, String resourceTwo) {
+    String queryString = QUERY_DIRECTDISTANCE;
+    queryString = queryString.replaceAll("#resourceOne", resourceOne);
+    queryString = queryString.replaceAll("#resourceTwo", resourceTwo);
     if (_endpoint != null)
       return new SQuery(queryString, _endpoint);
     else if (_model != null)

@@ -23,7 +23,7 @@ import org.apache.jena.rdf.model.Property;
 import org.apache.jena.rdf.model.ResIterator;
 import org.apache.jena.rdf.model.Resource;
 
-import sid.VOXII.propertyRanking.PropertyRanker;
+import es.unizar.vox2.rank.PropertyRanker;
 import sid.VOXII.propertyRanking.utils.DefinedObjectPropertyFilter;
 
 public class InstanceNumberOutboundDepth1Ranker extends PropertyRanker {

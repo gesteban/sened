@@ -10,9 +10,8 @@
 // Modifications: 
 ///////////////////////////////////////////////////////////////////////////////
 
-package sid.VOXII.propertyRanking;
+package es.unizar.vox2.rank;
 
-import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -34,25 +33,21 @@ public abstract class PropertyRanker {
   public static PropertyRanker create(String type) {
     PropertyRanker instance = null;
     if (type.equals(INSTANCE_NUMBER_RANKING_BIDIR_DEPTH_1))
-
       instance = new InstanceNumberBidirDepth1Ranker();
     else if (type.equals(INSTANCE_NUMBER_RANKING_INBOUND_DEPTH_1))
-
       instance = new InstanceNumberInboundDepth1Ranker();
     else if (type.equals(INSTANCE_NUMBER_RANKING_OUTBOUND_DEPTH_1))
       instance = new InstanceNumberOutboundDepth1Ranker();
-
     else if (type.equals(RELEVANT_INFORMATION_AMOUNT_RANKING_DEPTH_2))
       instance = new RelevantInformationDepth2Ranker();
-
     return instance;
   }
 
   /**
-   * Method that ranks the relevant properties (marked in the domain ontology as so), and returns an ORDERED arraylist
-   * with such properties along with their ranking information.
+   * Method that ranks the relevant properties (marked in the domain ontology as so), and returns an ORDERED list with
+   * such properties along with their ranking information.
    * 
-   * @param RDFModel
+   * @param model
    *          Model with the RDF-triples to be ranked
    * @param definedObjectProperties
    *          Properties that are marked in the ontology as relevant ones
@@ -60,7 +55,7 @@ public abstract class PropertyRanker {
    *          Resource which we are ranking the properties for
    * @return Ordered arrayList of ranked properties
    */
-  public abstract List<? extends RankedProperty> rankDefinedObjectProperties(Model RDFModel,
+  public abstract List<? extends RankedResource> rankDefinedObjectProperties(Model model,
       Set<String> definedObjectProperties, String initialResource);
 
   /**
@@ -68,7 +63,7 @@ public abstract class PropertyRanker {
    * which appear in the data model retrieved), and returns an ORDERED arraylist with such properties along with their
    * ranking information.
    * 
-   * @param RDFModel
+   * @param model
    *          Model with the RDF-triples to be ranked
    * @param definedObjectProperties
    *          Properties that are marked in the ontology as relevant ones, thus, it is used as a "black-list" filter
@@ -76,8 +71,7 @@ public abstract class PropertyRanker {
    *          Resource which we are ranking the properties for
    * @return Ordered arrayList of ranked properties
    */
-
-  public abstract ArrayList<? extends RankedProperty> rankNonDefinedObjectProperties(Model RDFModel,
+  public abstract List<? extends RankedResource> rankNonDefinedObjectProperties(Model model,
       HashSet<String> definedObjectProperties, String initialResource);
 
 }

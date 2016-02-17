@@ -24,8 +24,8 @@ import org.apache.jena.rdf.model.RDFNode;
 import org.apache.jena.rdf.model.ResIterator;
 import org.apache.jena.rdf.model.Resource;
 
-import sid.VOXII.propertyRanking.PropertyRanker;
-import sid.VOXII.propertyRanking.RankedProperty;
+import es.unizar.vox2.rank.PropertyRanker;
+import es.unizar.vox2.rank.RankedResource;
 
 public class RelevantInformationDepth2Ranker extends PropertyRanker {
 
@@ -89,7 +89,7 @@ public class RelevantInformationDepth2Ranker extends PropertyRanker {
   }
 
   @Override
-  public ArrayList<RankedProperty> rankNonDefinedObjectProperties(Model RDFModel,
+  public ArrayList<RankedResource> rankNonDefinedObjectProperties(Model RDFModel,
       HashSet<String> definedObjectProperties, String initialResource) {
     // TODO null method
     return null;

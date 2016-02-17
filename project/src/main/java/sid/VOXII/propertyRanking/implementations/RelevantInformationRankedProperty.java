@@ -1,8 +1,8 @@
 package sid.VOXII.propertyRanking.implementations;
 
-import sid.VOXII.propertyRanking.RankedProperty;
+import es.unizar.vox2.rank.RankedResource;
 
-public class RelevantInformationRankedProperty extends RankedProperty {
+public class RelevantInformationRankedProperty extends RankedResource {
 
   int reachableResources = 0;
   double informationWeight = 0.0;

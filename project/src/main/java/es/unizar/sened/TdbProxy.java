@@ -75,9 +75,36 @@ public class TdbProxy {
 
   }
 
+  public Model get(String resourceUri, int depth) throws ExecutionException {
+    if (depth < 1)
+      return null;
+    else if (depth == 1)
+      return _modelCache.get(resourceUri);
+    else {
+      Resource resource = Utils.createResource(resourceUri);
+      Model resultModel = _modelCache.get(resourceUri);
+      StmtIterator iter = resultModel.listStatements(resource, null, (RDFNode) null);
+      for (; iter.hasNext();) {
+        Statement stmt = iter.next();
+        if (stmt.getPredicate().isURIResource()
+            && DomainOntology.getObjectProperties().contains(Utils.createProperty(stmt.getPredicate().getURI()))) {
+          if (stmt.getSubject().isURIResource() && stmt.getSubject().getURI().equals(resourceUri)) {
+            if (stmt.getObject().isURIResource())
+              resultModel.add(get(stmt.getObject().asResource().getURI()));
+          } else if (stmt.getObject().isURIResource() && stmt.getObject().asResource().getURI().equals(resourceUri)) {
+            resultModel.add(get(stmt.getSubject().asResource().getURI()));
+          } else {
+            Log.e(TAG + "/get", "Unexpected error in statement");
+          }
+        }
+      }
+      return resultModel;
+    }
+  }
+  
   public Model getDepth2(String resourceUri) throws ExecutionException {
     Resource resource = Utils.createResource(resourceUri);
-    Model resultModel = _resourceCache.get(resourceUri);
+    Model resultModel = _modelCache.get(resourceUri);
     StmtIterator iter = resultModel.listStatements(resource, null, (RDFNode) null);
     for (; iter.hasNext();) {
       Statement stmt = iter.next();
@@ -85,9 +112,9 @@ public class TdbProxy {
           && DomainOntology.getObjectProperties().contains(Utils.createProperty(stmt.getPredicate().getURI()))) {
         if (stmt.getSubject().isURIResource() && stmt.getSubject().getURI().equals(resourceUri)) {
           if (stmt.getObject().isURIResource())
-            resultModel.add(_resourceCache.get(stmt.getObject().asResource().getURI()));
+            resultModel.add(_modelCache.get(stmt.getObject().asResource().getURI()));
         } else if (stmt.getObject().isURIResource() && stmt.getObject().asResource().getURI().equals(resourceUri)) {
-          resultModel.add(_resourceCache.get(stmt.getSubject().asResource().getURI()));
+          resultModel.add(_modelCache.get(stmt.getSubject().asResource().getURI()));
         } else {
           Log.e(TAG + "/getDepth2", "Unexpected error in statement");
         }
@@ -149,7 +176,7 @@ public class TdbProxy {
   /**
    * Cache storing the model of the resources.
    */
-  private final LoadingCache<String, Model> _resourceCache = CacheBuilder.newBuilder().maximumSize(100)
+  private final LoadingCache<String, Model> _modelCache = CacheBuilder.newBuilder().maximumSize(100)
       .build(new CacheLoader<String, Model>() {
         @Override
         public Model load(String resourceUri) {
@@ -160,7 +187,7 @@ public class TdbProxy {
   /**
    * Default method to get the model of a resource.
    * 
-   * Do not use directly, instead use {@link #_resourceCache}
+   * Do not use directly, instead use {@link #_modelCache}
    * 
    * @param resourceUri
    * @return the DESCRIBE model of the resource

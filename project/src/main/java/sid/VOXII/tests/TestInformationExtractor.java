@@ -9,11 +9,11 @@ import java.util.List;
 import org.apache.jena.rdf.model.Model;
 import org.apache.jena.rdf.model.NodeIterator;
 
+import es.unizar.vox2.rank.PropertyRanker;
+import es.unizar.vox2.rank.RankedResource;
 import sid.VOXII.informationExtraction.InformationExtractor;
 import sid.VOXII.informationExtraction.InformationExtractorFactory;
 import sid.VOXII.informationExtraction.implementations.PrunedDescribeDepth2IExtractor;
-import sid.VOXII.propertyRanking.PropertyRanker;
-import sid.VOXII.propertyRanking.RankedProperty;
 import sid.VOXII.propertyRanking.implementations.InstanceNumberRankedProperty;
 import sid.VOXII.propertyRanking.implementations.RelevantInformationRankedProperty;
 
@@ -70,13 +70,13 @@ public class TestInformationExtractor {
     HashSet<String> definedProperties = new HashSet<String>(relevantProperties);
 
     PropertyRanker propRanker = PropertyRanker.create(PropertyRanker.INSTANCE_NUMBER_RANKING_BIDIR_DEPTH_1);
-    List<? extends RankedProperty> rankedProperties = propRanker.rankDefinedObjectProperties(model, definedProperties,
+    List<? extends RankedResource> rankedProperties = propRanker.rankDefinedObjectProperties(model, definedProperties,
         resource);
     out.println("Ranking: " + PropertyRanker.INSTANCE_NUMBER_RANKING_BIDIR_DEPTH_1);
     out.println("-------------------------");
     for (int i = 0; i < rankedProperties.size(); i++) {
       InstanceNumberRankedProperty auxInfo = (InstanceNumberRankedProperty) rankedProperties.get(i);
-      out.println(" " + i + "# " + auxInfo.getPropertyUri());
+      out.println(" " + i + "# " + auxInfo.getResourceUri());
       out.println("     value:" + auxInfo.getRankValue() + "  #instances:" + auxInfo.getNumberOfInstances());
     }
     out.println();
@@ -88,7 +88,7 @@ public class TestInformationExtractor {
     out.println("-------------------------");
     for (int i = 0; i < rankedProperties.size(); i++) {
       InstanceNumberRankedProperty auxInfo = (InstanceNumberRankedProperty) rankedProperties.get(i);
-      out.println(" " + i + "# " + auxInfo.getPropertyUri());
+      out.println(" " + i + "# " + auxInfo.getResourceUri());
       out.println("     value:" + auxInfo.getRankValue() + "  #instances:" + auxInfo.getNumberOfInstances());
     }
     out.println();
@@ -100,7 +100,7 @@ public class TestInformationExtractor {
     out.println("-------------------------");
     for (int i = 0; i < rankedProperties.size(); i++) {
       InstanceNumberRankedProperty auxInfo = (InstanceNumberRankedProperty) rankedProperties.get(i);
-      out.println(" " + i + "# " + auxInfo.getPropertyUri());
+      out.println(" " + i + "# " + auxInfo.getResourceUri());
       out.println("     value:" + auxInfo.getRankValue() + "  #instances:" + auxInfo.getNumberOfInstances());
     }
     out.println();
@@ -112,7 +112,7 @@ public class TestInformationExtractor {
     out.println("-------------------------");
     for (int i = 0; i < rankedProperties.size(); i++) {
       RelevantInformationRankedProperty auxInfo = (RelevantInformationRankedProperty) rankedProperties.get(i);
-      out.println(" " + i + "# " + auxInfo.getPropertyUri());
+      out.println(" " + i + "# " + auxInfo.getResourceUri());
       out.println("     value:" + auxInfo.getRankValue() + "  #reachable:" + auxInfo.getReachableResources()
           + "  #weight:" + auxInfo.getInformationWeight());
 

@@ -1,14 +1,11 @@
 package es.unizar.sened.query;
 
-import java.io.StringWriter;
 import java.net.URLDecoder;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-import org.apache.commons.io.IOUtils;
-import org.apache.commons.io.output.ByteArrayOutputStream;
 import org.apache.jena.query.QuerySolution;
 import org.apache.jena.query.ResultSet;
 import org.apache.jena.query.ResultSetFormatter;
@@ -23,14 +20,12 @@ public class SQueryResult {
 
   private List<String> varNames;
   private List<QuerySolution> results;
-  private String prettyPrint;
+  private String prettyPrint = "";
 
   protected SQueryResult(ResultSet rs) {
-    ByteArrayOutputStream baos = new ByteArrayOutputStream();
-    ResultSetFormatter.out(baos, rs);
-    this.prettyPrint = new String(baos.toByteArray(), java.nio.charset.StandardCharsets.UTF_8);
-    this.varNames = rs.getResultVars();
-    this.results = ResultSetFormatter.toList(rs);
+    // prettyPrint = ResultSetFormatter.asText(rs);
+    varNames = rs.getResultVars();
+    results = ResultSetFormatter.toList(rs);
   }
 
   public String toString() {
@@ -96,7 +91,7 @@ public class SQueryResult {
     return results.get(row).get(varNames.get(column)).toString();
   }
 
-  public String getElemment(int row, String columnName) {
+  public String getElement(int row, String columnName) {
     return results.get(row).get(columnName).toString();
   }
 

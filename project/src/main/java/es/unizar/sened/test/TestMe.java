@@ -1,5 +1,7 @@
 package es.unizar.sened.test;
 
+import java.util.List;
+
 import org.apache.jena.atlas.web.auth.HttpAuthenticator;
 import org.apache.jena.atlas.web.auth.SimpleAuthenticator;
 import org.apache.jena.query.Query;
@@ -19,6 +21,10 @@ import es.unizar.sened.Sened;
 import es.unizar.sened.query.SQueryFactory;
 import es.unizar.sened.utils.Log;
 import es.unizar.sened.utils.SerializationUtils;
+import es.unizar.sened.utils.Utils;
+import es.unizar.vox2.rank.PropertyRanker;
+import es.unizar.vox2.rank.RankedResource;
+import es.unizar.vox2.rank.ResourceRanker;
 
 public class TestMe {
 
@@ -55,6 +61,7 @@ public class TestMe {
   static String test3_1 = "http://dbpedia.org/resource/Albert_Einstein";
   static String test3_2 = "http://dbpedia.org/resource/Falling_cat_problem";
   static String test3_3 = "http://dbpedia.org/resource/Elsa_Einstein";
+  static String test3_4 = "http://dbpedia.org/resource/United_States";
 
   public static void testSearchByKeyword_CategoryTaxonomy(String[] keywordsAndCategory) throws Exception {
     System.out.println(SerializationUtils.toString(Sened.getInstance().searchKeyword(keywordsAndCategory[0],
@@ -66,7 +73,16 @@ public class TestMe {
   }
 
   public static void testSearchByRelated(String resource) throws Exception {
-    Sened.getInstance().searchRelated(resource);
+    Log.i("test" + "/testSearchByRelated", "Searching related information of [" + resource + "]");
+
+    // get object properties
+    Sened.getInstance().getObjectProperties(resource, PropertyRanker.INSTANCE_NUMBER_RANKING_BIDIR_DEPTH_1);
+
+    // get objects of properties
+    // Sened.getInstance().getObjectsOfProperty(resource, rankedProps.get(0).getResourceUri(),
+    // ResourceRanker.DIRECT_DISTANCE);
+    Sened.getInstance().getObjectsOfProperty(resource, "http://dbpedia.org/ontology/knownFor",
+        ResourceRanker.DIRECT_DISTANCE);
   }
 
   public static void testVarious() {
