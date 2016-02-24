@@ -10,7 +10,7 @@
 // 		a given property. 
 // Modifications: 
 ///////////////////////////////////////////////////////////////////////////////
-package sid.VOXII.propertyRanking.implementations;
+package es.unizar.vox2.rank.prop.impl;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -24,8 +24,8 @@ import org.apache.jena.rdf.model.RDFNode;
 import org.apache.jena.rdf.model.ResIterator;
 import org.apache.jena.rdf.model.Resource;
 
-import es.unizar.vox2.rank.PropertyRanker;
 import es.unizar.vox2.rank.RankedResource;
+import es.unizar.vox2.rank.prop.PropertyRanker;
 
 public class RelevantInformationDepth2Ranker extends PropertyRanker {
 

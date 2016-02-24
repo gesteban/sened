@@ -1,4 +1,4 @@
-package sid.VOXII.propertyRanking.utils;
+package es.unizar.vox2.rank.prop;
 
 import java.util.HashSet;
 

@@ -9,7 +9,7 @@
 // Modifications: 
 ///////////////////////////////////////////////////////////////////////////////
 
-package sid.VOXII.propertyRanking.implementations;
+package es.unizar.vox2.rank.prop.impl;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -22,8 +22,8 @@ import org.apache.jena.rdf.model.Property;
 import org.apache.jena.rdf.model.ResIterator;
 import org.apache.jena.rdf.model.Resource;
 
-import es.unizar.vox2.rank.PropertyRanker;
-import sid.VOXII.propertyRanking.utils.DefinedObjectPropertyFilter;
+import es.unizar.vox2.rank.prop.DefinedObjectPropertyFilter;
+import es.unizar.vox2.rank.prop.PropertyRanker;
 
 public class InstanceNumberBidirDepth1Ranker extends PropertyRanker {
 

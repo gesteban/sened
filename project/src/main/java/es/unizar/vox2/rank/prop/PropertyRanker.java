@@ -10,7 +10,7 @@
 // Modifications: 
 ///////////////////////////////////////////////////////////////////////////////
 
-package es.unizar.vox2.rank;
+package es.unizar.vox2.rank.prop;
 
 import java.util.HashSet;
 import java.util.List;
@@ -18,10 +18,11 @@ import java.util.Set;
 
 import org.apache.jena.rdf.model.Model;
 
-import sid.VOXII.propertyRanking.implementations.InstanceNumberBidirDepth1Ranker;
-import sid.VOXII.propertyRanking.implementations.InstanceNumberInboundDepth1Ranker;
-import sid.VOXII.propertyRanking.implementations.InstanceNumberOutboundDepth1Ranker;
-import sid.VOXII.propertyRanking.implementations.RelevantInformationDepth2Ranker;
+import es.unizar.vox2.rank.RankedResource;
+import es.unizar.vox2.rank.prop.impl.InstanceNumberBidirDepth1Ranker;
+import es.unizar.vox2.rank.prop.impl.InstanceNumberInboundDepth1Ranker;
+import es.unizar.vox2.rank.prop.impl.InstanceNumberOutboundDepth1Ranker;
+import es.unizar.vox2.rank.prop.impl.RelevantInformationDepth2Ranker;
 
 public abstract class PropertyRanker {
 

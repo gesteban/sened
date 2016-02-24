@@ -1,7 +1,9 @@
 package es.unizar.sened.query;
 
+import java.util.HashSet;
 import java.util.Set;
 
+import org.apache.jena.ontology.OntProperty;
 import org.apache.jena.query.Dataset;
 import org.apache.jena.rdf.model.Model;
 
@@ -12,23 +14,6 @@ import es.unizar.sened.model.PropAndDir;
  * @author gesteban@unizar.es
  */
 public class SQueryFactory {
-
-  public static final String TAG = SQueryFactory.class.getSimpleName();
-
-  private static final String PREFIX_ALL = "PREFIX dcterms: <http://purl.org/dc/terms/> "
-      + "PREFIX skos: <http://www.w3.org/2004/02/skos/core#> PREFIX xsd: <http://www.w3.org/2001/XMLSchema#> ";
-  private static final String QUERY_SUBCATEGORIES = "PREFIX skos: <http://www.w3.org/2004/02/skos/core#> "
-      + "SELECT ?subcat  WHERE { ?subcat skos:broader <#categoryURI> }";
-  private static final String QUERY_TYPE = "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> \n"
-      + "SELECT DISTINCT ?type WHERE { <#uri> rdf:type ?type }";
-  private static final String QUERY_MANUALDESCRIBE = "construct { ?x ?y ?z } where { "
-      + "{ <#uri> ?y ?z BIND(<#uri> AS ?x) } UNION { ?x ?y <#uri> BIND(<#uri> AS ?z) } }";
-  private static final String QUERY_DIRECTDISTANCE = "select (count(distinct ?x) as ?count) where { { <#resourceOne> ?x <#resourceTwo> } "
-      + " UNION { <#resourceTwo> ?x <#resourceOne> } }";
-
-  private String _endpoint;
-  private Model _model;
-  private Dataset _dataset;
 
   public SQueryFactory(String endpoint) {
     _endpoint = endpoint;
@@ -99,6 +84,71 @@ public class SQueryFactory {
       return new SQuery(queryString, _dataset);
   }
 
+  public SQuery getKeywordQuery_CategoryTaxonomy_v2(String keyword, String categoryUri, int categoryDeep) {
+    // TODO stop using getLocalName to name variables (some variables could get the same name)
+    StringBuilder sb = new StringBuilder();
+    // get keyword searchable properties
+    Set<OntProperty> keywordSearchableProps = new HashSet<>();
+    for (OntProperty property : DomainOntology.getProperties())
+      if (DomainOntology.isKeywordSearchable(property))
+        keywordSearchableProps.add(property);
+    // build sparql select clause
+    sb.append(PREFIX_ALL + "SELECT DISTINCT ?uri");
+    // [complete lines version] uncomment to retrieve keyword searchable properties
+    // for (OntProperty property : keywordSearchableProps)
+    // sb.append(" ?" + property.getLocalName());
+    sb.append(" WHERE {\n");
+    // build category taxonomy of sparql where clause
+    sb.append("  {\n");
+    for (int i = 0; i < categoryDeep; i++) {
+      if (i != 0)
+        sb.append("    UNION ");
+      else
+        sb.append("    ");
+      sb.append("{ ?uri dcterms:subject");
+      for (int j = 0; j < i; j++)
+        sb.append("/skos:broader");
+      sb.append(" <" + categoryUri + "> }\n");
+    }
+    sb.append("  }\n");
+    // [complete lines version] uncomment to build general property match
+    // for (OntProperty property : keywordSearchableProps) {
+    // sb.append("    ?uri <" + property.getURI() + "> ?" + property.getLocalName() + " .\n");
+    // String lang = DomainOntology.getQueryLanguage(property);
+    // if (lang != null)
+    // sb.append("    FILTER langMatches(lang(?" + property.getLocalName() + "),\"" + lang + "\") .\n");
+    // }
+    // build filter match of sparql where clause
+    for (OntProperty property : keywordSearchableProps) {
+      sb.append("  OPTIONAL {\n");
+      sb.append("    ?uri <" + property.getURI() + "> ?" + property.getLocalName() + "_search\n");
+      String lang = DomainOntology.getQueryLanguage(property);
+      if (lang != null)
+        sb.append("    FILTER langMatches(lang(?" + property.getLocalName() + "_search),\"" + lang + "\")\n");
+      sb.append("    FILTER regex(?" + property.getLocalName() + "_search,\"[.., )(\\\\-\\\"]" + keyword
+          + "[.., )(\\\\-\\\"]\",\"i\") }\n");
+    }
+    // state we need at least one bounded keyword searchable property
+    int i = 0;
+    sb.append("  FILTER(");
+    for (OntProperty property : keywordSearchableProps) {
+      if (i++ > 0)
+        sb.append(" || ");
+      sb.append("bound(?" + property.getLocalName() + "_search)");
+    }
+    sb.append(")\n");
+    // end where clause
+    sb.append("}");
+    // return query
+    if (_endpoint != null)
+      return new SQuery(sb.toString(), _endpoint);
+    else if (_model != null)
+      return new SQuery(sb.toString(), _model);
+    else
+      // _dataset != null
+      return new SQuery(sb.toString(), _dataset);
+  }
+
   public SQuery getSubCategoryQuery(String categoryUri) {
     String queryString = QUERY_SUBCATEGORIES;
     queryString = queryString.replace("#categoryURI", categoryUri);
@@ -167,5 +217,20 @@ public class SQueryFactory {
       // _dataset != null
       return new SQuery(queryString, _dataset);
   }
+
+  private static final String PREFIX_ALL = "\nPREFIX dcterms: <http://purl.org/dc/terms/>\n"
+      + "PREFIX skos: <http://www.w3.org/2004/02/skos/core#>\nPREFIX xsd: <http://www.w3.org/2001/XMLSchema#>\n";
+  private static final String QUERY_SUBCATEGORIES = "PREFIX skos: <http://www.w3.org/2004/02/skos/core#> "
+      + "SELECT ?subcat  WHERE { ?subcat skos:broader <#categoryURI> }";
+  private static final String QUERY_TYPE = "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> \n"
+      + "SELECT DISTINCT ?type WHERE { <#uri> rdf:type ?type }";
+  private static final String QUERY_MANUALDESCRIBE = "construct { ?x ?y ?z } where { "
+      + "{ <#uri> ?y ?z BIND(<#uri> AS ?x) } UNION { ?x ?y <#uri> BIND(<#uri> AS ?z) } }";
+  private static final String QUERY_DIRECTDISTANCE = "select (count(distinct ?x) as ?count) where { { <#resourceOne> ?x <#resourceTwo> } "
+      + " UNION { <#resourceTwo> ?x <#resourceOne> } }";
+
+  private String _endpoint;
+  private Model _model;
+  private Dataset _dataset;
 
 }

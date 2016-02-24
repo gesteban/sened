@@ -1,4 +1,4 @@
-package sid.VOXII.tests;
+package sid.VOXII.test;
 
 import java.io.File;
 import java.io.PrintWriter;
@@ -9,13 +9,13 @@ import java.util.List;
 import org.apache.jena.rdf.model.Model;
 import org.apache.jena.rdf.model.NodeIterator;
 
-import es.unizar.vox2.rank.PropertyRanker;
 import es.unizar.vox2.rank.RankedResource;
+import es.unizar.vox2.rank.prop.PropertyRanker;
+import es.unizar.vox2.rank.prop.impl.InstanceNumberRankedProperty;
+import es.unizar.vox2.rank.prop.impl.RelevantInformationRankedProperty;
 import sid.VOXII.informationExtraction.InformationExtractor;
 import sid.VOXII.informationExtraction.InformationExtractorFactory;
-import sid.VOXII.informationExtraction.implementations.PrunedDescribeDepth2IExtractor;
-import sid.VOXII.propertyRanking.implementations.InstanceNumberRankedProperty;
-import sid.VOXII.propertyRanking.implementations.RelevantInformationRankedProperty;
+import sid.VOXII.informationExtraction.impl.PrunedDescribeDepth2IExtractor;
 
 public class TestInformationExtractor {
 

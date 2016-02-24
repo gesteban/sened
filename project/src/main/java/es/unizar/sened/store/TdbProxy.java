@@ -1,4 +1,4 @@
-package es.unizar.sened;
+package es.unizar.sened.store;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -28,6 +28,7 @@ import com.google.common.cache.LoadingCache;
 import es.unizar.sened.model.DomainOntology;
 import es.unizar.sened.query.SQuery;
 import es.unizar.sened.query.SQueryFactory;
+import es.unizar.sened.query.SQueryResult;
 import es.unizar.sened.utils.Log;
 import es.unizar.sened.utils.Utils;
 
@@ -75,6 +76,9 @@ public class TdbProxy {
 
   }
 
+  /**
+   * Method to get the model of a resource and its related resources in a given depth.
+   */
   public Model get(String resourceUri, int depth) throws ExecutionException {
     if (depth < 1)
       return null;
@@ -98,10 +102,56 @@ public class TdbProxy {
           }
         }
       }
+      iter = resultModel.listStatements(null, null, resource); // TODO es necesario recorrer también ?x ?y resource
+      for (; iter.hasNext();) {
+        Statement stmt = iter.next();
+        if (stmt.getPredicate().isURIResource()
+            && DomainOntology.getObjectProperties().contains(Utils.createProperty(stmt.getPredicate().getURI()))) {
+          if (stmt.getObject().isURIResource() && stmt.getObject().asResource().getURI().equals(resourceUri)) {
+            if (stmt.getSubject().isURIResource())
+              resultModel.add(get(stmt.getSubject().asResource().getURI()));
+          } else if (stmt.getSubject().isURIResource() && stmt.getSubject().getURI().equals(resourceUri)) {
+            resultModel.add(get(stmt.getObject().asResource().getURI()));
+          } else {
+            Log.e(TAG + "/get", "Unexpected error in statement");
+          }
+        }
+      }
       return resultModel;
     }
   }
+
+  /**
+   * Calculates the direct LDSD between two resources.
+   * <p/>
+   * It uses the approach of Alexandre Passant at 'Measuring Semantic Distance on Linking Data and Using it for
+   * Resources Recommendations'. See {@link http://swl.ils.indiana.edu/files/ldrec.pdf}.
+   * 
+   * @param model
+   * @param resourceOne
+   * @param resourceTwo
+   * @param keywords
+   * @return a number between 0.0 and 1.0
+   */
+  public double semanticDistance_Direct(String resourceOne, String resourceTwo) {
+    get(resourceOne);
+    get(resourceTwo);
+    SQuery query = _proxyQuery.getDirectDistanceQuery(resourceOne, resourceTwo);
+    SQueryResult result = query.doSelect();
+    String intString = result.asSimpleColumn().iterator().next();
+    return 1.0 / (1.0 + Integer.parseInt(intString.substring(0, intString.indexOf("^"))));
+  }
   
+  /**
+   * Search the given keywords in the keyword searchable fields of a resources with the given uris
+   */
+  public void searchKeyword(Set<String> resourceUriSet, Set<String> keywords) {
+    
+  }
+  
+  /**
+   * @deprecated
+   */
   public Model getDepth2(String resourceUri) throws ExecutionException {
     Resource resource = Utils.createResource(resourceUri);
     Model resultModel = _modelCache.get(resourceUri);
@@ -198,7 +248,7 @@ public class TdbProxy {
     // otherwhise just do a local query
     if (!_uriSet.contains(resourceUri)) {
       // sparql describe of resource
-      Log.i(TAG + "/get", "<" + resourceUri + "> not in local tdb, querying remote endpoint...");
+      Log.d(TAG + "/get", "<" + resourceUri + "> not in local tdb, querying remote endpoint...");
       SQuery query = _mainQuery.getDescribeQuery(resourceUri);
       waitDelay();
       resultModel = query.doDescribe();
@@ -215,7 +265,7 @@ public class TdbProxy {
       _uriSet.add(resourceUri);
       saveUriSet();
     } else {
-      Log.i(TAG + "/get", "<" + resourceUri + "> locally available");
+      Log.d(TAG + "/get", "<" + resourceUri + "> locally available");
       _tdb.begin(ReadWrite.READ);
       // SQuery query = _proxyQuery.getDescribeQuery(resourceUri);
       // resultModel = query.doDescribe();

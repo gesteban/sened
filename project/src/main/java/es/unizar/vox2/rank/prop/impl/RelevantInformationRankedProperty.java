@@ -1,4 +1,4 @@
-package sid.VOXII.propertyRanking.implementations;
+package es.unizar.vox2.rank.prop.impl;
 
 import es.unizar.vox2.rank.RankedResource;
 

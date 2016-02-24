@@ -1,11 +1,11 @@
-package es.unizar.vox2.rank;
+package es.unizar.vox2.rank.res;
 
 import java.util.List;
 import java.util.Set;
 
-import org.apache.jena.rdf.model.Model;
-
-import es.unizar.vox2.rank.impl.LdsdDirect;
+import es.unizar.sened.store.TdbProxy;
+import es.unizar.vox2.rank.RankedResource;
+import es.unizar.vox2.rank.res.impl.LdsdDirect;
 
 /**
  * @author gesteban@unizar.es
@@ -20,7 +20,8 @@ public abstract class ResourceRanker {
       instance = new LdsdDirect();
     return instance;
   }
-  
-  public abstract List<? extends RankedResource> rankResources(Model model, Set<String> resources, String initialResource);
+
+  public abstract List<? extends RankedResource> rankResources(Set<String> resourceUriSet, String resourceUri,
+      TdbProxy tdb);
 
 }

@@ -2,49 +2,28 @@ package es.unizar.sened.test;
 
 import java.util.List;
 
-import org.apache.jena.atlas.web.auth.HttpAuthenticator;
-import org.apache.jena.atlas.web.auth.SimpleAuthenticator;
-import org.apache.jena.query.Query;
-import org.apache.jena.query.QueryExecution;
-import org.apache.jena.query.QueryExecutionFactory;
-import org.apache.jena.query.QueryFactory;
-import org.apache.jena.rdf.model.Model;
-import org.apache.jena.riot.RDFDataMgr;
-import org.apache.jena.riot.RDFFormat;
-import org.apache.jena.update.Update;
-import org.apache.jena.update.UpdateExecutionFactory;
-import org.apache.jena.update.UpdateFactory;
-import org.apache.jena.update.UpdateProcessor;
-import org.apache.jena.update.UpdateRequest;
-
 import es.unizar.sened.Sened;
-import es.unizar.sened.query.SQueryFactory;
 import es.unizar.sened.utils.Log;
-import es.unizar.sened.utils.SerializationUtils;
 import es.unizar.sened.utils.Utils;
-import es.unizar.vox2.rank.PropertyRanker;
 import es.unizar.vox2.rank.RankedResource;
-import es.unizar.vox2.rank.ResourceRanker;
+import es.unizar.vox2.rank.prop.PropertyRanker;
+import es.unizar.vox2.rank.res.ResourceRanker;
 
 public class TestMe {
-
-  static String update_string = "insert data { graph <http://testgraph.com/> "
-      + "{ <http://test.com/resource> <http://test.com/property> <http://test.com/object> } }";
 
   public static void main(String[] args) throws Exception {
     Log.i("test", "start");
 
-    // Keyword search by CATEGORY taxonomy (WORKING)
-    // testSearchByKeyword_CategoryTaxonomy(test1_1);
+    // Keyword search by CATEGORY taxonomy (NOT RANKING)
+    testSearchByKeyword_CategoryTaxonomy(test1_2);
 
     // Keyword search by CLASS taxonomy (NOT WORKING)
     // testSearchByKeyword_ClassTaxonomy(test2_1);
 
-    // Related search (NOT WORKING)
-    testSearchByRelated(test3_1);
+    // Related search (WORKING)
+    // testSearchByRelated(test3_2);
 
-    Log.i("test", "done"); // TODO generate jar
-
+    Log.i("test", "done");
   }
 
   static String test1_1[] = { "cat", "http://dbpedia.org/resource/Category:Mechanics" };
@@ -54,7 +33,7 @@ public class TestMe {
   static String test1_5[] = { "flame extinguisher", "http://dbpedia.org/resource/Category:Chemistry" };
   static String test1_6[] = { "water transfer", "http://dbpedia.org/resource/Category:Chemistry" };
   static String test1_7[] = { "bubble size", "http://dbpedia.org/resource/Category:Chemistry" };
-  static String test1_8[] = { "cancer", "http://dbpedia.org/resource/Category:Oncology" }; // TODO test this properly
+  static String test1_8[] = { "cancer", "http://dbpedia.org/resource/Category:Oncology" };
 
   static String test2_1[] = { "senegal", "http://dbpedia.org/ontology/Country" };
 
@@ -64,8 +43,7 @@ public class TestMe {
   static String test3_4 = "http://dbpedia.org/resource/United_States";
 
   public static void testSearchByKeyword_CategoryTaxonomy(String[] keywordsAndCategory) throws Exception {
-    System.out.println(SerializationUtils.toString(Sened.getInstance().searchKeyword(keywordsAndCategory[0],
-        keywordsAndCategory[1])));
+    Sened.getInstance().searchKeyword(keywordsAndCategory[0], keywordsAndCategory[1]);
   }
 
   public static void testSearchByKeyword_ClassTaxonomy(String[] keywordsAndClass) throws Exception {
@@ -76,33 +54,15 @@ public class TestMe {
     Log.i("test" + "/testSearchByRelated", "Searching related information of [" + resource + "]");
 
     // get object properties
-    Sened.getInstance().getObjectProperties(resource, PropertyRanker.INSTANCE_NUMBER_RANKING_BIDIR_DEPTH_1);
+    List<? extends RankedResource> rankedProps = Sened.getInstance().getObjectProperties(resource,
+        PropertyRanker.INSTANCE_NUMBER_RANKING_BIDIR_DEPTH_1);
+    Utils.printRank(PropertyRanker.INSTANCE_NUMBER_RANKING_BIDIR_DEPTH_1, rankedProps);
 
-    // get objects of properties
-    // Sened.getInstance().getObjectsOfProperty(resource, rankedProps.get(0).getResourceUri(),
-    // ResourceRanker.DIRECT_DISTANCE);
-    Sened.getInstance().getObjectsOfProperty(resource, "http://dbpedia.org/ontology/knownFor",
-        ResourceRanker.DIRECT_DISTANCE);
-  }
+    // get objects of first ranked property
+    List<? extends RankedResource> rankedRes = Sened.getInstance().getObjectsOfProperty(resource,
+        rankedProps.get(0).getResourceUri(), ResourceRanker.DIRECT_DISTANCE);
+    Utils.printRank(ResourceRanker.DIRECT_DISTANCE, rankedRes);
 
-  public static void testVarious() {
-    // Query query = QueryFactory.create("SELECT * WHERE { ?s a ?type }");
-    // QueryExecution qe = QueryExecutionFactory.sparqlService("http://localhost:8890/sparql-auth", query);
-    HttpAuthenticator authenticator = new SimpleAuthenticator("dba", "PASSWORD-HERE".toCharArray());
-    QueryExecution qe = QueryExecutionFactory.sparqlService("http://localhost:8890/sparql-auth",
-        "SELECT * WHERE { ?s a ?type }", authenticator);
-
-    Log.i("tag", qe.execSelect().getRowNumber() + "");
-
-    // Model model = qe.execSelect().getResourceModel();
-    // RDFDataMgr.write(System.out, model, RDFFormat.TURTLE_PRETTY);
-
-    // UpdateRequest update = UpdateFactory.create(update_string);
-    // UpdateProcessor updateProc = UpdateExecutionFactory.createRemoteForm(update, "http://localhost:8890/sparql");
-    // updateProc.execute();
-
-    // SQueryFactory fact = new SQueryFactory("http://localhost:8890/sparql");
-    // fact.getCustomQuery(update_string);
   }
 
 }

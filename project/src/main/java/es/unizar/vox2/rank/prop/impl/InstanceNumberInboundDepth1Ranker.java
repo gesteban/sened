@@ -1,16 +1,16 @@
 ///////////////////////////////////////////////////////////////////////////////
-// File: InstanceNumberOutboundDepth1Ranker.java
+// File: InstanceNumberInboundDepth1Ranker.java
 // Author: Carlos Bobed
 // Date: 10 July 2014
 // Version: 0.1
-// Comments: Class that implements the simplest rank on the outbound 
+// Comments: Class that implements the simplest rank on the inbound 
 // 	edges/properties of the RDFgraph. It just counts the 
-// 	outbound instances of each of the properties in the set of 
+// 	inbound instances of each of the properties in the set of 
 // 	relevant/nonRelevant properties, and returns the properties sorted in descending order
 // Modifications: 
 ///////////////////////////////////////////////////////////////////////////////
 
-package sid.VOXII.propertyRanking.implementations;
+package es.unizar.vox2.rank.prop.impl;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -18,15 +18,14 @@ import java.util.HashSet;
 import java.util.Set;
 
 import org.apache.jena.rdf.model.Model;
-import org.apache.jena.rdf.model.NodeIterator;
 import org.apache.jena.rdf.model.Property;
 import org.apache.jena.rdf.model.ResIterator;
 import org.apache.jena.rdf.model.Resource;
 
-import es.unizar.vox2.rank.PropertyRanker;
-import sid.VOXII.propertyRanking.utils.DefinedObjectPropertyFilter;
+import es.unizar.vox2.rank.prop.DefinedObjectPropertyFilter;
+import es.unizar.vox2.rank.prop.PropertyRanker;
 
-public class InstanceNumberOutboundDepth1Ranker extends PropertyRanker {
+public class InstanceNumberInboundDepth1Ranker extends PropertyRanker {
 
   public ArrayList<InstanceNumberRankedProperty> rankDefinedObjectProperties(Model RDFModel,
       Set<String> definedObjectProperties, String initialResource) {
@@ -35,7 +34,7 @@ public class InstanceNumberOutboundDepth1Ranker extends PropertyRanker {
     Property relevantProperty = null;
     Resource relevantResource = RDFModel.getResource(initialResource);
 
-    NodeIterator nIterator = null;
+    ResIterator rIterator = null;
 
     InstanceNumberRankedProperty auxRankedProperty = null;
 
@@ -47,8 +46,10 @@ public class InstanceNumberOutboundDepth1Ranker extends PropertyRanker {
         relevantProperty = RDFModel.getProperty(property);
 
         if (relevantProperty != null) {
-          nIterator = RDFModel.listObjectsOfProperty(relevantResource, relevantProperty);
-          numInstances = nIterator.toList().size();
+          // we just take into account the properties that have the relevant
+          // resource as subject
+          rIterator = RDFModel.listResourcesWithProperty(relevantProperty, relevantResource);
+          numInstances = rIterator.toList().size();
           totalInstances += numInstances;
 
           auxRankedProperty = new InstanceNumberRankedProperty(property);
@@ -64,7 +65,6 @@ public class InstanceNumberOutboundDepth1Ranker extends PropertyRanker {
         }
         Collections.sort(result);
       }
-
     }
 
     return result;
@@ -77,7 +77,6 @@ public class InstanceNumberOutboundDepth1Ranker extends PropertyRanker {
     Resource relevantResource = RDFModel.getResource(initialResource);
     Property nonRelevantProperty = null;
     ResIterator rIterator = null;
-    NodeIterator nIterator = null;
 
     InstanceNumberRankedProperty auxRankedProperty = null;
 
@@ -98,9 +97,9 @@ public class InstanceNumberOutboundDepth1Ranker extends PropertyRanker {
       for (String property : nonDefinedObjectProperties) {
         nonRelevantProperty = RDFModel.getProperty(property);
         if (nonRelevantProperty != null) {
-          // we retrieve the outbound edges
-          nIterator = RDFModel.listObjectsOfProperty(relevantResource, nonRelevantProperty);
-          numInstances = nIterator.toList().size();
+          // we retrieve the inbound edges
+          rIterator = RDFModel.listResourcesWithProperty(nonRelevantProperty, relevantResource);
+          numInstances = rIterator.toList().size();
           totalInstances += numInstances;
 
           auxRankedProperty = new InstanceNumberRankedProperty(nonRelevantProperty.getURI().toString());
@@ -119,6 +118,7 @@ public class InstanceNumberOutboundDepth1Ranker extends PropertyRanker {
     }
 
     return result;
+
   }
 
 }

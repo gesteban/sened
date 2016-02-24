@@ -11,15 +11,9 @@ import java.io.IOException;
  */
 public final class Log {
 
-  public static final String TAG = Log.class.getSimpleName();
-
   public enum LogBehaviour {
     DEBUG, INFO, WARNINGS, FILE;
   }
-
-  private static LogBehaviour behaviour;
-  private static FileWriter fstream;
-  private static BufferedWriter out;
 
   static {
     setLogBehaviour(LogBehaviour.DEBUG);
@@ -113,5 +107,11 @@ public final class Log {
       ex.printStackTrace();
     }
   }
+
+  private static final String TAG = Log.class.getSimpleName();
+
+  private static LogBehaviour behaviour;
+  private static FileWriter fstream;
+  private static BufferedWriter out;
 
 }

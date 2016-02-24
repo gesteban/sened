@@ -10,7 +10,7 @@
 
 package sid.VOXII.informationExtraction;
 
-import sid.VOXII.informationExtraction.implementations.PrunedDescribeDepth2IExtractor;
+import sid.VOXII.informationExtraction.impl.PrunedDescribeDepth2IExtractor;
 
 public class InformationExtractorFactory {
 

@@ -1,6 +1,5 @@
 package es.unizar.sened.query;
 
-import java.net.URLDecoder;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
@@ -10,9 +9,6 @@ import org.apache.jena.query.QuerySolution;
 import org.apache.jena.query.ResultSet;
 import org.apache.jena.query.ResultSetFormatter;
 
-import es.unizar.sened.model.SKOSCategory;
-import es.unizar.sened.model.SResource;
-
 /**
  * @author gesteban@unizar.es
  */
@@ -20,16 +16,10 @@ public class SQueryResult {
 
   private List<String> varNames;
   private List<QuerySolution> results;
-  private String prettyPrint = "";
 
   protected SQueryResult(ResultSet rs) {
-    // prettyPrint = ResultSetFormatter.asText(rs);
     varNames = rs.getResultVars();
     results = ResultSetFormatter.toList(rs);
-  }
-
-  public String toString() {
-    return prettyPrint;
   }
 
   public int getResultSize() {
@@ -40,34 +30,15 @@ public class SQueryResult {
     return varNames.size();
   }
 
-  public Set<SResource> asArticleSet() throws Exception {
-    Set<SResource> articleSet = new HashSet<SResource>();
-    for (QuerySolution qs : results) {
-      // Creamos el articulo a partir del resultado
-      SResource article = new SResource(URLDecoder.decode(qs.get("uri").toString(), "UTF-8"));
-      for (String varName : varNames) {
-        // article.add(varName, URLDecoder.decode(qs.get(varName).toString(), "UTF-8"));
-        article.add(varName, new String(qs.get(varName).toString().getBytes(), "UTF-8"));
-      }
-      articleSet.add(article);
-    }
-    return articleSet;
-  }
-
-  public Set<SKOSCategory> asCategorySet() {
-    List<String> uriList = this.getColumn(0);
-    Set<SKOSCategory> categorySet = new HashSet<SKOSCategory>();
-    for (int i = 0; i < uriList.size(); i++) {
-      categorySet.add(new SKOSCategory(uriList.get(i)));
-    }
-    return categorySet;
-  }
-
   public Set<String> asSimpleColumn() {
     return new HashSet<String>(this.getColumn(0));
   }
 
-  public List<String> getRow(int row) {
+  public QuerySolution getRow(int row) {
+    return results.get(row);
+  }
+
+  public List<String> getSimpleRow(int row) {
     List<String> returnThis = new ArrayList<String>();
     for (int i = 0; i < varNames.size(); i++) {
       returnThis.add(results.get(row).get(varNames.get(i)).toString());

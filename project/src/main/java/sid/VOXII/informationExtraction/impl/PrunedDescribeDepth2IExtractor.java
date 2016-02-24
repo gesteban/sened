@@ -7,7 +7,7 @@
 // 	the following steps to extract the information: 
 // Modifications: 
 ///////////////////////////////////////////////////////////////////////////////
-package sid.VOXII.informationExtraction.implementations;
+package sid.VOXII.informationExtraction.impl;
 
 import java.util.ArrayList;
 import java.util.HashSet;

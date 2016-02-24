@@ -119,6 +119,8 @@
         <rdfs:range rdf:resource="&dbo;Person"/>
         <rdfs:range rdf:resource="&sened;Void"/>
     </owl:ObjectProperty>
+    
+
 
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
@@ -135,7 +137,7 @@
 
     <owl:DatatypeProperty rdf:about="&dbo;abstract">
         <queryLanguage rdf:datatype="&xsd;language">en</queryLanguage>
-        <kwdSearchable>yes</kwdSearchable>
+        <kwdSearchable rdf:datatype="&xsd;boolean">true</kwdSearchable>
         <rdfs:domain rdf:resource="&yago;Institute108407330"/>
         <rdfs:domain rdf:resource="&dbo;Person"/>
         <rdfs:domain rdf:resource="&sened;Void"/>
@@ -204,6 +206,7 @@
 
     <rdf:Description rdf:about="&rdfs;label">
         <queryLanguage rdf:datatype="&xsd;language">en</queryLanguage>
+        <kwdSearchable rdf:datatype="&xsd;boolean">true</kwdSearchable>
     </rdf:Description>
 </rdf:RDF>
 

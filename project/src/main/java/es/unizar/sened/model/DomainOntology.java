@@ -12,12 +12,7 @@ import org.apache.jena.ontology.OntModelSpec;
 import org.apache.jena.ontology.OntProperty;
 import org.apache.jena.ontology.OntResource;
 import org.apache.jena.rdf.model.ModelFactory;
-import org.apache.jena.rdf.model.Property;
-import org.apache.jena.rdf.model.Resource;
 import org.apache.jena.util.iterator.ExtendedIterator;
-
-import es.unizar.sened.utils.Log;
-import es.unizar.sened.utils.Utils;
 
 /**
  * TODO make this class non-static
@@ -26,7 +21,7 @@ import es.unizar.sened.utils.Utils;
  */
 public class DomainOntology {
 
-  private static final String TAG = DomainOntology.class.getSimpleName();
+  // private static final String TAG = DomainOntology.class.getSimpleName();
 
   private static final String PATH = "/es/unizar/sened/model/domain-ontology.rdf";
   private static final String BASE_URI = "http://sened.unizar.es/def#";
@@ -61,7 +56,7 @@ public class DomainOntology {
   public static Set<OntProperty> getProperties() {
     return _ontology.listAllOntProperties().toSet();
   }
-  
+
   public static Set<ObjectProperty> getObjectProperties() {
     return _ontology.listObjectProperties().toSet();
   }
@@ -110,18 +105,15 @@ public class DomainOntology {
   }
 
   public static boolean isKeywordSearchable(OntProperty property) {
-    return property.hasProperty(kwdSearchable);
+    if (property.hasProperty(kwdSearchable) && property.getPropertyValue(kwdSearchable).isLiteral()) {
+      // Log.d(TAG, property.getPropertyValue(kwdSearchable).)
+      return property.getPropertyValue(kwdSearchable).asLiteral().getBoolean();
+    }
+    return false;
   }
 
   public static String getTaxonomyType() {
     return _taxonomyType;
   }
 
-  public static void main(String[] args) {
-    Resource knownFor = Utils.createResource("http://dbpedia.org/ontology/knownFor");
-    for(ObjectProperty prop : DomainOntology.getObjectProperties()) {
-      
-    }
-  }
-  
 }
