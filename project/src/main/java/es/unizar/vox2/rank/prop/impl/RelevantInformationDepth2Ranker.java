@@ -89,8 +89,8 @@ public class RelevantInformationDepth2Ranker extends PropertyRanker {
   }
 
   @Override
-  public ArrayList<RankedResource> rankNonDefinedObjectProperties(Model RDFModel,
-      HashSet<String> definedObjectProperties, String initialResource) {
+  public ArrayList<RankedResource> rankNonDefinedObjectProperties(Model RDFModel, Set<String> definedObjectProperties,
+      String initialResource) {
     // TODO null method
     return null;
   }

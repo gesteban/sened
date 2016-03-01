@@ -22,17 +22,17 @@ import org.apache.jena.rdf.model.Property;
 import org.apache.jena.rdf.model.ResIterator;
 import org.apache.jena.rdf.model.Resource;
 
-import es.unizar.vox2.rank.prop.DefinedObjectPropertyFilter;
+import es.unizar.sened.utils.Utils;
 import es.unizar.vox2.rank.prop.PropertyRanker;
 
 public class InstanceNumberInboundDepth1Ranker extends PropertyRanker {
 
-  public ArrayList<InstanceNumberRankedProperty> rankDefinedObjectProperties(Model RDFModel,
+  public ArrayList<InstanceNumberRankedProperty> rankDefinedObjectProperties(Model model,
       Set<String> definedObjectProperties, String initialResource) {
     int totalInstances = 0;
     int numInstances = 0;
     Property relevantProperty = null;
-    Resource relevantResource = RDFModel.getResource(initialResource);
+    Resource relevantResource = model.getResource(initialResource);
 
     ResIterator rIterator = null;
 
@@ -43,12 +43,12 @@ public class InstanceNumberInboundDepth1Ranker extends PropertyRanker {
     if (relevantResource != null) {
       for (String property : definedObjectProperties) {
         // we retrieve the triples with this property in both directions
-        relevantProperty = RDFModel.getProperty(property);
+        relevantProperty = model.getProperty(property);
 
         if (relevantProperty != null) {
           // we just take into account the properties that have the relevant
           // resource as subject
-          rIterator = RDFModel.listResourcesWithProperty(relevantProperty, relevantResource);
+          rIterator = model.listResourcesWithProperty(relevantProperty, relevantResource);
           numInstances = rIterator.toList().size();
           totalInstances += numInstances;
 
@@ -71,7 +71,7 @@ public class InstanceNumberInboundDepth1Ranker extends PropertyRanker {
   }
 
   public ArrayList<InstanceNumberRankedProperty> rankNonDefinedObjectProperties(Model RDFModel,
-      HashSet<String> definedObjectProperties, String initialResource) {
+      Set<String> definedObjectProperties, String initialResource) {
     int totalInstances = 0;
     int numInstances = 0;
     Resource relevantResource = RDFModel.getResource(initialResource);
@@ -82,13 +82,12 @@ public class InstanceNumberInboundDepth1Ranker extends PropertyRanker {
 
     ArrayList<InstanceNumberRankedProperty> result = new ArrayList<InstanceNumberRankedProperty>();
 
-    HashSet<String> nonDefinedObjectProperties = new HashSet<String>();
+    Set<String> nonDefinedObjectProperties = new HashSet<String>();
 
     // we first have to retrieve the properties that are not in the
     // ontology and appear in the rdfmodel
 
-    nonDefinedObjectProperties = DefinedObjectPropertyFilter.obtainNonDefinedProperties(RDFModel,
-        definedObjectProperties, initialResource);
+    nonDefinedObjectProperties = Utils.obtainNonDefinedProperties(RDFModel, definedObjectProperties, initialResource);
 
     // we now apply the same algorithm to obtain the
     // ranking

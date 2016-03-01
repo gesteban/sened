@@ -28,7 +28,6 @@ import com.google.common.cache.LoadingCache;
 import es.unizar.sened.model.DomainOntology;
 import es.unizar.sened.query.SQuery;
 import es.unizar.sened.query.SQueryFactory;
-import es.unizar.sened.query.SQueryResult;
 import es.unizar.sened.utils.Log;
 import es.unizar.sened.utils.Utils;
 
@@ -102,7 +101,7 @@ public class TdbProxy {
           }
         }
       }
-      iter = resultModel.listStatements(null, null, resource); // TODO es necesario recorrer también ?x ?y resource
+      iter = resultModel.listStatements(null, null, resource); // TODO es realmente necesario coger los recursos entrantes?
       for (; iter.hasNext();) {
         Statement stmt = iter.next();
         if (stmt.getPredicate().isURIResource()
@@ -122,33 +121,12 @@ public class TdbProxy {
   }
 
   /**
-   * Calculates the direct LDSD between two resources.
-   * <p/>
-   * It uses the approach of Alexandre Passant at 'Measuring Semantic Distance on Linking Data and Using it for
-   * Resources Recommendations'. See {@link http://swl.ils.indiana.edu/files/ldrec.pdf}.
-   * 
-   * @param model
-   * @param resourceOne
-   * @param resourceTwo
-   * @param keywords
-   * @return a number between 0.0 and 1.0
-   */
-  public double semanticDistance_Direct(String resourceOne, String resourceTwo) {
-    get(resourceOne);
-    get(resourceTwo);
-    SQuery query = _proxyQuery.getDirectDistanceQuery(resourceOne, resourceTwo);
-    SQueryResult result = query.doSelect();
-    String intString = result.asSimpleColumn().iterator().next();
-    return 1.0 / (1.0 + Integer.parseInt(intString.substring(0, intString.indexOf("^"))));
-  }
-  
-  /**
    * Search the given keywords in the keyword searchable fields of a resources with the given uris
    */
   public void searchKeyword(Set<String> resourceUriSet, Set<String> keywords) {
-    
+
   }
-  
+
   /**
    * @deprecated
    */
@@ -226,7 +204,7 @@ public class TdbProxy {
   /**
    * Cache storing the model of the resources.
    */
-  private final LoadingCache<String, Model> _modelCache = CacheBuilder.newBuilder().maximumSize(100)
+  private final LoadingCache<String, Model> _modelCache = CacheBuilder.newBuilder().maximumSize(11)
       .build(new CacheLoader<String, Model>() {
         @Override
         public Model load(String resourceUri) {

@@ -15,13 +15,13 @@ public class TestMe {
     Log.i("test", "start");
 
     // Keyword search by CATEGORY taxonomy (NOT RANKING)
-    testSearchByKeyword_CategoryTaxonomy(test1_2);
+    // testSearchByKeyword_CategoryTaxonomy(test1_2);
 
     // Keyword search by CLASS taxonomy (NOT WORKING)
     // testSearchByKeyword_ClassTaxonomy(test2_1);
 
     // Related search (WORKING)
-    // testSearchByRelated(test3_2);
+    testSearchByRelated(test3_1);
 
     Log.i("test", "done");
   }
@@ -57,6 +57,11 @@ public class TestMe {
     List<? extends RankedResource> rankedProps = Sened.getInstance().getObjectProperties(resource,
         PropertyRanker.INSTANCE_NUMBER_RANKING_BIDIR_DEPTH_1);
     Utils.printRank(PropertyRanker.INSTANCE_NUMBER_RANKING_BIDIR_DEPTH_1, rankedProps);
+    
+ // get object properties
+    List<? extends RankedResource> rankedProps2 = Sened.getInstance().getObjectProperties2(resource,
+        PropertyRanker.INSTANCE_NUMBER_RANKING_BIDIR_DEPTH_1);
+    Utils.printRank(PropertyRanker.INSTANCE_NUMBER_RANKING_BIDIR_DEPTH_1, rankedProps2);
 
     // get objects of first ranked property
     List<? extends RankedResource> rankedRes = Sened.getInstance().getObjectsOfProperty(resource,

@@ -3,7 +3,8 @@ package es.unizar.vox2.rank.res;
 import java.util.List;
 import java.util.Set;
 
-import es.unizar.sened.store.TdbProxy;
+import org.apache.jena.rdf.model.Model;
+
 import es.unizar.vox2.rank.RankedResource;
 import es.unizar.vox2.rank.res.impl.LdsdDirect;
 
@@ -21,7 +22,7 @@ public abstract class ResourceRanker {
     return instance;
   }
 
-  public abstract List<? extends RankedResource> rankResources(Set<String> resourceUriSet, String resourceUri,
-      TdbProxy tdb);
+  public abstract List<? extends RankedResource> rankResources(Model model, Set<String> resourceUriSet,
+      String resourceUri);
 
 }

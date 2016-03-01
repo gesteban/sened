@@ -28,7 +28,8 @@ import es.unizar.vox2.rank.res.ResourceRanker;
 public class Sened {
 
   // TODO parameters in arguments or config file
-  public static final String REMOTE_ENDPOINT = "http://dbpedia.org/sparql";
+  // public static final String REMOTE_ENDPOINT = "http://dbpedia.org/sparql";
+  public static final String REMOTE_ENDPOINT = "http://localhost:8890/sparql";
   public static final String LANGUAGE = "en";
   public static final int QUERY_DEEP = 3;
 
@@ -72,6 +73,22 @@ public class Sened {
     }
   }
 
+  public List<? extends RankedResource> getObjectProperties2(String resourceUri, String rankType)
+      throws ExecutionException {
+    Model model = _tdb.get(resourceUri, 2);
+    Set<String> definedProperties = new HashSet<>();
+    for (OntProperty prop : DomainOntology.getObjectProperties())
+      definedProperties.add(prop.getURI());
+    PropertyRanker propRanker = PropertyRanker.create(rankType);
+    if (propRanker == null)
+      return null;
+    else {
+      List<? extends RankedResource> rankedProperties = propRanker.rankNonDefinedObjectProperties(model,
+          definedProperties, resourceUri);
+      return rankedProperties;
+    }
+  }
+
   public List<? extends RankedResource> getObjectsOfProperty(String resourceUri, String propertyUri, String rankType)
       throws ExecutionException {
     Model model = _tdb.get(resourceUri, 2);
@@ -86,7 +103,7 @@ public class Sened {
     if (resRanker == null)
       return null;
     else {
-      List<? extends RankedResource> rankedResources = resRanker.rankResources(resourceUriSet, resourceUri, _tdb);
+      List<? extends RankedResource> rankedResources = resRanker.rankResources(model, resourceUriSet, resourceUri);
       return rankedResources;
     }
   }

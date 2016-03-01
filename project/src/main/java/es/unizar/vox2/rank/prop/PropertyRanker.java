@@ -12,7 +12,6 @@
 
 package es.unizar.vox2.rank.prop;
 
-import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
@@ -73,6 +72,6 @@ public abstract class PropertyRanker {
    * @return Ordered arrayList of ranked properties
    */
   public abstract List<? extends RankedResource> rankNonDefinedObjectProperties(Model model,
-      HashSet<String> definedObjectProperties, String initialResource);
+      Set<String> definedObjectProperties, String initialResource);
 
 }
