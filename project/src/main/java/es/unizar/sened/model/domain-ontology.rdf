@@ -104,11 +104,29 @@
     
 
 
+    <!-- http://dbpedia.org/ontology/child -->
+
+    <owl:ObjectProperty rdf:about="&dbo;child"/>
+    
+
+
     <!-- http://dbpedia.org/ontology/deathPlace -->
 
     <owl:ObjectProperty rdf:about="&dbo;deathPlace">
         <rdfs:domain rdf:resource="&dbo;Person"/>
     </owl:ObjectProperty>
+    
+
+
+    <!-- http://dbpedia.org/ontology/doctoralAdvisor -->
+
+    <owl:ObjectProperty rdf:about="&dbo;doctoralAdvisor"/>
+    
+
+
+    <!-- http://dbpedia.org/ontology/influencedBy -->
+
+    <owl:ObjectProperty rdf:about="&dbo;influencedBy"/>
     
 
 
@@ -119,6 +137,42 @@
         <rdfs:range rdf:resource="&dbo;Person"/>
         <rdfs:range rdf:resource="&sened;Void"/>
     </owl:ObjectProperty>
+    
+
+
+    <!-- http://dbpedia.org/ontology/leader -->
+
+    <owl:ObjectProperty rdf:about="&dbo;leader"/>
+    
+
+
+    <!-- http://dbpedia.org/ontology/notableStudent -->
+
+    <owl:ObjectProperty rdf:about="&dbo;notableStudent"/>
+    
+
+
+    <!-- http://dbpedia.org/ontology/relative -->
+
+    <owl:ObjectProperty rdf:about="&dbo;relative"/>
+    
+
+
+    <!-- http://dbpedia.org/ontology/spouse -->
+
+    <owl:ObjectProperty rdf:about="&dbo;spouse"/>
+    
+
+
+    <!-- http://dbpedia.org/property/influenced -->
+
+    <owl:ObjectProperty rdf:about="&dbp;influenced"/>
+    
+
+
+    <!-- http://www.w3.org/2000/01/rdf-schema#seeAlso -->
+
+    <owl:ObjectProperty rdf:about="&rdfs;seeAlso"/>
     
 
 

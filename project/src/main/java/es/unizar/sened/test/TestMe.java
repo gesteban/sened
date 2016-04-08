@@ -15,13 +15,13 @@ public class TestMe {
     Log.i("test", "start");
 
     // Keyword search by CATEGORY taxonomy (NOT RANKING)
-    // testSearchByKeyword_CategoryTaxonomy(test1_2);
+    testSearchByKeyword_CategoryTaxonomy(test1_2);
 
     // Keyword search by CLASS taxonomy (NOT WORKING)
     // testSearchByKeyword_ClassTaxonomy(test2_1);
 
     // Related search (WORKING)
-    testSearchByRelated(test3_1);
+    // testSearchByRelated(test3_4);
 
     Log.i("test", "done");
   }
@@ -41,6 +41,11 @@ public class TestMe {
   static String test3_2 = "http://dbpedia.org/resource/Falling_cat_problem";
   static String test3_3 = "http://dbpedia.org/resource/Elsa_Einstein";
   static String test3_4 = "http://dbpedia.org/resource/United_States";
+  static String test3_5 = "http://dbpedia.org/resource/Hechingen";
+  static String test3_6 = "http://dbpedia.org/resource/Cancer";
+
+  static String PROPERTY_RANK_TYPE = PropertyRanker.INSTANCE_NUMBER_RANKING_OUTBOUND_DEPTH_1;
+  static String RESOURCE_RANK_TYPE = ResourceRanker.DIRECT_DISTANCE;
 
   public static void testSearchByKeyword_CategoryTaxonomy(String[] keywordsAndCategory) throws Exception {
     Sened.getInstance().searchKeyword(keywordsAndCategory[0], keywordsAndCategory[1]);
@@ -54,19 +59,16 @@ public class TestMe {
     Log.i("test" + "/testSearchByRelated", "Searching related information of [" + resource + "]");
 
     // get object properties
-    List<? extends RankedResource> rankedProps = Sened.getInstance().getObjectProperties(resource,
-        PropertyRanker.INSTANCE_NUMBER_RANKING_BIDIR_DEPTH_1);
-    Utils.printRank(PropertyRanker.INSTANCE_NUMBER_RANKING_BIDIR_DEPTH_1, rankedProps);
-    
- // get object properties
-    List<? extends RankedResource> rankedProps2 = Sened.getInstance().getObjectProperties2(resource,
-        PropertyRanker.INSTANCE_NUMBER_RANKING_BIDIR_DEPTH_1);
-    Utils.printRank(PropertyRanker.INSTANCE_NUMBER_RANKING_BIDIR_DEPTH_1, rankedProps2);
+    List<? extends RankedResource> rankedProps = Sened.getInstance().getOutboundDefinedObjectProperties(resource,
+        PROPERTY_RANK_TYPE);
+    Utils.printRank(PROPERTY_RANK_TYPE, rankedProps);
 
     // get objects of first ranked property
-    List<? extends RankedResource> rankedRes = Sened.getInstance().getObjectsOfProperty(resource,
-        rankedProps.get(0).getResourceUri(), ResourceRanker.DIRECT_DISTANCE);
-    Utils.printRank(ResourceRanker.DIRECT_DISTANCE, rankedRes);
+    if (rankedProps.size() > 0) {
+      List<? extends RankedResource> rankedRes = Sened.getInstance().getObjectsOfProperty(resource,
+          rankedProps.get(0).getResourceUri(), RESOURCE_RANK_TYPE);
+      Utils.printRank(RESOURCE_RANK_TYPE, rankedRes);
+    }
 
   }
 

@@ -1,6 +1,5 @@
 package es.unizar.sened.query;
 
-import java.util.HashSet;
 import java.util.Set;
 
 import org.apache.jena.ontology.OntProperty;
@@ -35,6 +34,7 @@ public class SQueryFactory {
 
   public SQuery getKeywordQuery_CategoryTaxonomy(String keyword, String categoryUri, int categoryDeep) {
 
+    // TODO do not assume resource is always an article (Void special class)
     Set<PropAndDir> retrievableProps = DomainOntology.getProperties(DomainOntology.Void);
     String queryString = PREFIX_ALL + "SELECT DISTINCT ?uri";
     for (PropAndDir propAndDir : retrievableProps) {
@@ -88,10 +88,7 @@ public class SQueryFactory {
     // TODO stop using getLocalName to name variables (some variables could get the same name)
     StringBuilder sb = new StringBuilder();
     // get keyword searchable properties
-    Set<OntProperty> keywordSearchableProps = new HashSet<>();
-    for (OntProperty property : DomainOntology.getProperties())
-      if (DomainOntology.isKeywordSearchable(property))
-        keywordSearchableProps.add(property);
+    Set<OntProperty> keywordSearchableProps = DomainOntology.getKeywordSearchableProperties();
     // build sparql select clause
     sb.append(PREFIX_ALL + "SELECT DISTINCT ?uri");
     // [complete lines version] uncomment to retrieve keyword searchable properties

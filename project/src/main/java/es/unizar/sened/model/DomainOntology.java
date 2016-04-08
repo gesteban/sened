@@ -112,6 +112,14 @@ public class DomainOntology {
     return false;
   }
 
+  public static Set<OntProperty> getKeywordSearchableProperties() {
+    Set<OntProperty> keywordSearchableProps = new HashSet<>();
+    for (OntProperty property : DomainOntology.getProperties())
+      if (DomainOntology.isKeywordSearchable(property))
+        keywordSearchableProps.add(property);
+    return keywordSearchableProps;
+  }
+
   public static String getTaxonomyType() {
     return _taxonomyType;
   }

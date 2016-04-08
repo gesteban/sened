@@ -2,6 +2,7 @@ package es.unizar.sened;
 
 import java.util.Arrays;
 import java.util.HashSet;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
 import java.util.concurrent.ExecutionException;
@@ -9,14 +10,17 @@ import java.util.concurrent.ExecutionException;
 import org.apache.jena.atlas.lib.NotImplemented;
 import org.apache.jena.ontology.OntProperty;
 import org.apache.jena.rdf.model.Model;
+import org.apache.jena.rdf.model.ModelFactory;
 import org.apache.jena.rdf.model.NodeIterator;
 import org.apache.jena.rdf.model.RDFNode;
 import org.apache.jena.rdf.model.Resource;
+import org.apache.jena.rdf.model.Statement;
 
 import es.unizar.sened.model.DomainOntology;
 import es.unizar.sened.query.SQueryFactory;
 import es.unizar.sened.store.LuceneIndex;
 import es.unizar.sened.store.TdbProxy;
+import es.unizar.sened.utils.Log;
 import es.unizar.sened.utils.Utils;
 import es.unizar.vox2.rank.RankedResource;
 import es.unizar.vox2.rank.prop.PropertyRanker;
@@ -50,16 +54,29 @@ public class Sened {
     Set<String> keywordSet = new HashSet<String>();
     // each keyword is separated by a space
     keywordSet.addAll(Arrays.asList(keywords.split(" ")));
+    // find if we already indexed uri list of keywords
     Set<String> uriSet = _index.get(keywordSet, category, QUERY_DEEP);
+    // query resources
+    Model model = ModelFactory.createDefaultModel();
     for (String resourceUri : uriSet) {
-      _tdb.get(resourceUri, 1);
+      model.add(_tdb.getOnlyOutbound(resourceUri, 1));
+    }
+    // extract statements of keyword searchable properties
+    Set<Statement> stmtSet = new HashSet<Statement>();
+    if (model != null) {
+      for (OntProperty kwdSearchableProp : DomainOntology.getKeywordSearchableProperties()) {
+        stmtSet.addAll(model.listStatements(null, kwdSearchableProp, (String) null).toSet());
+      }
+    }
+    for(Statement stmt : stmtSet) {
+      Log.d(TAG, stmt.toString());
     }
     return null;
   }
 
-  public List<? extends RankedResource> getObjectProperties(String resourceUri, String rankType)
+  public List<? extends RankedResource> getDefinedObjectProperties(String resourceUri, String rankType)
       throws ExecutionException {
-    Model model = _tdb.get(resourceUri, 2);
+    Model model = _tdb.getWithInbound(resourceUri, 2);
     Set<String> definedProperties = new HashSet<>();
     for (OntProperty prop : DomainOntology.getObjectProperties())
       definedProperties.add(prop.getURI());
@@ -73,9 +90,9 @@ public class Sened {
     }
   }
 
-  public List<? extends RankedResource> getObjectProperties2(String resourceUri, String rankType)
+  public List<? extends RankedResource> getNonDefinedObjectProperties(String resourceUri, String rankType)
       throws ExecutionException {
-    Model model = _tdb.get(resourceUri, 2);
+    Model model = _tdb.getWithInbound(resourceUri, 2);
     Set<String> definedProperties = new HashSet<>();
     for (OntProperty prop : DomainOntology.getObjectProperties())
       definedProperties.add(prop.getURI());
@@ -89,9 +106,29 @@ public class Sened {
     }
   }
 
+  public List<? extends RankedResource> getOutboundDefinedObjectProperties(String resourceUri, String rankType)
+      throws ExecutionException {
+    Model model = _tdb.getOnlyOutbound(resourceUri, 2);
+    Set<String> definedProperties = new HashSet<>();
+    for (OntProperty prop : DomainOntology.getObjectProperties())
+      definedProperties.add(prop.getURI());
+    PropertyRanker propRanker = PropertyRanker.create(rankType);
+    if (propRanker == null)
+      return null;
+    else {
+      List<? extends RankedResource> rankedProperties = propRanker.rankDefinedObjectProperties(model,
+          definedProperties, resourceUri);
+      // removing properties with zero value
+      for (Iterator<? extends RankedResource> iter = rankedProperties.iterator(); iter.hasNext();)
+        if (iter.next().getRankValue() == 0.0)
+          iter.remove();
+      return rankedProperties;
+    }
+  }
+
   public List<? extends RankedResource> getObjectsOfProperty(String resourceUri, String propertyUri, String rankType)
       throws ExecutionException {
-    Model model = _tdb.get(resourceUri, 2);
+    Model model = _tdb.getOnlyOutbound(resourceUri, 2);
     Set<String> resourceUriSet = new HashSet<>();
     for (NodeIterator iter = model.listObjectsOfProperty(Utils.createResource(resourceUri),
         Utils.createProperty(propertyUri)); iter.hasNext();) {
@@ -108,7 +145,7 @@ public class Sened {
     }
   }
 
-  // private static final String TAG = Sened.class.getSimpleName();
+  private static final String TAG = Sened.class.getSimpleName();
 
   private LuceneIndex _index;
   private SQueryFactory _remoteQuery;

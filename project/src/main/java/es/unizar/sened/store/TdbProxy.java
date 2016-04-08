@@ -76,9 +76,40 @@ public class TdbProxy {
   }
 
   /**
-   * Method to get the model of a resource and its related resources in a given depth.
+   * Method to get the model of a resource and its related resources (using only outbound properties) in a given depth.
    */
-  public Model get(String resourceUri, int depth) throws ExecutionException {
+  public Model getOnlyOutbound(String resourceUri, int depth) throws ExecutionException {
+    if (depth < 1)
+      return null;
+    else if (depth == 1)
+      return _modelCache.get(resourceUri);
+    else {
+      Resource resource = Utils.createResource(resourceUri);
+      Model resultModel = _modelCache.get(resourceUri);
+      StmtIterator iter = resultModel.listStatements(resource, null, (RDFNode) null);
+      for (; iter.hasNext();) {
+        Statement stmt = iter.next();
+        if (stmt.getPredicate().isURIResource()
+            && DomainOntology.getObjectProperties().contains(Utils.createProperty(stmt.getPredicate().getURI()))) {
+          if (stmt.getSubject().isURIResource() && stmt.getSubject().getURI().equals(resourceUri)) {
+            if (stmt.getObject().isURIResource())
+              resultModel.add(get(stmt.getObject().asResource().getURI()));
+          }/*
+            * else if (stmt.getObject().isURIResource() && stmt.getObject().asResource().getURI().equals(resourceUri)) {
+            * resultModel.add(get(stmt.getSubject().asResource().getURI())); } else { Log.e(TAG + "/get",
+            * "Unexpected error in statement"); }
+            */
+        }
+      }
+      return resultModel;
+    }
+  }
+
+  /**
+   * Method to get the model of a resource and all its related resources (using inbound and outbound properties) in a
+   * given depth.
+   */
+  public Model getWithInbound(String resourceUri, int depth) throws ExecutionException {
     if (depth < 1)
       return null;
     else if (depth == 1)
@@ -101,7 +132,8 @@ public class TdbProxy {
           }
         }
       }
-      iter = resultModel.listStatements(null, null, resource); // TODO es realmente necesario coger los recursos entrantes?
+      iter = resultModel.listStatements(null, null, resource); // TODO es realmente necesario coger los recursos
+                                                               // entrantes?
       for (; iter.hasNext();) {
         Statement stmt = iter.next();
         if (stmt.getPredicate().isURIResource()
@@ -127,30 +159,6 @@ public class TdbProxy {
 
   }
 
-  /**
-   * @deprecated
-   */
-  public Model getDepth2(String resourceUri) throws ExecutionException {
-    Resource resource = Utils.createResource(resourceUri);
-    Model resultModel = _modelCache.get(resourceUri);
-    StmtIterator iter = resultModel.listStatements(resource, null, (RDFNode) null);
-    for (; iter.hasNext();) {
-      Statement stmt = iter.next();
-      if (stmt.getPredicate().isURIResource()
-          && DomainOntology.getObjectProperties().contains(Utils.createProperty(stmt.getPredicate().getURI()))) {
-        if (stmt.getSubject().isURIResource() && stmt.getSubject().getURI().equals(resourceUri)) {
-          if (stmt.getObject().isURIResource())
-            resultModel.add(_modelCache.get(stmt.getObject().asResource().getURI()));
-        } else if (stmt.getObject().isURIResource() && stmt.getObject().asResource().getURI().equals(resourceUri)) {
-          resultModel.add(_modelCache.get(stmt.getSubject().asResource().getURI()));
-        } else {
-          Log.e(TAG + "/getDepth2", "Unexpected error in statement");
-        }
-      }
-    }
-    return resultModel;
-  }
-
   public long size() {
     _tdb.begin(ReadWrite.READ);
     long size = _tdb.getDefaultModel().size();
@@ -173,7 +181,7 @@ public class TdbProxy {
   private final String TDB_DIRECTORY = ".sened_tdb";
   private final String TDB_NAME = "dataset_2";
 
-  private final long REMOTE_QUERY_DELAY = 1000;
+  private final long REMOTE_QUERY_DELAY = 10; // ms
   private long REMOTE_QUERY_LAST_TIMESTAMP = 0;
 
   /**
@@ -287,7 +295,9 @@ public class TdbProxy {
     long currentTime = System.currentTimeMillis();
     if (currentTime - REMOTE_QUERY_LAST_TIMESTAMP < REMOTE_QUERY_DELAY) {
       try {
-        Thread.sleep(REMOTE_QUERY_DELAY - (currentTime - REMOTE_QUERY_LAST_TIMESTAMP));
+        long msToWait = REMOTE_QUERY_DELAY - (currentTime - REMOTE_QUERY_LAST_TIMESTAMP);
+        Log.d(TAG + "/waitDelay", "waiting " + msToWait + " ms until next query");
+        Thread.sleep(msToWait);
       } catch (InterruptedException e) {
         e.printStackTrace();
       }
