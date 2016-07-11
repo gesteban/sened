@@ -15,8 +15,10 @@ import org.apache.jena.rdf.model.NodeIterator;
 import org.apache.jena.rdf.model.RDFNode;
 import org.apache.jena.rdf.model.Resource;
 import org.apache.jena.rdf.model.Statement;
+import org.apache.jena.vocabulary.RDFS;
 
 import es.unizar.sened.model.DomainOntology;
+import es.unizar.sened.model.VoxResource;
 import es.unizar.sened.query.SQueryFactory;
 import es.unizar.sened.store.LuceneIndex;
 import es.unizar.sened.store.TdbProxy;
@@ -32,8 +34,8 @@ import es.unizar.vox2.rank.res.ResourceRanker;
 public class Sened {
 
   // TODO parameters in arguments or config file
-  // public static final String REMOTE_ENDPOINT = "http://dbpedia.org/sparql";
-  public static final String REMOTE_ENDPOINT = "http://localhost:8890/sparql";
+  public static final String REMOTE_ENDPOINT = "http://dbpedia.org/sparql";
+  // public static final String REMOTE_ENDPOINT = "http://localhost:8890/sparql";
   public static final String LANGUAGE = "en";
   public static final int QUERY_DEEP = 3;
 
@@ -68,8 +70,16 @@ public class Sened {
         stmtSet.addAll(model.listStatements(null, kwdSearchableProp, (String) null).toSet());
       }
     }
+    Set<VoxResource> aSet = new HashSet<VoxResource>();
     for(Statement stmt : stmtSet) {
-      Log.d(TAG, stmt.toString());
+      // Log.d(TAG, stmt.toString());
+      aSet.add(new VoxResource(stmt.getSubject().asResource().getURI().toString()));
+      if(stmt.getPredicate().getURI().toString().equals("http://www.w3.org/2000/01/rdf-schema#label")) {
+        System.out.println("---------------------");
+      }
+    }
+    for(VoxResource asd : aSet) {
+      System.out.println("><<>>>>>>>> " + asd);
     }
     return null;
   }
