@@ -7,10 +7,10 @@ public class VoxResource {
   public String abstractText;
   public String relation;
 
-  public VoxResource (String uri) {
+  public VoxResource(String uri) {
     this.uri = uri;
   }
-  
+
   @Override
   public int hashCode() {
     final int prime = 31;
@@ -35,10 +35,25 @@ public class VoxResource {
       return false;
     return true;
   }
-  
+
+  @Override
+  public String toString() {
+    return "VoxResource [uri=" + uri + ", label=" + label + ", abstractText=" + abstractText.length() + ", relation="
+        + relation + "]";
+  }
+
   public String get(String key) {
-    // switch()
-    return "";
+    switch (key) {
+    case "label":
+      return label;
+    case "abstractText":
+      return abstractText;
+    case "uri":
+      return uri;
+    case "relation":
+      return relation;
+    }
+    return "<not_key_found>";
   }
 
 }

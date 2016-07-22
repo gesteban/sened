@@ -1,9 +1,11 @@
 package es.unizar.sened;
 
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.ExecutionException;
 
@@ -35,7 +37,8 @@ public class Sened {
 
   // TODO parameters in arguments or config file
   public static final String REMOTE_ENDPOINT = "http://dbpedia.org/sparql";
-  // public static final String REMOTE_ENDPOINT = "http://localhost:8890/sparql";
+  // public static final String REMOTE_ENDPOINT =
+  // "http://localhost:8890/sparql";
   public static final String LANGUAGE = "en";
   public static final int QUERY_DEEP = 3;
 
@@ -64,21 +67,36 @@ public class Sened {
       model.add(_tdb.getOnlyOutbound(resourceUri, 1));
     }
     // extract statements of keyword searchable properties
-    Set<Statement> stmtSet = new HashSet<Statement>();
+    Map<OntProperty, Set<Statement>> stmtPropMap = new HashMap<OntProperty, Set<Statement>>();
     if (model != null) {
       for (OntProperty kwdSearchableProp : DomainOntology.getKeywordSearchableProperties()) {
-        stmtSet.addAll(model.listStatements(null, kwdSearchableProp, (String) null).toSet());
+        stmtPropMap.put(kwdSearchableProp,
+            new HashSet<Statement>(model.listStatements(null, kwdSearchableProp, (String) null).toSet()));
       }
     }
-    Set<VoxResource> aSet = new HashSet<VoxResource>();
-    for(Statement stmt : stmtSet) {
-      // Log.d(TAG, stmt.toString());
-      aSet.add(new VoxResource(stmt.getSubject().asResource().getURI().toString()));
-      if(stmt.getPredicate().getURI().toString().equals("http://www.w3.org/2000/01/rdf-schema#label")) {
-        System.out.println("---------------------");
+    Map<String, VoxResource> resMap = new HashMap<String, VoxResource>();
+    for (OntProperty prop : stmtPropMap.keySet()) {
+      Set<Statement> stmtSet = stmtPropMap.get(prop);
+      for (Statement stmt : stmtSet) {
+        VoxResource resource = resMap.get(stmt.getSubject().asResource().getURI().toString());
+        if (resource == null) {
+          resource = new VoxResource(stmt.getSubject().asResource().getURI().toString());
+          resource.relation = prop.getURI();
+        }
+        if (stmt.getPredicate().getURI().toString().equals("http://www.w3.org/2000/01/rdf-schema#label")) {
+          if (stmt.getObject().asLiteral().getLanguage().equals(LANGUAGE)) {
+            resource.label = stmt.getObject().asLiteral().getLexicalForm();
+          }
+
+        } else if (stmt.getPredicate().getURI().toString().equals("http://dbpedia.org/ontology/abstract")) {
+          if (stmt.getObject().asLiteral().getLanguage().equals(LANGUAGE))
+            resource.abstractText = stmt.getObject().asLiteral().getLexicalForm();
+        }
+        resMap.put(resource.uri, resource);
       }
     }
-    for(VoxResource asd : aSet) {
+
+    for (VoxResource asd : resMap.values()) {
       System.out.println("><<>>>>>>>> " + asd);
     }
     return null;
@@ -94,8 +112,8 @@ public class Sened {
     if (propRanker == null)
       return null;
     else {
-      List<? extends RankedResource> rankedProperties = propRanker.rankDefinedObjectProperties(model,
-          definedProperties, resourceUri);
+      List<? extends RankedResource> rankedProperties = propRanker.rankDefinedObjectProperties(model, definedProperties,
+          resourceUri);
       return rankedProperties;
     }
   }
@@ -126,8 +144,8 @@ public class Sened {
     if (propRanker == null)
       return null;
     else {
-      List<? extends RankedResource> rankedProperties = propRanker.rankDefinedObjectProperties(model,
-          definedProperties, resourceUri);
+      List<? extends RankedResource> rankedProperties = propRanker.rankDefinedObjectProperties(model, definedProperties,
+          resourceUri);
       // removing properties with zero value
       for (Iterator<? extends RankedResource> iter = rankedProperties.iterator(); iter.hasNext();)
         if (iter.next().getRankValue() == 0.0)
